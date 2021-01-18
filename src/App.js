@@ -6,9 +6,14 @@ import LanguageSelector from "./components/LanguageSelector";
 import Example from "./components/Example";
 import { ThemeContext, themes } from "./theme/theme-context";
 import ThemedButton from "./components/ThemedButton";
+import { Text } from "./containers/Language";
 
 function Toolbar(props) {
-  return <ThemedButton onClick={props.changeTheme}>Change Theme</ThemedButton>;
+  return (
+    <ThemedButton onClick={props.changeTheme}>
+      <Text tid="buttonText" />
+    </ThemedButton>
+  );
 }
 
 function App() {

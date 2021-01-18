@@ -1,5 +1,6 @@
 {
     "exploreHeader": "Hello",
     "welcomeDescription": "Welcome",
-    "clickMe": "Click Me"
+    "clickMe": "Click Me", 
+    "buttonText" : "Change Theme"
 }
