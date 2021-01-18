@@ -3,13 +3,17 @@ import React, { createContext } from "react";
 export const themes = {
   light: {
     background: "gold",
-    textAlign: "right",
+    textAlign: "left",
     color: "#222222",
+    direction: "ltr",
+    float: "left",
   },
   dark: {
     background: "#222222",
     color: "gold",
-    textAlign: "left",
+    textAlign: "right",
+    direction: "rtl",
+    float: "right",
   },
 };
 
