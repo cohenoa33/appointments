@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 
 import { Text, LanguageContext } from "../containers/Language";
 
-export default function Example() {
+export default function Example({ setLogout }) {
   const { dictionary } = useContext(LanguageContext);
 
   return (
@@ -10,12 +10,9 @@ export default function Example() {
       <h1>
         <Text tid="exploreHeader" />
       </h1>
-      <p>
-        <Text tid="welcomeDescription" />
-      </p>
-
+      <button onClick={setLogout}>Clear</button>
       <div>
-        <input type="text" placeholder={dictionary.welcomeDescription} />
+        {/* <input type="text" placeholder={dictionary.welcomeDescription} /> */}
       </div>
     </div>
   );

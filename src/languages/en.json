@@ -1,6 +1,13 @@
 {
-    "exploreHeader": "Hello",
+    "exploreHeader": "My List",
     "welcomeDescription": "Welcome",
     "clickMe": "Click Me", 
-    "buttonText" : "Change Theme"
+    "buttonText" : "Change Theme", 
+    "changeToSignup" : "Don't have an account?", 
+    "changeToLogin" : "Already have an account?", 
+    "email": "Email", 
+    "password" : "Password",
+    "passwordConfirmation" : "Password Confirmation",
+    "login" : "Sign In", 
+    "signup": "Sign Up"
 }

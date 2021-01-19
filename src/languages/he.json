@@ -1,7 +1,10 @@
 {
-    "exploreHeader": "שלום",
-    "welcomeDescription": "ברוכים הבאים",
-    "clickMe": "לחץ כאן", 
-    "buttonText" : "שנה נושא"
+    "exploreHeader": "התורים שלי",
+    "buttonText" : "שנה נושא", 
+    "email": "אימייל", 
+    "password" : "סיסמא",
+    "passwordConfirmation" : "אימות סיסמא",
+    "login" : "הכנס", 
+    "signup": "הרשם"
 
 }
