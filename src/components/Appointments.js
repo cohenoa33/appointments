@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import Appointment from "./Appointment";
+import TableHeader from "./TableHeader";
 import Filter from "./Filter";
 import { UserContext } from "../containers/User";
 import { LanguageContext } from "../containers/Language";
@@ -7,7 +8,7 @@ import filterAndSort from "../services/filterAndSort";
 
 export default function Appointments() {
   const { user } = useContext(UserContext);
-  const { dictionary } = useContext(LanguageContext);
+  const { dictionary, userLanguage } = useContext(LanguageContext);
   const [sort, setSort] = useState("date");
   const [isSort, setIsSort] = useState({ date: true });
   const [filter, setFilter] = useState("future");
@@ -29,13 +30,20 @@ export default function Appointments() {
         isSort[`${sort}`]
       )
     : appointments;
+  console.log(userLanguage);
 
   return (
     <div>
       <Filter sortingBy={sortingBy} setFilter={setFilter} />
       <div>
         <table>
-          <thead>
+          <TableHeader
+            sort={sort}
+            sortingBy={sortingBy}
+            dictionary={dictionary}
+            buttonLang={userLanguage}
+          />
+          {/* <thead>
             <tr>
               <th>
                 <button
@@ -75,7 +83,7 @@ export default function Appointments() {
               <th>{dictionary.approvedByInsurance}?</th>
               <th>{dictionary.additionalInformation}</th>
             </tr>
-          </thead>
+          </thead> */}
           <tbody>
             {appointments
               ? appointments.map((appointment) => (

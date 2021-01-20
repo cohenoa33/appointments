@@ -42,10 +42,21 @@ const deleteIcon = (
   </svg>
 );
 
+const arrowDown = (
+  <svg
+    id="global-nav-icon--classic__down-arrow"
+    width="16"
+    height="16"
+    data-supported-dps="16x16"
+  >
+    <path d="M8.8 10.66L14 5.12a.07.07 0 00-.07-.12H2.07a.07.07 0 00-.07.12l5.2 5.54a1.1 1.1 0 001.6 0z"></path>
+  </svg>
+);
 let svgs = {
   edit: edit,
   filter: filter,
   deleteIcon: deleteIcon,
+  arrowDown: arrowDown,
 };
 
 export default svgs;

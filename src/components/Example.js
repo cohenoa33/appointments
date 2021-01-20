@@ -1,10 +1,8 @@
-import React, { useContext } from "react";
+import React from "react";
 
 import { Text } from "../containers/Language";
-import { UserContext } from "../containers/User";
 
 export default function Example() {
-  const { user } = useContext(UserContext);
   return (
     <div>
       <h1>

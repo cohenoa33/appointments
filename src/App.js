@@ -1,8 +1,8 @@
-import React, { useState, useContext, useEffect } from "react";
+import React, { useState, useEffect } from "react";
 import "./App.css";
 
 import { LanguageProvider } from "./containers/Language";
-import { UserContext, UserProvider } from "./containers/User";
+import { UserProvider } from "./containers/User";
 import LanguageSelector from "./components/LanguageSelector";
 import LoginSignup from "./components/LoginSignup";
 import Appointments from "./components/Appointments";
@@ -37,7 +37,7 @@ function App() {
   }, []);
 
   const handleSignInUp = (user) => {
-    let data = (user.password_confirmation
+    (user.password_confirmation
       ? api.auth.signup(user)
       : api.auth.login(user)
     ).then((data) => {
@@ -56,7 +56,6 @@ function App() {
     localStorage.clear();
   };
 
-  console.log(user, theme);
   return (
     <LanguageProvider>
       <UserProvider user={user}>

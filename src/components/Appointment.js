@@ -26,7 +26,6 @@ function Appointment({ appointment }) {
       ? convertors.convertTime(appointment.time)
       : appointment.time;
   };
-  console.log(appointment.date);
   return (
     <tr>
       <td>

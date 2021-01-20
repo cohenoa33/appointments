@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { LanguageContext } from "../containers/Language";
-import svgs from "../services/svg";
 
 export default function Filter({ setFilter }) {
   const { dictionary } = useContext(LanguageContext);
@@ -12,7 +11,6 @@ export default function Filter({ setFilter }) {
 
   return (
     <label>
-      {svgs.filter}
       <select value={selected} onChange={filter}>
         <option value="future">{dictionary.nextAppointments}</option>
         <option value="past_only">{dictionary.archive}</option>

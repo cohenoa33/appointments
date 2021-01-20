@@ -7,6 +7,9 @@ export const themes = {
     color: "#222222",
     direction: "ltr",
     float: "left",
+    button: {
+      color: "222222",
+    },
   },
   dark: {
     background: "#222222",

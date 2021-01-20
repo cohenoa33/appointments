@@ -1,10 +1,100 @@
+.hidden-button-en {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1px;
+  margin: 0;
+}
+.hidden-button-en:active {
+  outline: 0;
+}
+.hidden-button-en:focus {
+  outline: 0;
+}
+.hidden-button-en:checked {
+  outline: 0;
+}
+.hidden-button-en:hover {
+  outline: 0;
+  color: lightgrey;
+  font-weight: bolder;
+}
+
+.hidden-button-he {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1px;
+  margin: 0;
+  color: gold;
+}
+.hidden-button-he:active {
+  outline: 0;
+}
+.hidden-button-he:focus {
+  outline: 0;
+}
+.hidden-button-he:checked {
+  outline: 0;
+}
+.hidden-button-he:hover {
+  outline: 0;
+  color: lightgrey;
+  font-weight: bolder;
+}
+
+.sorting {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 1px;
+  margin: 0;
+  color: darkgrey;
+}
+.sorting:active {
+  outline: 0;
+}
+.sorting:focus {
+  outline: 0;
+}
+.sorting:checked {
+  outline: 0;
+}
+.sorting:hover {
+  outline: 0;
+  color: lightgrey;
+  font-weight: bolder;
+}
+
 .container {
   width: 100%;
+}
+
+svg {
+  margin: 5px;
+}
+
+path {
+  fill: darkgrey;
 }
 
 button {
   width: 100px;
   height: 50px;
+}
+
+table, th, td {
+  border: 1px solid darkgrey;
+  border-collapse: collapse;
+  text-align: center;
+  padding: 5px;
+  margin: 5px;
 }
 
 * {

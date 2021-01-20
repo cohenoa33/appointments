@@ -1,5 +1,3 @@
-import moment from "moment";
-
 const validate = (appointment) => {
   if (appointment.doctor !== undefined && appointment.doctor.length > 1) {
     if (appointment.patient !== undefined && appointment.patient.length > 1) {
