@@ -1,12 +1,12 @@
 import React, { useContext } from "react";
-
-import { LanguageContext } from "../containers/Language";
+import { Text } from "../containers/Language";
 
 export default function SignOut({ setLogout }) {
-  const { dictionary } = useContext(LanguageContext);
   return (
     <div>
-      <button onClick={setLogout}>{dictionary.logout}</button>
+      <button onClick={setLogout}>
+        <Text tid="logout" />
+      </button>
     </div>
   );
 }

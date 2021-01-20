@@ -6,6 +6,7 @@ import { UserContext, UserProvider } from "./containers/User";
 import LanguageSelector from "./components/LanguageSelector";
 import LoginSignup from "./components/LoginSignup";
 import Appointments from "./components/Appointments";
+import Example from "./components/Example";
 import SignOut from "./components/SignOut";
 import { ThemeContext, themes } from "./theme/theme-context";
 import api from "./services/api";
@@ -77,6 +78,7 @@ function App() {
             ) : (
               <div>
                 <SignOut setLogout={setLogout} />
+                <Example />
                 <Appointments />
               </div>
             )}

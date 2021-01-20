@@ -3,9 +3,7 @@ import Appointment from "./Appointment";
 import Filter from "./Filter";
 import { UserContext } from "../containers/User";
 import { LanguageContext } from "../containers/Language";
-
-import helpers from "../services/helpers";
-import moment from "moment";
+import filterAndSort from "../services/filterAndSort";
 
 export default function Appointments() {
   const { user } = useContext(UserContext);
@@ -23,34 +21,13 @@ export default function Appointments() {
       setIsSort({ [`${fieldName}`]: false });
     }
   };
-  const filterBy = (array, fieldName) => {
-    if (array) {
-      if (fieldName === "need_insurance")
-        return array.filter(
-          (app) =>
-            app.insurance_approval === false && app.need_insurance === true
-        );
-      if (fieldName === "insurance_done")
-        return array.filter(
-          (app) =>
-            app.insurance_approval === true && app.need_insurance === true
-        );
-      if (fieldName === "past_only")
-        return array.filter((app) => {
-          return moment(app.date, "YYYY/MM/DD").isBefore(moment()) ? app : null;
-        });
-      if (fieldName === "future")
-        return array.filter((app) => {
-          return !moment(app.date, "YYYY/MM/DD").isBefore(moment())
-            ? app
-            : null;
-        });
-    }
-    return array;
-  };
 
   appointments = appointments
-    ? helpers.sortBy(filterBy(appointments, filter), sort, isSort[`${sort}`])
+    ? filterAndSort.sortBy(
+        filterAndSort.filterBy(appointments, filter),
+        sort,
+        isSort[`${sort}`]
+      )
     : appointments;
 
   return (

@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import moment from "moment";
-import helpers from "../services/helpers";
+import convertors from "../services/convertors";
 import { LanguageContext } from "../containers/Language";
 
 function Appointment({ appointment }) {
@@ -18,12 +18,12 @@ function Appointment({ appointment }) {
   const date = () => {
     return userLanguage === "en"
       ? moment(appointment.date).format("dddd, MMMM Do YYYY")
-      : helpers.convertDate(appointment.date);
+      : convertors.convertDate(appointment.date);
   };
 
   const time = () => {
     return userLanguage === "en"
-      ? helpers.convertTime(appointment.time)
+      ? convertors.convertTime(appointment.time)
       : appointment.time;
   };
   console.log(appointment.date);
@@ -32,9 +32,6 @@ function Appointment({ appointment }) {
       <td>
         {date()} {dictionary.at} {time()}
       </td>
-
-      <td>{} </td>
-
       <td>
         {appointment.doctor}
         <br /> {specialty(appointment.specialty)}

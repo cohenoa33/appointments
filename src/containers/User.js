@@ -1,11 +1,11 @@
 import React, { createContext } from "react";
 
-//set default language
+//set default user to empty object
 export const UserContext = createContext({
   user: {},
 });
 
-// provides context, using the local storage instead of using state
+// provides context,passing user as props
 export function UserProvider({ children, user }) {
   const provider = {
     user: user,

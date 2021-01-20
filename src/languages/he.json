@@ -1,6 +1,8 @@
 {
     "exploreHeader": "התורים שלי",
     "buttonText" : "שנה נושא", 
+    "changeToSignup" : "לא רשום?", 
+    "changeToLogin" : "אני כבר רשום", 
     "email": "אימייל", 
     "password" : "סיסמא",
     "passwordConfirmation" : "אימות סיסמא",
