@@ -1,3 +1,5 @@
+import moment from "moment";
+
 const sortBy = (array, name, order) => {
   switch (name) {
     case "date": {
@@ -73,10 +75,46 @@ const convertTime = (time) => {
   return hour + ":" + minuets + " " + ampm;
 };
 
+const convertDate = (date) => {
+  const days = {
+    Sunday: "ראשון",
+    Monday: "שני",
+    Tuesday: "שלישי",
+    Wednesday: "רביעי",
+    Thursday: "חמישי",
+    Friday: "שישי",
+    Saturday: "שבת",
+  };
+
+  const months = {
+    January: "ינואר",
+    February: "פברואר",
+    March: "מרץ",
+    April: "אפריל",
+    May: "מאי",
+    June: "יוני",
+    July: "יולי",
+    August: "אוגוסט",
+    September: "ספטמבר",
+    October: "אוקטובר",
+    November: "נובמבר",
+    December: "דצמבר",
+  };
+  let dateToConvert = moment(date).format("dddd, MMMM Do YYYY");
+  let dayWeek = dateToConvert.split(",")[0];
+  let month = dateToConvert.split(" ")[1];
+  let year = dateToConvert.split(" ")[3];
+  let day = date.split("-")[2];
+  dayWeek = days[dayWeek];
+  month = months[month];
+  return dayWeek + ", " + day + " ב" + month + " " + year;
+};
+
 let helpers = {
   sortBy: sortBy,
   validate: validate,
   convertTime: convertTime,
+  convertDate: convertDate,
 };
 
 export default helpers;

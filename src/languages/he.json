@@ -5,6 +5,22 @@
     "password" : "סיסמא",
     "passwordConfirmation" : "אימות סיסמא",
     "login" : "הכנס", 
-    "signup": "הרשם"
+    "signup": "הרשם",
+    "logout": "התנתק",
+    "nextAppointments": "תורים עתידיים",
+    "archive" :"תורים שעברו", 
+    "needInsuranceApproval": "ממתין לאישור קופת חולים", 
+    "approvedByInsurance": "אושרו על ידי קופת חולים", 
+    "allAppointments": "כל התורים", 
+    "date": "תאריך",
+    "doctor": "רופא",
+    "patientName": "למי הפגישה",
+    "address": "כתובת", 
+    "additionalInformation": "מידע נוסף", 
+    "yes": "כן", 
+    "no": "לא", 
+    "symptoms": "סימפטומים", 
+    "notes" : "הערות", 
+    "at": "בשעה"
 
 }

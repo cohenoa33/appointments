@@ -1,14 +1,15 @@
 import React, { useContext, useState } from "react";
 import Appointment from "./Appointment";
 import Filter from "./Filter";
-import { Text } from "../containers/Language";
 import { UserContext } from "../containers/User";
+import { LanguageContext } from "../containers/Language";
+
 import helpers from "../services/helpers";
-import useWindowDimensions from "../services/useWindowDimensions";
 import moment from "moment";
 
 export default function Appointments() {
   const { user } = useContext(UserContext);
+  const { dictionary } = useContext(LanguageContext);
   const [sort, setSort] = useState("date");
   const [isSort, setIsSort] = useState({ date: true });
   const [filter, setFilter] = useState("future");
@@ -52,8 +53,6 @@ export default function Appointments() {
     ? helpers.sortBy(filterBy(appointments, filter), sort, isSort[`${sort}`])
     : appointments;
 
-  console.log(filter);
-
   return (
     <div>
       <Filter sortingBy={sortingBy} setFilter={setFilter} />
@@ -66,7 +65,7 @@ export default function Appointments() {
                   className={sort === "date" ? "sorting" : "hidden-button"}
                   onClick={() => sortingBy("date")}
                 >
-                  Date
+                  {dictionary.date}
                 </button>
               </th>
               <th>
@@ -74,7 +73,7 @@ export default function Appointments() {
                   className={sort === "doctor" ? "sorting" : "hidden-button"}
                   onClick={() => sortingBy("doctor")}
                 >
-                  Doctor
+                  {dictionary.doctor}
                 </button>
               </th>
               <th>
@@ -82,10 +81,10 @@ export default function Appointments() {
                   className={sort === "patient" ? "sorting" : "hidden-button"}
                   onClick={() => sortingBy("patient")}
                 >
-                  Patient Name
+                  {dictionary.patientName}
                 </button>
               </th>
-              <th>Address</th>
+              <th>{dictionary.address}</th>
               <th>
                 <button
                   className={
@@ -93,11 +92,11 @@ export default function Appointments() {
                   }
                   onClick={() => sortingBy("insurance_approval")}
                 >
-                  Need Insurance Approval?
+                  {dictionary.needInsuranceApproval}?
                 </button>
               </th>
-              <th>Approved by Insurance?</th>
-              <th>Additional Information</th>
+              <th>{dictionary.approvedByInsurance}?</th>
+              <th>{dictionary.additionalInformation}</th>
             </tr>
           </thead>
           <tbody>

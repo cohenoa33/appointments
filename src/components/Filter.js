@@ -1,6 +1,5 @@
 import React, { useState, useContext } from "react";
 import { LanguageContext } from "../containers/Language";
-
 import svgs from "../services/svg";
 
 export default function Filter({ setFilter }) {

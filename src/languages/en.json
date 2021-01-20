@@ -15,6 +15,16 @@
     "archive" :"Archive", 
     "needInsuranceApproval": "Need Insurance Approval", 
     "approvedByInsurance": "Approved by Insurance", 
-    "allAppointments": "All Appointments"
+    "allAppointments": "All Appointments", 
+    "date": "Date",
+    "doctor": "Doctor",
+    "patientName": "Patient Name",
+    "address": "Address", 
+    "additionalInformation": "Additional Information",
+    "yes": "Yes", 
+    "no": "No", 
+    "symptoms": "Symptoms", 
+    "notes" : "Notes", 
+    "at": "At"
 
 }
