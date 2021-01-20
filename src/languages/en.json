@@ -9,5 +9,12 @@
     "password" : "Password",
     "passwordConfirmation" : "Password Confirmation",
     "login" : "Sign In", 
-    "signup": "Sign Up"
+    "signup": "Sign Up",
+    "logout": "Sign Out",
+    "nextAppointments": "Next Appointments",
+    "archive" :"Archive", 
+    "needInsuranceApproval": "Need Insurance Approval", 
+    "approvedByInsurance": "Approved by Insurance", 
+    "allAppointments": "All Appointments"
+
 }

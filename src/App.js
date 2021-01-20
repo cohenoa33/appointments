@@ -2,10 +2,11 @@ import React, { useState, useContext, useEffect } from "react";
 import "./App.css";
 
 import { LanguageProvider } from "./containers/Language";
-import { userContext } from "./containers/User";
+import { UserContext, UserProvider } from "./containers/User";
 import LanguageSelector from "./components/LanguageSelector";
 import LoginSignup from "./components/LoginSignup";
-import Example from "./components/Example";
+import Appointments from "./components/Appointments";
+import SignOut from "./components/SignOut";
 import { ThemeContext, themes } from "./theme/theme-context";
 import api from "./services/api";
 
@@ -54,11 +55,10 @@ function App() {
     localStorage.clear();
   };
 
-  console.log(jwt ? "yes" : "no", "jwt");
-  console.log(user, "user");
+  console.log(user, theme);
   return (
-    <userContext.Provider value={user}>
-      <LanguageProvider>
+    <LanguageProvider>
+      <UserProvider user={user}>
         <ThemeContext.Provider value={theme}>
           <div className="container" style={theme}>
             <header id="header">
@@ -75,12 +75,15 @@ function App() {
             {!jwt ? (
               <LoginSignup handleSignInUp={handleSignInUp} />
             ) : (
-              <Example setLogout={setLogout} />
+              <div>
+                <SignOut setLogout={setLogout} />
+                <Appointments />
+              </div>
             )}
           </div>
         </ThemeContext.Provider>
-      </LanguageProvider>
-    </userContext.Provider>
+      </UserProvider>
+    </LanguageProvider>
   );
 }
 

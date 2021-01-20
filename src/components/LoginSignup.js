@@ -3,21 +3,23 @@ import { LanguageContext } from "../containers/Language";
 import SignInUpForm from "./SignInUpForm";
 
 function LoginSignup({ handleSignInUp }) {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [password_confirmation, setPassword_confirmation] = useState("");
+  const initialState = {
+    email: "",
+    password: "",
+    password_confirmation: "",
+  };
+  const [{ email, password, password_confirmation }, setState] = useState(
+    initialState
+  );
+
+  const clearState = () => {
+    setState({ ...initialState });
+  };
   const { dictionary } = useContext(LanguageContext);
 
   const handleChange = (e) => {
-    if (e.target.name === "email") {
-      setEmail(e.target.value);
-    }
-    if (e.target.name === "password") {
-      setPassword(e.target.value);
-    }
-    if (e.target.name === "password_confirmation") {
-      setPassword_confirmation(e.target.value);
-    }
+    const { name, value } = e.target;
+    setState((prevState) => ({ ...prevState, [name]: value }));
   };
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -29,6 +31,7 @@ function LoginSignup({ handleSignInUp }) {
         }
       : { email: email.toLowerCase(), password: password };
     handleSignInUp(user);
+    clearState();
   };
 
   return (
