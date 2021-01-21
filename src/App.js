@@ -8,8 +8,10 @@ import LoginSignup from "./components/LoginSignup";
 import Appointments from "./components/Appointments";
 import Example from "./components/Example";
 import SignOut from "./components/SignOut";
+import AddNew from "./components/AddNew";
 import { ThemeContext, themes } from "./theme/theme-context";
 import api from "./services/api";
+import NewAppointment from "./components/NewAppointment";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -23,6 +25,7 @@ function App() {
   const [jwt, setJwt] = useState(
     localStorage.token ? localStorage.token : null
   );
+  const [addNew, setAddNew] = useState(false);
 
   useEffect(() => {
     if (localStorage.token) {
@@ -77,8 +80,15 @@ function App() {
             ) : (
               <div className="no-margin">
                 <SignOut setLogout={setLogout} />
-                <Example />
-                <Appointments />
+                <AddNew setAddNew={() => setAddNew(!addNew)} />
+                {!addNew ? (
+                  <div className="no-margin">
+                    <Example />
+                    <Appointments />
+                  </div>
+                ) : (
+                  <NewAppointment setAddNew={() => setAddNew(!addNew)} />
+                )}
               </div>
             )}
           </div>

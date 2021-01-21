@@ -106,11 +106,12 @@ table, th, td {
   text-align: center;
   vertical-align: top;
   margin: 5px;
-  width: 100%;
+  width: 95%;
   padding-top: 10px;
   padding-right: 0;
   padding-left: 0;
   table-layout: fixed;
+  margin: 0 auto;
 }
 
 th {

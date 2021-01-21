@@ -25,6 +25,8 @@
     "no": "No", 
     "symptoms": "Symptoms", 
     "notes" : "Notes", 
-    "at": "At"
+    "at": "At", 
+    "newAppointment": "Add Appointment", 
+    "specialty" : "Specialty/Type"
 
 }
