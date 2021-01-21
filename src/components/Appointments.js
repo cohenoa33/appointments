@@ -33,10 +33,10 @@ export default function Appointments() {
   console.log(userLanguage);
 
   return (
-    <div>
+    <div className="no-margin">
       <Filter sortingBy={sortingBy} setFilter={setFilter} />
-      <div>
-        <table>
+      <div className="no-margin">
+        <table className={`table-${userLanguage}`}>
           <TableHeader
             sort={sort}
             sortingBy={sortingBy}

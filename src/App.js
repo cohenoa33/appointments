@@ -75,7 +75,7 @@ function App() {
             {!jwt ? (
               <LoginSignup handleSignInUp={handleSignInUp} />
             ) : (
-              <div>
+              <div className="no-margin">
                 <SignOut setLogout={setLogout} />
                 <Example />
                 <Appointments />

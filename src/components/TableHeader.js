@@ -14,38 +14,41 @@ export default function TableHeader({
     <thead>
       <tr>
         <th>
-          <button className={setClassName()} onClick={() => sortingBy("date")}>
-            {svg.arrowDown}
+          <a
+            herf="#"
+            className={setClassName()}
+            onClick={() => sortingBy("date")}
+          >
             {dictionary.date}
-          </button>
+          </a>
         </th>
         <th>
-          <button
+          <a
+            herf="#"
             className={setClassName()}
             onClick={() => sortingBy("doctor")}
           >
-            {svg.arrowDown}
             {dictionary.doctor}
-          </button>
+          </a>
         </th>
         <th>
-          <button
+          <a
+            herf="#"
             className={setClassName()}
             onClick={() => sortingBy("patient")}
           >
-            {svg.arrowDown}
             {dictionary.patientName}
-          </button>
+          </a>
         </th>
         <th>{dictionary.address}</th>
         <th>
-          <button
+          <a
+            herf="#"
             className={setClassName()}
             onClick={() => sortingBy("insurance_approval")}
           >
-            {svg.arrowDown}
             {dictionary.needInsuranceApproval}
-          </button>
+          </a>
         </th>
         <th>{dictionary.approvedByInsurance}</th>
         <th>{dictionary.additionalInformation}</th>

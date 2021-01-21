@@ -37,11 +37,9 @@ function Appointment({ appointment }) {
       </td>
       <td>{appointment.patient}</td>
       <td>
-        {appointment.location !== null ? (
-          appointment.location
-        ) : (
-          <p className="text-hidden">{dictionary.no}</p>
-        )}
+        {appointment.location !== null
+          ? appointment.location
+          : `${dictionary.no}`}
       </td>
       <td>
         {appointment.need_insurance ? `${dictionary.yes}` : `${dictionary.no}`}
