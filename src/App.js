@@ -54,10 +54,14 @@ function App() {
     setJwt(data.jwt);
   };
   const newAppointment = (appointment) => {
-    user.appointments.concat(appointment);
-    setUser(user);
+    let updateList = user.appointments.concat(appointment);
+    setUser((prevState) => ({ ...prevState, appointments: updateList }));
     setAddNew(!addNew);
   };
+  const [appointments, setAppointments] = useState(user.appointments);
+  useEffect(() => {
+    setAppointments(user.appointments);
+  }, [user]);
 
   const setLogout = () => {
     setUser({});
@@ -90,7 +94,7 @@ function App() {
                 {!addNew ? (
                   <div className="no-margin">
                     <Example />
-                    <Appointments appointments={user.appointments} />
+                    <Appointments appointments={appointments} />
                   </div>
                 ) : (
                   <NewAppointment
