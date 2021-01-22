@@ -7,7 +7,7 @@
   text-align: center;
   padding-top: 0;
   margin-top: -1px;
-  vertical-align: top;
+  vertical-align: center;
 }
 .hidden-button-en:active {
   outline: 0;
@@ -33,7 +33,7 @@
   text-align: center;
   padding-top: 0;
   margin-top: -1px;
-  vertical-align: top;
+  vertical-align: center;
   color: gold;
 }
 .hidden-button-he:active {
@@ -52,6 +52,47 @@
   cursor: pointer;
 }
 
+.hidden-button-en-no {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0;
+  margin-top: -1px;
+  vertical-align: center;
+}
+.hidden-button-en-no:active {
+  outline: 0;
+}
+.hidden-button-en-no:focus {
+  outline: 0;
+}
+.hidden-button-en-no:checked {
+  outline: 0;
+}
+
+.hidden-button-he-no {
+  background-color: transparent;
+  border: none;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  padding-top: 0;
+  margin-top: -1px;
+  vertical-align: center;
+  color: gold;
+}
+.hidden-button-he-no:active {
+  outline: 0;
+}
+.hidden-button-he-no:focus {
+  outline: 0;
+}
+.hidden-button-he-no:checked {
+  outline: 0;
+}
+
 .sorting {
   background-color: transparent;
   border: none;
@@ -60,7 +101,7 @@
   text-align: center;
   padding-top: 0;
   margin-top: -1px;
-  vertical-align: top;
+  vertical-align: center;
   color: darkgrey;
 }
 .sorting:active {
@@ -71,12 +112,6 @@
 }
 .sorting:checked {
   outline: 0;
-}
-.sorting:hover {
-  outline: 0;
-  color: lightgrey;
-  font-weight: bolder;
-  cursor: pointer;
 }
 
 .container {

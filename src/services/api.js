@@ -47,7 +47,7 @@ const addAppointment = (appointment) => {
   return fetch(`${API_ROOT}/appointments`, {
     method: "POST",
     headers: headers,
-    body: JSON.stringify({ appointment }),
+    body: JSON.stringify(appointment),
   }).then((res) => res.json());
 };
 

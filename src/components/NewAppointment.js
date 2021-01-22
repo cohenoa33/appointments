@@ -2,85 +2,108 @@ import { LanguageContext } from "../containers/Language";
 import React, { useContext, useState } from "react";
 import api from "../services/api";
 
-export default function NewAppointment({ setAddNew }) {
+export default function NewAppointment({ newAppointment, setAddNew, user }) {
+  const initialState = {
+    doctor: "",
+    date: "",
+    time: "",
+    specialty: "",
+    patient: "",
+    address: "",
+    symptoms: "",
+    appointment_notes: "",
+    need_insurance: false,
+    insurance_approval: true,
+  };
   const { dictionary } = useContext(LanguageContext);
-  const [doctor, setDoctor] = useState();
-  const [specialty, setSpecialty] = useState();
-  const [patient, setPatient] = useState();
-  const [date, setDate] = useState();
-  const [time, setTime] = useState();
-  const [address, setAddress] = useState();
-  const [symptoms, setSymptoms] = useState();
-  const [info, setInfo] = useState();
-  const [insurance, setInsurance] = useState(true);
-  const [approved, setApproved] = useState(false);
+  const [
+    {
+      doctor,
+      date,
+      time,
+      specialty,
+      patient,
+      location,
+      symptoms,
+      appointment_notes,
+      need_insurance,
+      insurance_approval,
+    },
+    setState,
+  ] = useState(initialState);
 
   const handleChange = (e) => {
-    let name = e.target.name;
-    let value = e.target.value;
-    switch (name) {
-      case "date":
-        setDate(value);
-      case "doctor":
-        setDoctor(value);
+    const { name, value, checked } = e.target;
+    if (name === "need_insurance" || name === "insurance_approval") {
+      setState((prevState) => ({ ...prevState, [name]: checked }));
+    } else {
+      setState((prevState) => ({ ...prevState, [name]: value }));
     }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let newAppointment = {
-      appointment: {
-        doctor: doctor,
-        specialty: specialty,
-        patient: patient,
-        date: date,
-        time: time,
-        address: address,
-        symptoms: symptoms,
-        appointment_notes: info,
-        need_insurance: insurance,
-        insurance_approval: approved,
-      },
+
+    let appointment = {
+      doctor,
+      date,
+      time,
+      specialty,
+      patient,
+      location,
+      symptoms,
+      appointment_notes,
+      need_insurance,
+      insurance_approval,
+      user_id: user,
     };
-    console.log(newAppointment);
-    // api.appointment.add(newAppointment).then((data) => {
-    //   !data.error ? setAddNew() : alert(data.error);
-    // });
+    api.appointment.add(appointment).then((data) => {
+      if (!data.error) {
+        newAppointment(data);
+      } else {
+        alert(data.error);
+      }
+    });
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <label>{dictionary.doctor}</label>
-        <input type="text" name="Doctor" onChange={handleChange} required />
+        <input type="text" name="doctor" onChange={handleChange} required />
         <br />
         <label>{dictionary.specialty}</label>
-        <input type="text" name="specialty" onChange={setSpecialty} />
+        <input type="text" name="specialty" onChange={handleChange} />
         <br />
         <label>{dictionary.patientName}</label>
-        <input type="text" name="patient" onChange={setPatient} required />
+        <input type="text" name="patient" onChange={handleChange} required />
         <br />
         <label>{dictionary.date}</label>
-        <input type="date" name="date" onChange={setDate} required />
+        <input type="date" name="date" onChange={handleChange} required />
 
         <label>{dictionary.time}</label>
-        <input type="time" name="time" onChange={setTime} required />
+        <input type="time" name="time" onChange={handleChange} required />
         <br />
         <label>{dictionary.address}</label>
-        <input type="text" name="location" onChange={setAddress} required />
+        <input type="text" name="location" onChange={handleChange} required />
         <br />
         <label>{dictionary.symptoms}</label>
-        <textarea type="text" name="symptoms" onChange={setSymptoms} />
+        <textarea type="text" name="symptoms" onChange={handleChange} />
         <br />
         <label>{dictionary.additionalInformation}</label>
-        <textarea type="text" name="appointment_notes" onChange={setInfo} />
+        <textarea
+          type="text"
+          name="appointment_notes"
+          onChange={handleChange}
+        />
 
         <label>
           {dictionary.needInsuranceApproval}
           <input
             name="need_insurance"
             type="checkbox"
-            checked={insurance}
-            onChange={() => setInsurance(!insurance)}
+            checked={need_insurance}
+            onChange={handleChange}
           />
         </label>
         <label>
@@ -88,8 +111,8 @@ export default function NewAppointment({ setAddNew }) {
           <input
             name="insurance_approval"
             type="checkbox"
-            checked={approved}
-            onChange={() => setApproved(!approved)}
+            checked={insurance_approval}
+            onChange={handleChange}
           />
         </label>
         <input type="submit" value="xxx" />

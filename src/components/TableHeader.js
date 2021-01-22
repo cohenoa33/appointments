@@ -1,5 +1,4 @@
 import React from "react";
-import svg from "../services/svg";
 
 export default function TableHeader({
   dictionary,
@@ -9,49 +8,57 @@ export default function TableHeader({
 }) {
   const setClassName = () =>
     buttonLang === "he" ? "hidden-button-he" : "hidden-button-en";
+  const setClassNameNoSorting = () =>
+    buttonLang === "he" ? "hidden-button-he-no" : "hidden-button-en-no";
 
   return (
     <thead>
       <tr>
         <th>
-          <a
-            herf="#"
-            className={setClassName()}
-            onClick={() => sortingBy("date")}
-          >
+          <button className={setClassName()} onClick={() => sortingBy("date")}>
             {dictionary.date}
-          </a>
+          </button>
         </th>
         <th>
-          <a
-            herf="#"
+          <button
             className={setClassName()}
             onClick={() => sortingBy("doctor")}
           >
             {dictionary.doctor}
-          </a>
+          </button>
         </th>
         <th>
-          <a
-            herf="#"
+          <button
             className={setClassName()}
             onClick={() => sortingBy("patient")}
           >
             {dictionary.patientName}
-          </a>
+          </button>
         </th>
-        <th>{dictionary.address}</th>
         <th>
-          <a
-            herf="#"
+          <button className={setClassNameNoSorting()}>
+            {dictionary.address}
+          </button>
+        </th>
+        <th>
+          <button
             className={setClassName()}
             onClick={() => sortingBy("insurance_approval")}
           >
             {dictionary.needInsuranceApproval}
-          </a>
+          </button>
         </th>
-        <th>{dictionary.approvedByInsurance}</th>
-        <th>{dictionary.additionalInformation}</th>
+        <th>
+          <button className={setClassNameNoSorting()}>
+            {dictionary.approvedByInsurance}
+          </button>
+        </th>
+        <th>
+          {" "}
+          <button className={setClassNameNoSorting()}>
+            {dictionary.additionalInformation}
+          </button>
+        </th>
       </tr>
     </thead>
   );

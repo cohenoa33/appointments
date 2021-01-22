@@ -53,6 +53,12 @@ function App() {
     setUser(data.user);
     setJwt(data.jwt);
   };
+  const newAppointment = (appointment) => {
+    user.appointments.concat(appointment);
+    setUser(user);
+    setAddNew(!addNew);
+  };
+
   const setLogout = () => {
     setUser({});
     setJwt();
@@ -84,10 +90,13 @@ function App() {
                 {!addNew ? (
                   <div className="no-margin">
                     <Example />
-                    <Appointments />
+                    <Appointments appointments={user.appointments} />
                   </div>
                 ) : (
-                  <NewAppointment setAddNew={() => setAddNew(!addNew)} />
+                  <NewAppointment
+                    user={user.id}
+                    newAppointment={newAppointment}
+                  />
                 )}
               </div>
             )}
