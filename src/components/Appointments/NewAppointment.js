@@ -96,68 +96,89 @@ export default function NewAppointment({
   const renderTextArea = (name) => {
     return appointment ? (
       <textarea
+        className="input"
         type="text"
         name={name}
         onChange={handleChange}
         value={`appointment.${name}`}
       />
     ) : (
-      <textarea type="text" name={name} onChange={handleChange} />
+      <textarea
+        className="input"
+        type="text"
+        name={name}
+        onChange={handleChange}
+      />
     );
   };
 
   return (
-    <div>
-      <button className="x-btn" onClick={() => setAddNew(!addNew)}>
-        {dictionary.cancel}
-      </button>
-      <Text tid="newAppointment" />
-      <form onSubmit={handleSubmit}>
-        <label>{dictionary.doctor}</label>
-        {renderInput("doctor", "text", true)}
+    <div className="new-appointment-container">
+      <div className="new-appointment-form">
+        <button className="x-btn" onClick={() => setAddNew(!addNew)}>
+          {dictionary.cancel}
+        </button>
         <br />
-        <label>{dictionary.specialty}</label>
-        {renderInput("specialty", "text", false)}
+        <h1>
+          <Text tid="newAppointment" />
+        </h1>
         <br />
-        <label>{dictionary.patientName}</label>
-        {renderInput("patient", "text", true)}
-        <br />
-        <label>{dictionary.date}</label>
-        {renderInput("date", "date", true)}
-        <label>{dictionary.time}</label>
-        {renderInput("time", "time", true)}
-        <br />
-        <label>{dictionary.address}</label>
-        {renderInput("location", "text", true)}
-        <br />
-        <label>{dictionary.symptoms}</label>
-        {renderTextArea("symptoms")}
-        <br />
-        <label>{dictionary.additionalInformation}</label>
-        {renderTextArea("appointment_notes")}
-
-        <label>
-          {dictionary.needInsuranceApproval}
-          <input
-            name="need_insurance"
-            type="checkbox"
-            checked={appointment ? appointment.need_insurance : need_insurance}
-            onChange={handleChange}
-          />
-        </label>
-        <label>
-          {dictionary.approvedByInsurance}
-          <input
-            name="insurance_approval"
-            type="checkbox"
-            checked={
-              appointment ? appointment.insurance_approval : insurance_approval
-            }
-            onChange={handleChange}
-          />
-        </label>
-        <input type="submit" value="xxx" />
-      </form>
+        <form onSubmit={handleSubmit}>
+          <label>{dictionary.doctor}</label>
+          {renderInput("doctor", "text", true)}
+          <br />
+          <label>{dictionary.specialty}</label>
+          {renderInput("specialty", "text", false)}
+          <br />
+          <label>{dictionary.patientName}</label>
+          {renderInput("patient", "text", true)}
+          <br />
+          <label>{dictionary.date}</label>
+          {renderInput("date", "date", true)}
+          <br />
+          <label>{dictionary.time}</label>
+          {renderInput("time", "time", true)}
+          <br />
+          <label>{dictionary.address}</label>
+          {renderInput("location", "text", true)}
+          <br />
+          <br />
+          <label>{dictionary.symptoms}</label>
+          {renderTextArea("symptoms")}
+          <br />
+          <label>{dictionary.additionalInformation}</label>
+          {renderTextArea("appointment_notes")}
+          <br />
+          <label className="checkbox">
+            {dictionary.needInsuranceApproval}
+            <input
+              name="need_insurance"
+              type="checkbox"
+              checked={
+                appointment ? appointment.need_insurance : need_insurance
+              }
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <label className="checkbox">
+            {dictionary.approvedByInsurance}
+            <input
+              name="insurance_approval"
+              type="checkbox"
+              checked={
+                appointment
+                  ? appointment.insurance_approval
+                  : insurance_approval
+              }
+              onChange={handleChange}
+            />
+          </label>
+          <br />
+          <br />
+          <input type="submit" value={dictionary.save} />
+        </form>
+      </div>
     </div>
   );
 }

@@ -128,6 +128,22 @@ button {
   padding-bottom: 200px;
 }
 
+.new-appointment-container {
+  margin: 0 auto;
+}
+
+.new-appointment-form {
+  background-color: darkgrey;
+  padding: 20px;
+  width: 50%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.new-appointment-form h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -190,6 +206,35 @@ path {
 
 #header {
   margin: 0.5em;
+}
+
+form {
+  line-height: 2em;
+  display: inline-block;
+  width: 95%;
+}
+
+label {
+  width: 25%;
+  float: right;
+  padding-right: 30px;
+}
+
+input[type=text], input[type=date], input[type=time] {
+  width: 50%;
+  height: 1.55em;
+}
+input[type=text]:focus, input[type=date]:focus, input[type=time]:focus {
+  outline: 0;
+}
+
+textarea {
+  height: 3em;
+  width: 50%;
+}
+
+.checkbox {
+  width: 100%;
 }
 
 table, th, td {
