@@ -1,11 +1,14 @@
-import { LanguageContext } from "../containers/Language";
+import { LanguageContext, Text } from "../containers/Language";
 import React, { useContext, useState } from "react";
+
 import api from "../services/api";
 
 export default function NewAppointment({
   addNewAppointment,
   user,
   appointment,
+  addNew,
+  setAddNew,
 }) {
   const initialState = appointment
     ? appointment
@@ -105,6 +108,10 @@ export default function NewAppointment({
 
   return (
     <div>
+      <button className="x-btn" onClick={() => setAddNew(!addNew)}>
+        X
+      </button>
+      <Text tid="newAppointment" />
       <form onSubmit={handleSubmit}>
         <label>{dictionary.doctor}</label>
         {renderInput("doctor", "text", true)}

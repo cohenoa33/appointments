@@ -1,6 +1,7 @@
 import React from "react";
 import moment from "moment";
 import convertors from "../services/convertors";
+import api from "../services/api";
 
 export default function Row({
   dictionary,
@@ -8,6 +9,7 @@ export default function Row({
   edit,
   setEdit,
   userLanguage,
+  updateAppointmentsList,
 }) {
   const specialty = (specialty) => {
     return specialty ? `(${specialty})` : null;
@@ -29,6 +31,16 @@ export default function Row({
       ? convertors.convertTime(appointment.time)
       : appointment.time;
   };
+  const deleteAppointment = (id) => {
+    api.appointment.delete(id).then((data) => {
+      if (!data.error) {
+        updateAppointmentsList(id, "delete");
+      } else {
+        alert(data.error);
+      }
+    });
+  };
+
   return (
     <tr>
       <td>
@@ -60,6 +72,9 @@ export default function Row({
         {symptoms(appointment.symptoms)}
         <div className="buttons">
           <button onClick={() => setEdit(!edit)}>{dictionary.edit}</button>
+          <button onClick={() => deleteAppointment(appointment.id)}>
+            {dictionary.delete}
+          </button>
         </div>
       </td>
     </tr>

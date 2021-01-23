@@ -25,6 +25,7 @@ function Appointment({ appointment, updateAppointmentsList }) {
           appointment={appointment}
           edit={edit}
           setEdit={setEdit}
+          updateAppointmentsList={updateAppointmentsList}
         />
       )}
     </>

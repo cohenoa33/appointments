@@ -114,12 +114,30 @@
   outline: 0;
 }
 
+.x-btn {
+  color: balck;
+  padding: 0;
+  background-color: red;
+}
+
 .container {
   width: 100%;
 }
 
 .no-margin {
   margin: 0;
+}
+
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+.modal_content {
+  background-color: white;
+  position: absolute;
 }
 
 svg {

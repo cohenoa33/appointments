@@ -59,7 +59,8 @@ function App() {
     setAddNew(!addNew);
   };
   const updateAppointmentsList = (appointment, action) => {
-    let filteredList = user.appointments.filter((a) => a.id !== appointment.id);
+    let id = typeof appointment === "number" ? appointment : appointment.id;
+    let filteredList = user.appointments.filter((a) => a.id !== id);
     let updateList =
       action === "edit" ? filteredList.concat(appointment) : filteredList;
     setUser((prevState) => ({ ...prevState, appointments: updateList }));
@@ -74,8 +75,6 @@ function App() {
     setJwt();
     localStorage.clear();
   };
-
-  console.log(user.appointments);
 
   return (
     <LanguageProvider>
@@ -111,6 +110,8 @@ function App() {
                   <NewAppointment
                     user={user.id}
                     addNewAppointment={addNewAppointment}
+                    addNew={addNew}
+                    setAddNew={setAddNew}
                   />
                 )}
               </div>
