@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { LanguageContext } from "../containers/Language";
+import { LanguageContext } from "../../containers/Language";
 
 export default function Filter({ setFilter }) {
   const { dictionary } = useContext(LanguageContext);

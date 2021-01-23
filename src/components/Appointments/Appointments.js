@@ -1,9 +1,9 @@
 import React, { useContext, useState } from "react";
-import Appointment from "./Appointment";
+import Appointment from "./Row";
 import TableHeader from "./TableHeader";
 import Filter from "./Filter";
-import { LanguageContext } from "../containers/Language";
-import filterAndSort from "../services/filterAndSort";
+import { LanguageContext } from "../../containers/Language";
+import filterAndSort from "../../services/filterAndSort";
 
 export default function Appointments({ appointments, updateAppointmentsList }) {
   const { dictionary, userLanguage } = useContext(LanguageContext);
@@ -29,9 +29,11 @@ export default function Appointments({ appointments, updateAppointmentsList }) {
     : appointments;
 
   return (
-    <div className="no-margin">
-      <Filter sortingBy={sortingBy} setFilter={setFilter} />
-      <div className="no-margin">
+    <div>
+      <div className="filter">
+        <Filter sortingBy={sortingBy} setFilter={setFilter} />
+      </div>
+      <div>
         <table className={`table-${userLanguage}`}>
           <TableHeader
             sort={sort}

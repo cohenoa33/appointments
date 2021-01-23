@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import api from "../services/api";
-import helpers from "../services/helpers";
+import api from "../../services/api";
+import helpers from "../../services/helpers";
 
 export default function Edit({
   dictionary,

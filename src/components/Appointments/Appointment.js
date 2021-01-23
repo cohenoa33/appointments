@@ -1,9 +1,9 @@
 import React, { useState } from "react";
 import moment from "moment";
-import convertors from "../services/convertors";
-import api from "../services/api";
+import convertors from "../../services/convertors";
+import api from "../../services/api";
 
-export default function Row({
+export default function Appointment({
   dictionary,
   appointment,
   edit,
@@ -42,7 +42,6 @@ export default function Row({
       }
     });
   };
-  console.log(toggle);
 
   return (
     <tr>

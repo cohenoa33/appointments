@@ -1,4 +1,9 @@
 @charset "UTF-8";
+button {
+  width: 100px;
+  height: 50px;
+}
+
 .hidden-button-en {
   background-color: transparent;
   border: none;
@@ -115,17 +120,47 @@
 }
 
 .x-btn {
-  color: balck;
-  padding: 0;
-  background-color: red;
+  width: auto;
 }
 
 .container {
   width: 100%;
+  padding-bottom: 200px;
 }
 
-.no-margin {
+ul {
   margin: 0;
+  padding: 0;
+  background-color: lightgrey;
+}
+ul li {
+  display: inline;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+ul button {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  height: 50px;
+  padding: 0;
+  width: auto;
+  font-size: 1.1em;
+}
+ul button:active {
+  outline: 0;
+}
+ul button:focus {
+  outline: 0;
+}
+ul button:checked {
+  outline: 0;
+}
+ul button:hover {
+  outline: 0;
+  color: darkgrey;
+  font-weight: bolder;
+  cursor: pointer;
 }
 
 svg {
@@ -137,12 +172,24 @@ path {
 }
 
 .confirm-delete {
-  color: red;
+  color: #ca0829ed;
 }
 
-button {
-  width: 100px;
-  height: 50px;
+.title {
+  text-align: center;
+}
+
+.filter {
+  text-align: center;
+  padding-bottom: 10px;
+}
+.filter select {
+  font-size: 1.1em;
+  padding: 5px;
+}
+
+#header {
+  margin: 0.5em;
 }
 
 table, th, td {
@@ -472,7 +519,6 @@ tr:hover {
 * {
   font-family: Inconsolata;
   box-sizing: border-box;
-  margin: 0.5em;
 }
 
 /*# sourceMappingURL=App.css.map */

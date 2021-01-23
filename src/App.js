@@ -3,15 +3,15 @@ import "./App.css";
 
 import { LanguageProvider } from "./containers/Language";
 import { UserProvider } from "./containers/User";
-import LanguageSelector from "./components/LanguageSelector";
-import LoginSignup from "./components/LoginSignup";
-import Appointments from "./components/Appointments";
-import Example from "./components/Example";
-import SignOut from "./components/SignOut";
-import AddNew from "./components/AddNew";
-import { ThemeContext, themes } from "./theme/theme-context";
+import LanguageSelector from "./components/Header/LanguageSelector";
+import LoginSignup from "./components/SigninSignup/LoginSignup";
+import Appointments from "./components/Appointments/Appointments";
+import Title from "./components/Appointments/Title";
+import SignOut from "./components/Navbar/SignOut";
+import AddNewButton from "./components/Navbar/AddNewButton";
+import { ThemeContext, themes } from "./containers/Theme";
 import api from "./services/api";
-import NewAppointment from "./components/NewAppointment";
+import NewAppointment from "./components/Appointments/NewAppointment";
 
 function App() {
   const [theme, setTheme] = useState(
@@ -95,12 +95,18 @@ function App() {
             {!jwt ? (
               <LoginSignup handleSignInUp={handleSignInUp} />
             ) : (
-              <div className="no-margin">
-                <SignOut setLogout={setLogout} />
-                <AddNew setAddNew={() => setAddNew(!addNew)} />
+              <div>
+                <ul>
+                  <li>
+                    <AddNewButton setAddNew={() => setAddNew(!addNew)} />
+                  </li>
+                  <li>
+                    <SignOut setLogout={setLogout} />
+                  </li>
+                </ul>
                 {!addNew ? (
-                  <div className="no-margin">
-                    <Example />
+                  <div>
+                    <Title />
                     <Appointments
                       appointments={appointments}
                       updateAppointmentsList={updateAppointmentsList}

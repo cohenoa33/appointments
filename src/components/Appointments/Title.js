@@ -1,11 +1,11 @@
 import React from "react";
 
-import { Text } from "../containers/Language";
+import { Text } from "../../containers/Language";
 
-export default function Example() {
+export default function Title() {
   return (
     <div>
-      <h1>
+      <h1 className="title">
         <Text tid="exploreHeader" />
       </h1>
     </div>

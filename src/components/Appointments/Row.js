@@ -1,10 +1,10 @@
 import React, { useContext, useState } from "react";
 
-import { LanguageContext } from "../containers/Language";
-import Row from "./Row";
+import { LanguageContext } from "../../containers/Language";
+import Appointment from "./Appointment";
 import Edit from "./Edit";
 
-function Appointment({ appointment, updateAppointmentsList }) {
+export default function Row({ appointment, updateAppointmentsList }) {
   const { dictionary, userLanguage } = useContext(LanguageContext);
   const [edit, setEdit] = useState(false);
 
@@ -19,7 +19,7 @@ function Appointment({ appointment, updateAppointmentsList }) {
           updateAppointmentsList={updateAppointmentsList}
         />
       ) : (
-        <Row
+        <Appointment
           userLanguage={userLanguage}
           dictionary={dictionary}
           appointment={appointment}
@@ -31,5 +31,3 @@ function Appointment({ appointment, updateAppointmentsList }) {
     </>
   );
 }
-
-export default Appointment;
