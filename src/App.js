@@ -53,10 +53,16 @@ function App() {
     setUser(data.user);
     setJwt(data.jwt);
   };
-  const newAppointment = (appointment) => {
-    let updateList = user.appointments.concat(appointment);
+  const addNewAppointment = (appointment) => {
+    const updateList = user.appointments.concat(appointment);
     setUser((prevState) => ({ ...prevState, appointments: updateList }));
     setAddNew(!addNew);
+  };
+  const updateAppointmentsList = (appointment, action) => {
+    let filteredList = user.appointments.filter((a) => a.id !== appointment.id);
+    let updateList =
+      action === "edit" ? filteredList.concat(appointment) : filteredList;
+    setUser((prevState) => ({ ...prevState, appointments: updateList }));
   };
   const [appointments, setAppointments] = useState(user.appointments);
   useEffect(() => {
@@ -68,6 +74,8 @@ function App() {
     setJwt();
     localStorage.clear();
   };
+
+  console.log(user.appointments);
 
   return (
     <LanguageProvider>
@@ -94,12 +102,15 @@ function App() {
                 {!addNew ? (
                   <div className="no-margin">
                     <Example />
-                    <Appointments appointments={appointments} />
+                    <Appointments
+                      appointments={appointments}
+                      updateAppointmentsList={updateAppointmentsList}
+                    />
                   </div>
                 ) : (
                   <NewAppointment
                     user={user.id}
-                    newAppointment={newAppointment}
+                    addNewAppointment={addNewAppointment}
                   />
                 )}
               </div>

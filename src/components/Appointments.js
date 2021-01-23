@@ -5,7 +5,7 @@ import Filter from "./Filter";
 import { LanguageContext } from "../containers/Language";
 import filterAndSort from "../services/filterAndSort";
 
-export default function Appointments({ appointments }) {
+export default function Appointments({ appointments, updateAppointmentsList }) {
   const { dictionary, userLanguage } = useContext(LanguageContext);
   const [sort, setSort] = useState("date");
   const [isSort, setIsSort] = useState({ date: true });
@@ -43,7 +43,11 @@ export default function Appointments({ appointments }) {
           <tbody>
             {list
               ? list.map((appointment) => (
-                  <Appointment appointment={appointment} key={appointment.id} />
+                  <Appointment
+                    appointment={appointment}
+                    key={appointment.id}
+                    updateAppointmentsList={updateAppointmentsList}
+                  />
                 ))
               : null}
           </tbody>

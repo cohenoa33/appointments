@@ -1,0 +1,124 @@
+import React, { useState } from "react";
+import api from "../services/api";
+
+export default function Edit({
+  dictionary,
+  appointment,
+  edit,
+  setEdit,
+  updateAppointmentsList,
+}) {
+  const [updatedAppointment, setUpdatedAppointment] = useState(appointment);
+
+  const handleChange = (e) => {
+    const value =
+      e.target.type === "checkbox" ? e.target.checked : e.target.value;
+    setUpdatedAppointment({ ...updatedAppointment, [e.target.name]: value });
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    api.appointment.update(updatedAppointment).then((data) => {
+      if (!data.error) {
+        updateAppointmentsList(data, "edit");
+        setEdit(!edit);
+      } else {
+        alert(data.error);
+      }
+    });
+  };
+
+  return (
+    <tr>
+      <td>
+        <label>{dictionary.date}</label>
+        <input
+          type="date"
+          name="date"
+          value={updatedAppointment.date}
+          onChange={handleChange}
+        />
+        <label>{dictionary.time}</label>
+        <input
+          type="time"
+          name="time"
+          value={updatedAppointment.time}
+          onChange={handleChange}
+        />
+      </td>
+      <td>
+        <label>{dictionary.doctor}</label>
+        <input
+          type="text"
+          name="doctor"
+          value={updatedAppointment.doctor}
+          onChange={handleChange}
+        />
+        <br />
+        <label>{dictionary.specialty}</label>
+        <input
+          type="text"
+          name="specialty"
+          value={updatedAppointment.specialty}
+          onChange={handleChange}
+        />
+      </td>
+      <td>
+        {" "}
+        <input
+          type="text"
+          name="patient"
+          value={updatedAppointment.patient}
+          onChange={handleChange}
+        />
+      </td>
+      <td>
+        {" "}
+        <input
+          type="text"
+          name="location"
+          value={updatedAppointment.location}
+          onChange={handleChange}
+        />
+      </td>
+
+      <td>
+        <input
+          name="need_insurance"
+          type="checkbox"
+          checked={updatedAppointment.need_insurance}
+          onChange={handleChange}
+        />
+      </td>
+      <td>
+        <input
+          name="insurance_approval"
+          type="checkbox"
+          checked={updatedAppointment.insurance_approval}
+          onChange={handleChange}
+        />
+      </td>
+      <td className="additional-info">
+        <label>{dictionary.additionalInformation}</label>
+        <textarea
+          type="text"
+          name="additionalInformation"
+          value={updatedAppointment.additionalInformation}
+          onChange={handleChange}
+        />
+
+        <br></br>
+        <label>{dictionary.symptoms}</label>
+        <textarea
+          type="text"
+          name="symptoms"
+          value={updatedAppointment.symptoms}
+          onChange={handleChange}
+        />
+        <div className="buttons">
+          <button onClick={handleSubmit}>{dictionary.save}</button>
+        </div>
+      </td>
+    </tr>
+  );
+}

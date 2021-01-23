@@ -17,6 +17,7 @@
     "approvedByInsurance": "Approved by Insurance", 
     "allAppointments": "All Appointments", 
     "date": "Date",
+    "time": "Time",
     "doctor": "Doctor",
     "patientName": "Patient Name",
     "address": "Address", 
@@ -27,6 +28,8 @@
     "notes" : "Notes", 
     "at": "At", 
     "newAppointment": "Add Appointment", 
-    "specialty" : "Specialty/Type"
+    "specialty" : "Specialty/Type", 
+    "edit" : "Edit", 
+    "save": "Save Changes"
 
 }
