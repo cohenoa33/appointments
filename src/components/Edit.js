@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import api from "../services/api";
+import helpers from "../services/helpers";
 
 export default function Edit({
   dictionary,
@@ -18,14 +19,23 @@ export default function Edit({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    api.appointment.update(updatedAppointment).then((data) => {
-      if (!data.error) {
-        updateAppointmentsList(data, "edit");
-        setEdit(!edit);
-      } else {
-        alert(data.error);
-      }
-    });
+    let isValid = helpers.validate(updatedAppointment);
+    if (isValid !== true) {
+      alert(`${isValid}`);
+      setUpdatedAppointment(appointment);
+    } else {
+      api.appointment.update(updatedAppointment).then((data) => {
+        if (!data.error) {
+          updateAppointmentsList(data, "edit");
+          setEdit(!edit);
+        } else {
+          alert(data.error);
+        }
+      });
+    }
+  };
+  const checkNull = (value) => {
+    return value === null ? "" : value;
   };
 
   return (
@@ -51,7 +61,7 @@ export default function Edit({
         <input
           type="text"
           name="doctor"
-          value={updatedAppointment.doctor}
+          value={checkNull(updatedAppointment.doctor)}
           onChange={handleChange}
         />
         <br />
@@ -59,7 +69,7 @@ export default function Edit({
         <input
           type="text"
           name="specialty"
-          value={updatedAppointment.specialty}
+          value={checkNull(updatedAppointment.specialty)}
           onChange={handleChange}
         />
       </td>
@@ -102,13 +112,13 @@ export default function Edit({
         <label>{dictionary.additionalInformation}</label>
         <textarea
           type="text"
-          name="additionalInformation"
-          value={updatedAppointment.additionalInformation}
+          name="appointment_notes"
+          value={checkNull(updatedAppointment.appointment_notes)}
           onChange={handleChange}
         />
 
         <br></br>
-        <label>{dictionary.symptoms}</label>
+        <label>{checkNull(dictionary.symptoms)}</label>
         <textarea
           type="text"
           name="symptoms"
@@ -117,6 +127,7 @@ export default function Edit({
         />
         <div className="buttons">
           <button onClick={handleSubmit}>{dictionary.save}</button>
+          <button onClick={() => setEdit(!edit)}>{dictionary.cancel}</button>
         </div>
       </td>
     </tr>

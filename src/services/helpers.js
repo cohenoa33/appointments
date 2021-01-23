@@ -1,13 +1,19 @@
 const validate = (appointment) => {
   if (appointment.doctor !== undefined && appointment.doctor.length > 1) {
     if (appointment.patient !== undefined && appointment.patient.length > 1) {
-      if (appointment.date !== undefined && validateDate(appointment.date)) {
-        if (appointment.time !== undefined) {
-          return true;
+      if (
+        appointment.location !== undefined &&
+        appointment.location.length > 1
+      ) {
+        if (appointment.date !== undefined && validateDate(appointment.date)) {
+          if (appointment.time !== undefined) {
+            return true;
+          }
+          return "Time is required: please pick hour, minutes and AM-PM";
         }
-        return "Time is required: please pick hour, minutes and AM-PM";
+        return "Date is required: please pick valid appointment date";
       }
-      return "Date is required: please pick valid appointment date";
+      return "Address is required: make sure address is 2 characters minimum";
     }
     return "Patient is required: make sure patient's name is 2 characters minimum";
   }

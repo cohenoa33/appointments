@@ -109,7 +109,7 @@ export default function NewAppointment({
   return (
     <div>
       <button className="x-btn" onClick={() => setAddNew(!addNew)}>
-        X
+        {dictionary.cancel}
       </button>
       <Text tid="newAppointment" />
       <form onSubmit={handleSubmit}>

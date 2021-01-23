@@ -29,6 +29,8 @@
     "edit":"עריכה" ,
     "time": "שעה", 
     "save": "שמור שינויים", 
-    "delete" : "מחק"
+    "delete" : "מחק", 
+    "confirmDelete": "האם אתה בטוח?", 
+    "cancel": "בטל"
 
 }

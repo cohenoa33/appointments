@@ -128,24 +128,16 @@
   margin: 0;
 }
 
-.modal {
-  display: none;
-  position: fixed;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.25);
-}
-
-.modal_content {
-  background-color: white;
-  position: absolute;
-}
-
 svg {
   margin: 5px;
 }
 
 path {
   fill: darkgrey;
+}
+
+.confirm-delete {
+  color: red;
 }
 
 button {
