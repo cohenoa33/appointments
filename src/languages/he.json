@@ -31,6 +31,7 @@
     "save": "שמור שינויים", 
     "delete" : "מחק", 
     "confirmDelete": "האם אתה בטוח?", 
-    "cancel": "בטל"
+    "cancel": "בטל", 
+    "back" : "חזור"
 
 }

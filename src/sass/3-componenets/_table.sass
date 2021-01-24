@@ -10,21 +10,29 @@ table, th, td
     padding-left: 0
     table-layout: fixed
     margin: 0 auto
-
 th
     height: 100px
 tr
     &:hover
         background-color: $clicked
 
+thead tr
+    background-color: $hover-table
+    &:hover
+        background-color: $hover-table
+.additional-info
+    margin-top: 20px
+.button
+    text-align: center
+
 @media only screen and (max-width: 760px)
     .table-en
-        +responsive-table(left, -9999px, 0, 60%, 10px, 0, 10px, "Date", "Doctor", "Patient Name", "Address", "Need Insurance", "Approved By Insurance", "Additional Information")
+        +responsive-table(left, -9999px, 0, 40%, 10px, 0, 10px, "Date", "Doctor", "Patient Name", "Address", "Need Insurance", "Approved By Insurance", "Additional Information")
     .table-he
-        +responsive-table(right, 0, -9999px, 10px, 60%, 10px, 0, "תאריך", "רופא", "עבור מי", "כתובת", "ממתין לאישור", "אושר", "מידע נוסף")
+        +responsive-table(right, 0, -9999px, 10px, 40%, 10px, 0, "תאריך", "רופא", "עבור מי", "כתובת", "ממתין לאישור", "אושר", "מידע נוסף")
 
 @media (min-device-width: 768px) and (max-device-width: 1024px)
     .table-en
-        +responsive-table(left, -9999px, 0, 60%, 10px, 0, 10px, "Date", "Doctor", "Patient Name", "Address", "Need Insurance", "Approved By Insurance", "Additional Information")
+        +responsive-table(left, -9999px, 0, 40%, 10px, 0, 10px, "Date", "Doctor", "Patient Name", "Address", "Need Insurance", "Approved By Insurance", "Additional Information")
     .table-he
-        +responsive-table(right, 0, -9999px, 10px, 60%, 10px, 0, "תאריך", "רופא", "עבור מי", "כתובת", "ממתין לאישור", "אושר", "מידע נוסף")
+        +responsive-table(right, 0, -9999px, 10px, 40%, 10px, 0, "תאריך", "רופא", "עבור מי", "כתובת", "ממתין לאישור", "אושר", "מידע נוסף")

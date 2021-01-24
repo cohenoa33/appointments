@@ -2,6 +2,7 @@ import { LanguageContext, Text } from "../../containers/Language";
 import React, { useContext, useState } from "react";
 
 import api from "../../services/api";
+import helpers from "../../services/helpers";
 
 export default function NewAppointment({
   addNewAppointment,
@@ -25,7 +26,7 @@ export default function NewAppointment({
         insurance_approval: false,
       };
 
-  const { dictionary } = useContext(LanguageContext);
+  const { dictionary, userLanguage } = useContext(LanguageContext);
   const [
     {
       doctor,
@@ -114,9 +115,9 @@ export default function NewAppointment({
 
   return (
     <div className="new-appointment-container">
-      <div className="new-appointment-form">
+      <div className={helpers.class("new-appointment-form", userLanguage)}>
         <button className="x-btn" onClick={() => setAddNew(!addNew)}>
-          {dictionary.cancel}
+          {dictionary.back}
         </button>
         <br />
         <h1>
@@ -148,35 +149,39 @@ export default function NewAppointment({
           <br />
           <label>{dictionary.additionalInformation}</label>
           {renderTextArea("appointment_notes")}
+          <div className="checkbox">
+            <label>
+              {" "}
+              <input
+                name="need_insurance"
+                type="checkbox"
+                checked={
+                  appointment ? appointment.need_insurance : need_insurance
+                }
+                onChange={handleChange}
+              />
+              {dictionary.needInsuranceApproval}
+            </label>
+            <br />
+            <label>
+              <input
+                name="insurance_approval"
+                type="checkbox"
+                checked={
+                  appointment
+                    ? appointment.insurance_approval
+                    : insurance_approval
+                }
+                onChange={handleChange}
+              />
+              {dictionary.approvedByInsurance}
+            </label>
+          </div>
           <br />
-          <label className="checkbox">
-            {dictionary.needInsuranceApproval}
-            <input
-              name="need_insurance"
-              type="checkbox"
-              checked={
-                appointment ? appointment.need_insurance : need_insurance
-              }
-              onChange={handleChange}
-            />
-          </label>
           <br />
-          <label className="checkbox">
-            {dictionary.approvedByInsurance}
-            <input
-              name="insurance_approval"
-              type="checkbox"
-              checked={
-                appointment
-                  ? appointment.insurance_approval
-                  : insurance_approval
-              }
-              onChange={handleChange}
-            />
-          </label>
-          <br />
-          <br />
-          <input type="submit" value={dictionary.save} />
+          <div className="submit">
+            <input type="submit" value={dictionary.save} />
+          </div>
         </form>
       </div>
     </div>

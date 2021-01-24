@@ -41,14 +41,16 @@ export default function Edit({
   return (
     <tr>
       <td>
-        <label>{dictionary.date}</label>
+        {/* <label>{dictionary.date} </label> */}
         <input
           type="date"
           name="date"
           value={updatedAppointment.date}
           onChange={handleChange}
         />
-        <label>{dictionary.time}</label>
+        <br />
+        <label>{dictionary.time} </label>
+
         <input
           type="time"
           name="time"
@@ -57,7 +59,7 @@ export default function Edit({
         />
       </td>
       <td>
-        <label>{dictionary.doctor}</label>
+        {/* <label>{dictionary.doctor} </label> */}
         <input
           type="text"
           name="doctor"
@@ -65,7 +67,7 @@ export default function Edit({
           onChange={handleChange}
         />
         <br />
-        <label>{dictionary.specialty}</label>
+        <label>{dictionary.specialty} </label>
         <input
           type="text"
           name="specialty"
@@ -109,27 +111,25 @@ export default function Edit({
         />
       </td>
       <td className="additional-info">
-        <label>{dictionary.additionalInformation}</label>
+        {/* <label>{dictionary.additionalInformation}</label> */}
         <textarea
           type="text"
           name="appointment_notes"
           value={checkNull(updatedAppointment.appointment_notes)}
           onChange={handleChange}
         />
-
-        <br></br>
         <label>{checkNull(dictionary.symptoms)}</label>
         <textarea
           type="text"
           name="symptoms"
-          value={updatedAppointment.symptoms}
+          value={checkNull(updatedAppointment.symptoms)}
           onChange={handleChange}
         />
-        <div className="buttons">
-          <button onClick={handleSubmit}>{dictionary.save}</button>
-          <button onClick={() => setEdit(!edit)}>{dictionary.cancel}</button>
-        </div>
       </td>
+      <div className="buttons">
+        <button onClick={handleSubmit}>{dictionary.save}</button>
+        <button onClick={() => setEdit(!edit)}>{dictionary.cancel}</button>
+      </div>
     </tr>
   );
 }
