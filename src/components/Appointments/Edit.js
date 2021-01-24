@@ -50,7 +50,7 @@ export default function Edit({
         />
         <br />
         <label>{dictionary.time} </label>
-
+        <br />
         <input
           type="time"
           name="time"
@@ -68,6 +68,7 @@ export default function Edit({
         />
         <br />
         <label>{dictionary.specialty} </label>
+        <br />
         <input
           type="text"
           name="specialty"
@@ -128,8 +129,18 @@ export default function Edit({
           onChange={handleChange}
         />
         <div className="buttons">
-          <button onClick={handleSubmit}>{dictionary.save}</button>
-          <button onClick={() => setEdit(!edit)}>{dictionary.cancel}</button>
+          <button
+            className={helpers.class("button", "save")}
+            onClick={handleSubmit}
+          >
+            {dictionary.save}{" "}
+          </button>
+          <button
+            className={helpers.class("button", "cancel")}
+            onClick={() => setEdit(!edit)}
+          >
+            {dictionary.cancel}
+          </button>
         </div>
       </td>
     </tr>

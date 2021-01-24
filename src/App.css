@@ -177,6 +177,17 @@ button {
   margin: 0 auto;
 }
 
+.buttons {
+  margin: 5px;
+}
+.buttons button .button-save {
+  height: 35px;
+  max-width: 70px;
+  margin: 3px;
+  background-color: #9e011c;
+  background-color: red;
+}
+
 ul {
   margin: 0;
   padding: 0;
@@ -286,6 +297,20 @@ path {
     padding: 5px;
   }
 }
+.submit {
+  text-align: center;
+}
+.submit input[type=submit] {
+  height: 50px;
+  width: 150px;
+  font-size: 1.15em;
+  font-weight: bold;
+  background-color: #0e4bbd;
+  border-radius: 5px;
+  border: none;
+  padding: 0px;
+}
+
 .new-appointment-form-en {
   background-color: darkgrey;
   padding: 20px;
@@ -307,8 +332,8 @@ path {
   width: 30%;
   float: left;
   text-align: left;
-  padding-left: 30px;
-  padding-right: 0;
+  margin-left: 50px;
+  margin-right: 0;
 }
 .new-appointment-form-en input[type=text], .new-appointment-form-en input[type=date], .new-appointment-form-en input[type=time] {
   width: 50%;
@@ -328,7 +353,7 @@ path {
   margin-bottom: 10px;
 }
 .new-appointment-form-en .checkbox label {
-  padding-left: 30px;
+  padding-left: 50px;
   padding-right: 0;
   width: 50%;
 }
@@ -354,8 +379,8 @@ path {
   width: 30%;
   float: right;
   text-align: right;
-  padding-left: 0;
-  padding-right: 30px;
+  margin-left: 0;
+  margin-right: 50px;
 }
 .new-appointment-form-he input[type=text], .new-appointment-form-he input[type=date], .new-appointment-form-he input[type=time] {
   width: 50%;
@@ -376,50 +401,68 @@ path {
 }
 .new-appointment-form-he .checkbox label {
   padding-left: 0;
-  padding-right: 30px;
+  padding-right: 50px;
   width: 50%;
 }
 
-.submit {
-  text-align: center;
-}
-.submit input[type=submit] {
-  height: 50px;
-  font-size: 1.15em;
-  font-weight: bold;
-  background-color: #0e4bbd;
-  border-radius: 5px;
-  border: none;
-  padding: 10px;
-}
+@media only screen and (max-width: 760px) {
+  .new-appointment-form-en {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 30px;
+  }
+  .new-appointment-form-en label {
+    margin-left: 5px;
+    margin-right: 0;
+  }
 
-.new-appointment-form-en {
-  width: 100%;
-  padding: 0;
-  padding-bottom: 30px;
-}
-.new-appointment-form-en label {
-  padding-left: 5px;
-  padding-right: 0;
-}
+  .new-appointment-form-he {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 30px;
+  }
+  .new-appointment-form-he label {
+    margin-left: 0;
+    margin-right: 5px;
+  }
 
-.new-appointment-form-he {
-  width: 100%;
-  padding: 0;
-  padding-bottom: 30px;
-}
-.new-appointment-form-he label {
-  padding-left: 0;
-  padding-right: 5px;
-}
+  .new-appointment-form-en .checkbox, .new-appointment-form-he .checkbox {
+    display: block;
+  }
 
-.new-appointment-form-en .checkbox, .new-appointment-form-he .checkbox {
-  display: block;
+  label {
+    width: 100%;
+  }
 }
-.new-appointment-form-en .checkbox label, .new-appointment-form-he .checkbox label {
-  width: 100%;
-}
+@media (min-device-width: 768px) and (max-device-width: 1024px) {
+  .new-appointment-form-en {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 30px;
+  }
+  .new-appointment-form-en label {
+    margin-left: 5px;
+    margin-right: 0;
+  }
 
+  .new-appointment-form-he {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 30px;
+  }
+  .new-appointment-form-he label {
+    margin-left: 0;
+    margin-right: 5px;
+  }
+
+  .new-appointment-form-en .checkbox, .new-appointment-form-he .checkbox {
+    display: block;
+  }
+
+  label {
+    width: 100%;
+  }
+}
 table, th, td {
   border: 1px solid darkgrey;
   border-collapse: collapse;
@@ -444,10 +487,12 @@ tr:hover {
 
 td input[type=text], td input[type=date], td input[type=time] {
   line-height: 2em;
+  max-width: 95%;
 }
 
 td textarea {
   line-height: 3em;
+  max-width: 95%;
 }
 
 thead tr {

@@ -17,8 +17,8 @@
         width: 30%
         float: $label-float
         text-align: $label-float
-        padding-left: $label-pedding-left
-        padding-right: $label-pedding-right
+        margin-left: $label-pedding-left
+        margin-right: $label-pedding-right
     input[type="text"], input[type="date"], input[type="time"]
         width: 50%
         height: 1.85em
@@ -37,36 +37,38 @@
             padding-right: $label-pedding-right
             width: 50%
 
-.new-appointment-form-en
-    +appointment-form(left, 30px, 0,)
-.new-appointment-form-he
-    +appointment-form(right, 0, 30px)
 .submit
     text-align: center
     input[type="submit"]
         height: 50px
+        width: 150px
         font-size: 1.15em
         font-weight: bold
-        background-color: #0e4bbd
+        background-color: $save
         border-radius: 5px
         border: none
-        padding: 10px
+        padding: 0px
 =responsive-form-column($padding-left, $padding-right)
     width: 100%
     padding: 0
     padding-bottom: 30px
     label
-        padding-left: $padding-left
-        padding-right: $padding-right
+        margin-left: $padding-left
+        margin-right: $padding-right
 =responsive-form()
-.new-appointment-form-en
-    +responsive-form-column(5px, 0)
-.new-appointment-form-he
-    +responsive-form-column(0, 5px)
-.new-appointment-form-en .checkbox, .new-appointment-form-he .checkbox
-    display: block
+    .new-appointment-form-en
+        +responsive-form-column(5px, 0)
+    .new-appointment-form-he
+        +responsive-form-column(0, 5px)
+    .new-appointment-form-en .checkbox, .new-appointment-form-he .checkbox
+        display: block
     label
         width: 100%
+
+.new-appointment-form-en
+    +appointment-form(left, 50px, 0,)
+.new-appointment-form-he
+    +appointment-form(right, 0, 50px)
 
 @media only screen and (max-width: 760px)
     +responsive-form()

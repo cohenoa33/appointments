@@ -30,7 +30,7 @@
     "newAppointment": "Add Appointment", 
     "specialty" : "Specialty/Type", 
     "edit" : "Edit", 
-    "save": "Save Changes", 
+    "save": "Save", 
     "back" : "Back", 
     "delete": "Delete", 
     "confirmDelete": "Are you sure?", 
