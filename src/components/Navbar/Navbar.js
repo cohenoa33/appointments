@@ -12,8 +12,8 @@ export default function Navbar({
         <li> {renderLanguages()}</li>
         {jwt ? (
           <>
-            <li>{renderSignUp()}</li>
             <li>{renderAddNewButton()}</li>
+            <li>{renderSignUp()}</li>
           </>
         ) : null}
       </ul>

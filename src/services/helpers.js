@@ -24,9 +24,12 @@ const validateDate = (date) => {
   let fiveYearsYear = new Date().getFullYear() - 5;
   return +date.split("-")[0] >= fiveYearsYear ? true : false;
 };
-
+const createClassName = (name, language) => {
+  return `${name}-${language}`;
+};
 let helpers = {
   validate: validate,
+  class: createClassName,
 };
 
 export default helpers;

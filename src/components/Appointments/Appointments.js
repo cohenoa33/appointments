@@ -4,6 +4,7 @@ import TableHeader from "./TableHeader";
 import Filter from "./Filter";
 import { LanguageContext } from "../../containers/Language";
 import filterAndSort from "../../services/filterAndSort";
+import helpers from "../../services/helpers";
 
 export default function Appointments({ appointments, updateAppointmentsList }) {
   const { dictionary, userLanguage } = useContext(LanguageContext);
@@ -34,7 +35,7 @@ export default function Appointments({ appointments, updateAppointmentsList }) {
         <Filter sortingBy={sortingBy} setFilter={setFilter} />
       </div>
       <div>
-        <table className={`table-${userLanguage}`}>
+        <table className={helpers.class("table", userLanguage)}>
           <TableHeader
             sort={sort}
             sortingBy={sortingBy}

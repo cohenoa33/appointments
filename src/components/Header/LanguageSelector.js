@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
-
 import { languageOptions } from "../../languages";
 import { LanguageContext } from "../../containers/Language";
+import helpers from "../../services/helpers";
 
 export default function LanguageSelector({ changeTheme }) {
   const { userLanguage, userLanguageChange } = useContext(LanguageContext);
@@ -22,7 +22,12 @@ export default function LanguageSelector({ changeTheme }) {
     // </select>
     <div value={userLanguage}>
       {Object.entries(languageOptions).map(([id, name]) => (
-        <button key={id} value={id} onClick={() => handleLanguageChange(id)}>
+        <button
+          className={helpers.class("lang-btn", userLanguage)}
+          key={id}
+          value={id}
+          onClick={() => handleLanguageChange(id)}
+        >
           {name}
         </button>
       ))}
