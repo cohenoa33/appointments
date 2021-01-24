@@ -10,7 +10,7 @@ export default function Filter({ setFilter }) {
   };
 
   return (
-    <label>
+    <label className="filter-label">
       <select value={selected} onChange={filter}>
         <option value="future">{dictionary.nextAppointments}</option>
         <option value="past_only">{dictionary.archive}</option>

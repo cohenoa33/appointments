@@ -162,6 +162,7 @@ ul {
   margin: 0;
   padding: 0;
   background-color: lightgrey;
+  width: 100%;
 }
 ul li {
   display: inline;
@@ -226,14 +227,46 @@ path {
 }
 
 .filter {
+  display: block;
   text-align: center;
-  padding-bottom: 10px;
-}
-.filter select {
-  font-size: 1.1em;
-  padding: 5px;
+  padding-bottom: 20px;
+  margin: auto;
+  width: 50%;
+  padding: 10px;
 }
 
+.filter-label {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+.filter-label select {
+  font-size: 1.15rem;
+  padding: 10px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 760px) {
+  .filter {
+    margin-inline-start: 0;
+    padding: 0;
+  }
+
+  .filter-label {
+    padding: 5px;
+  }
+}
+@media (min-device-width: 768px) and (max-device-width: 1024px) {
+  .filter {
+    margin-inline-start: 0;
+    padding: 0;
+  }
+
+  .filter-label {
+    padding: 5px;
+  }
+}
 form {
   line-height: 2em;
   display: inline-block;
