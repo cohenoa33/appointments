@@ -442,6 +442,14 @@ tr:hover {
   background-color: darkgrey;
 }
 
+td input[type=text], td input[type=date], td input[type=time] {
+  line-height: 2em;
+}
+
+td textarea {
+  line-height: 3em;
+}
+
 thead tr {
   background-color: #616161;
 }
@@ -451,10 +459,6 @@ thead tr:hover {
 
 .additional-info {
   margin-top: 20px;
-}
-
-.button {
-  text-align: center;
 }
 
 @media only screen and (max-width: 760px) {

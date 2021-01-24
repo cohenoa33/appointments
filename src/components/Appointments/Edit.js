@@ -118,18 +118,20 @@ export default function Edit({
           value={checkNull(updatedAppointment.appointment_notes)}
           onChange={handleChange}
         />
+        <br />
         <label>{checkNull(dictionary.symptoms)}</label>
+        <br />
         <textarea
           type="text"
           name="symptoms"
           value={checkNull(updatedAppointment.symptoms)}
           onChange={handleChange}
         />
+        <div className="buttons">
+          <button onClick={handleSubmit}>{dictionary.save}</button>
+          <button onClick={() => setEdit(!edit)}>{dictionary.cancel}</button>
+        </div>
       </td>
-      <div className="buttons">
-        <button onClick={handleSubmit}>{dictionary.save}</button>
-        <button onClick={() => setEdit(!edit)}>{dictionary.cancel}</button>
-      </div>
     </tr>
   );
 }
