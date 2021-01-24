@@ -8,6 +8,7 @@ import LoginSignup from "./components/SigninSignup/LoginSignup";
 import Appointments from "./components/Appointments/Appointments";
 import Title from "./components/Appointments/Title";
 import SignOut from "./components/Navbar/SignOut";
+import Navbar from "./components/Navbar/Navbar";
 import AddNewButton from "./components/Navbar/AddNewButton";
 import { ThemeContext, themes } from "./containers/Theme";
 import api from "./services/api";
@@ -76,34 +77,42 @@ function App() {
     localStorage.clear();
   };
 
+  const renderLanguages = () => (
+    <LanguageSelector
+      changeTheme={() =>
+        setTheme(
+          window.localStorage.getItem("user-lang") === "en"
+            ? themes.light
+            : themes.dark
+        )
+      }
+    />
+  );
+
+  const renderLoginSignup = () => (
+    <LoginSignup handleSignInUp={handleSignInUp} />
+  );
+
+  const renderAddNewButton = () => (
+    <AddNewButton setAddNew={() => setAddNew(!addNew)} />
+  );
+  const renderSignUp = () => <SignOut setLogout={setLogout} />;
+
   return (
     <LanguageProvider>
       <UserProvider user={user}>
         <ThemeContext.Provider value={theme}>
           <div className="container" style={theme}>
-            <header id="header">
-              <LanguageSelector
-                changeTheme={() =>
-                  setTheme(
-                    window.localStorage.getItem("user-lang") === "en"
-                      ? themes.light
-                      : themes.dark
-                  )
-                }
-              />
-            </header>
+            <Navbar
+              jwt={jwt}
+              renderLanguages={renderLanguages}
+              renderAddNewButton={renderAddNewButton}
+              renderSignUp={renderSignUp}
+            />
             {!jwt ? (
-              <LoginSignup handleSignInUp={handleSignInUp} />
+              renderLoginSignup()
             ) : (
               <div>
-                <ul>
-                  <li>
-                    <AddNewButton setAddNew={() => setAddNew(!addNew)} />
-                  </li>
-                  <li>
-                    <SignOut setLogout={setLogout} />
-                  </li>
-                </ul>
                 {!addNew ? (
                   <div>
                     <Title />
