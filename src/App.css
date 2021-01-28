@@ -168,9 +168,36 @@ button {
   font-size: 0.75rem;
 }
 
+.button-save {
+  height: 35px;
+  max-width: 70px;
+  margin: 3px;
+  color: #013855;
+}
+
+.button-cancel {
+  height: 35px;
+  max-width: 70px;
+  margin: 3px;
+  color: #616161;
+}
+
+.button-delete {
+  height: 35px;
+  max-width: 70px;
+  margin: 3px;
+  color: #9b001afc;
+}
+
+.button-edit {
+  height: 35px;
+  max-width: 70px;
+  margin: 3px;
+  color: #013855;
+}
+
 .container {
   width: 100%;
-  padding-bottom: 200px;
 }
 
 .new-appointment-container {
@@ -178,14 +205,7 @@ button {
 }
 
 .buttons {
-  margin: 5px;
-}
-.buttons button .button-save {
-  height: 35px;
-  max-width: 70px;
-  margin: 3px;
-  background-color: #9e011c;
-  background-color: red;
+  margin-top: 15px;
 }
 
 ul {
@@ -249,7 +269,7 @@ path {
 }
 
 .confirm-delete {
-  color: #9e011c;
+  color: #9b001afc;
 }
 
 .title {
@@ -305,8 +325,7 @@ path {
   width: 150px;
   font-size: 1.15em;
   font-weight: bold;
-  background-color: #0e4bbd;
-  border-radius: 5px;
+  background-color: #013855;
   border: none;
   padding: 0px;
 }

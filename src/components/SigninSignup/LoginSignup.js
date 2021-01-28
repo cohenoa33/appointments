@@ -35,7 +35,7 @@ function LoginSignup({ handleSignInUp }) {
   };
 
   return (
-    <div>
+    <div className="login-signup">
       <SignInUpForm
         handleSubmit={handleSubmit}
         handleChange={handleChange}

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import moment from "moment";
 import convertors from "../../services/convertors";
 import api from "../../services/api";
+import helpers from "../../services/helpers";
 
 export default function Appointment({
   dictionary,
@@ -76,18 +77,32 @@ export default function Appointment({
           {toggle ? (
             <>
               <h1 className="confirm-delete">{dictionary.confirmDelete}</h1>
-              <button onClick={() => deleteAppointment(appointment.id)}>
+              <button
+                onClick={() => deleteAppointment(appointment.id)}
+                className={helpers.class("button", "delete")}
+              >
                 {dictionary.yes}
               </button>{" "}
-              <button onClick={() => setToggle(!toggle)}>
+              <button
+                onClick={() => setToggle(!toggle)}
+                className={helpers.class("button", "cancel")}
+              >
                 {" "}
                 {dictionary.cancel}
               </button>
             </>
           ) : (
             <>
-              <button onClick={() => setEdit(!edit)}>{dictionary.edit}</button>
-              <button onClick={() => setToggle(!toggle)}>
+              <button
+                className={helpers.class("button", "edit")}
+                onClick={() => setEdit(!edit)}
+              >
+                {dictionary.edit}
+              </button>
+              <button
+                className={helpers.class("button", "delete")}
+                onClick={() => setToggle(!toggle)}
+              >
                 {dictionary.delete}
               </button>
             </>
