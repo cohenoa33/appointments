@@ -1,36 +1,22 @@
 import React, { useContext } from "react";
 import { languageOptions } from "../../languages";
 import { LanguageContext } from "../../containers/Language";
-import helpers from "../../services/helpers";
 
 export default function LanguageSelector({ changeTheme }) {
   const { userLanguage, userLanguageChange } = useContext(LanguageContext);
 
-  // set selected language by calling context method
-  const handleLanguageChange = (id) => {
-    userLanguageChange(id);
+  const handleLanguageChange = (e) => {
+    userLanguageChange(e.target.value);
     changeTheme();
   };
-  // languageOptions is an object's list, we can't map over it directly
+
   return (
-    // <select onChange={handleLanguageChange} value={userLanguage}>
-    //   {Object.entries(languageOptions).map(([id, name]) => (
-    //     <option key={id} value={id}>
-    //       {name}
-    //     </option>
-    //   ))}
-    // </select>
-    <div value={userLanguage}>
+    <select onChange={handleLanguageChange} value={userLanguage}>
       {Object.entries(languageOptions).map(([id, name]) => (
-        <button
-          className={helpers.class("lang-btn", userLanguage)}
-          key={id}
-          value={id}
-          onClick={() => handleLanguageChange(id)}
-        >
+        <option key={id} value={id}>
           {name}
-        </button>
+        </option>
       ))}
-    </div>
+    </select>
   );
 }

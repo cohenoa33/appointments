@@ -41,6 +41,23 @@ export default function Edit({
   return (
     <tr>
       <td>
+        {" "}
+        <div className="buttons">
+          <button
+            className={helpers.class("button", "save")}
+            onClick={handleSubmit}
+          >
+            {dictionary.save}{" "}
+          </button>
+          <button
+            className={helpers.class("button", "cancel")}
+            onClick={() => setEdit(!edit)}
+          >
+            {dictionary.cancel}
+          </button>
+        </div>
+      </td>
+      <td>
         {/* <label>{dictionary.date} </label> */}
         <input
           type="date"
@@ -128,20 +145,6 @@ export default function Edit({
           value={checkNull(updatedAppointment.symptoms)}
           onChange={handleChange}
         />
-        <div className="buttons">
-          <button
-            className={helpers.class("button", "save")}
-            onClick={handleSubmit}
-          >
-            {dictionary.save}{" "}
-          </button>
-          <button
-            className={helpers.class("button", "cancel")}
-            onClick={() => setEdit(!edit)}
-          >
-            {dictionary.cancel}
-          </button>
-        </div>
       </td>
     </tr>
   );

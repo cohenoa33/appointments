@@ -1,8 +1,9 @@
 import React, { useState, useContext } from "react";
 import { LanguageContext } from "../../containers/Language";
+import helpers from "../../services/helpers";
 
 export default function Filter({ setFilter }) {
-  const { dictionary } = useContext(LanguageContext);
+  const { dictionary, userLanguage } = useContext(LanguageContext);
   const [selected, setSelected] = useState("future");
   const filter = (e) => {
     setSelected(e.target.value);
@@ -11,7 +12,11 @@ export default function Filter({ setFilter }) {
 
   return (
     <label className="filter-label">
-      <select value={selected} onChange={filter}>
+      <select
+        value={selected}
+        onChange={filter}
+        className={helpers.class("select", userLanguage)}
+      >
         <option value="future">{dictionary.nextAppointments}</option>
         <option value="past_only">{dictionary.archive}</option>
         <option value="need_insurance">

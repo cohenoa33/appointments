@@ -5,6 +5,7 @@ export default function TableHeader({
   sort,
   sortingBy,
   buttonLang,
+  mobile,
 }) {
   const setClassName = () =>
     buttonLang === "he" ? "hidden-button-he" : "hidden-button-en";
@@ -14,6 +15,11 @@ export default function TableHeader({
   return (
     <thead>
       <tr>
+        {!mobile ? (
+          <th>
+            <button className={setClassNameNoSorting()}>#</button>
+          </th>
+        ) : null}
         <th>
           <button className={setClassName()} onClick={() => sortingBy("date")}>
             {dictionary.date}

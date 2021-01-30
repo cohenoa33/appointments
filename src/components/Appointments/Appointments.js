@@ -1,10 +1,33 @@
-import React, { useContext, useState } from "react";
+import React, { useContext, useState, useEffect } from "react";
 import Appointment from "./Row";
 import TableHeader from "./TableHeader";
 import Filter from "./Filter";
 import { LanguageContext } from "../../containers/Language";
 import filterAndSort from "../../services/filterAndSort";
 import helpers from "../../services/helpers";
+
+function getWindowDimensions() {
+  const { innerWidth: width, innerHeight: height } = window;
+  return {
+    width,
+    height,
+  };
+}
+function useWindowDimensions() {
+  const [windowDimensions, setWindowDimensions] = useState(
+    getWindowDimensions()
+  );
+
+  useEffect(() => {
+    function handleResize() {
+      setWindowDimensions(getWindowDimensions());
+    }
+
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
+  return windowDimensions;
+}
 
 export default function Appointments({ appointments, updateAppointmentsList }) {
   const { dictionary, userLanguage } = useContext(LanguageContext);
@@ -29,33 +52,42 @@ export default function Appointments({ appointments, updateAppointmentsList }) {
       )
     : appointments;
 
+  const renderTable = (mobile) => (
+    <div>
+      <table className={helpers.class("table", userLanguage)}>
+        <TableHeader
+          sort={sort}
+          sortingBy={sortingBy}
+          dictionary={dictionary}
+          buttonLang={userLanguage}
+          mobile={mobile}
+        />
+
+        <tbody>
+          {list
+            ? list.map((appointment, index) => (
+                <Appointment
+                  appointment={appointment}
+                  index={index}
+                  key={appointment.id}
+                  updateAppointmentsList={updateAppointmentsList}
+                  mobile={mobile}
+                />
+              ))
+            : null}
+        </tbody>
+      </table>
+    </div>
+  );
+
   return (
     <div>
       <div className="filter">
         <Filter sortingBy={sortingBy} setFilter={setFilter} />
       </div>
-      <div>
-        <table className={helpers.class("table", userLanguage)}>
-          <TableHeader
-            sort={sort}
-            sortingBy={sortingBy}
-            dictionary={dictionary}
-            buttonLang={userLanguage}
-          />
-
-          <tbody>
-            {list
-              ? list.map((appointment) => (
-                  <Appointment
-                    appointment={appointment}
-                    key={appointment.id}
-                    updateAppointmentsList={updateAppointmentsList}
-                  />
-                ))
-              : null}
-          </tbody>
-        </table>
-      </div>
+      {useWindowDimensions().width > 760
+        ? renderTable(false)
+        : renderTable(true)}
     </div>
   );
 }

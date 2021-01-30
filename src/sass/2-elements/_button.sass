@@ -1,6 +1,6 @@
-button
-    width: 100px
-    height: 50px
+
+.vertical-buttons
+    display: inline-grid
 .hidden-button-en
     +table-header-sort()
 .hidden-button-he
@@ -17,16 +17,18 @@ button
     +cancel-outline()
     +table-header()
     +button-hover($secondary)
-
-.lang-btn-en
-    +lang-btn(right)
-.lang-btn-he
-    +lang-btn(left)
 .button-save
-    +button-edit-save($save)
+    +button-edit-save($text-button)
 .button-cancel
     +button-edit-save($row-hover)
 .button-delete
     +button-edit-save($hazard)
 .button-edit
-    +button-edit-save($save)
+    +button-edit-save($text-button)
+.svg-button
+    border: none
+    background-color: transparent
+    margin: 0
+    padding: 0
+    height: auto
+    width: auto

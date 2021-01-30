@@ -3,6 +3,7 @@ import moment from "moment";
 import convertors from "../../services/convertors";
 import api from "../../services/api";
 import helpers from "../../services/helpers";
+import svg from "../../services/svg";
 
 export default function Appointment({
   dictionary,
@@ -11,26 +12,35 @@ export default function Appointment({
   setEdit,
   userLanguage,
   updateAppointmentsList,
+  index,
+  mobile,
 }) {
-  const specialty = (specialty) => {
+  const {
+    doctor,
+    specialty,
+    patient,
+    location,
+    need_insurance,
+    insurance_approval,
+    appointment_notes,
+    date,
+    time,
+    symptoms,
+    id,
+  } = appointment;
+
+  const checkSpecialty = (specialty) => {
     return specialty ? `(${specialty})` : null;
   };
-  const symptoms = (symptoms) => {
-    return symptoms ? `${dictionary.symptoms}: ${symptoms}` : null;
-  };
-  const notes = (notes) => {
-    return notes ? `${dictionary.notes}: ${notes}` : null;
-  };
-  const date = () => {
+
+  const checkDate = () => {
     return userLanguage === "en"
-      ? moment(appointment.date).format("dddd, MMMM Do YYYY")
-      : convertors.convertDate(appointment.date);
+      ? moment(date).format("dddd, MMMM Do YYYY")
+      : convertors.convertDate(date);
   };
 
-  const time = () => {
-    return userLanguage === "en"
-      ? convertors.convertTime(appointment.time)
-      : appointment.time;
+  const checkTime = () => {
+    return userLanguage === "en" ? convertors.convertTime(time) : time;
   };
   const [toggle, setToggle] = useState(false);
 
@@ -43,42 +53,61 @@ export default function Appointment({
       }
     });
   };
+  const renderEditDeleteButtons = () => (
+    <>
+      <button
+        // className={helpers.class("button", "edit")}
+        className="svg-button"
+        onClick={() => setEdit(!edit)}
+      >
+        {svg.edit}
+      </button>
+      <button
+        // className={helpers.class("button", "delete")}
+        className="svg-button"
+        onClick={() => setToggle(!toggle)}
+      >
+        {svg.deleteIcon}
+      </button>
+    </>
+  );
 
   return (
     <tr>
+      {!mobile ? (
+        <td>
+          <div className="vertical-buttons">
+            {toggle ? null : renderEditDeleteButtons()}
+          </div>
+        </td>
+      ) : null}
       <td>
-        {date()} {dictionary.at} {time()}
+        {checkDate()} {dictionary.at} {checkTime()}
       </td>
       <td>
-        {appointment.doctor}
-        <br /> {specialty(appointment.specialty)}
+        {doctor}
+        <br /> {checkSpecialty(specialty)}
       </td>
-      <td>{appointment.patient}</td>
-      <td>
-        {appointment.location !== null
-          ? appointment.location
-          : `${dictionary.no}`}
-      </td>
-      <td>
-        {appointment.need_insurance ? `${dictionary.yes}` : `${dictionary.no}`}
-      </td>
-      <td>
-        {appointment.insurance_approval
-          ? `${dictionary.yes}`
-          : `${dictionary.no}`}
-      </td>
+      <td>{patient}</td>
+      <td>{location !== null ? location : `${dictionary.no}`}</td>
+      <td>{need_insurance ? `${dictionary.yes}` : `${dictionary.no}`}</td>
+      <td>{insurance_approval ? `${dictionary.yes}` : `${dictionary.no}`}</td>
       <td className="additional-info">
-        {notes(appointment.appointment_notes)}
-        <br></br>
-
-        <br></br>
-        {symptoms(appointment.symptoms)}
+        {appointment_notes || symptoms ? (
+          <>
+            {appointment_notes
+              ? `${dictionary.notes}: ${appointment_notes}`
+              : null}
+            <br />
+            {symptoms ? `${dictionary.symptoms}: ${symptoms}` : null}
+          </>
+        ) : null}
         <div className="buttons">
           {toggle ? (
             <>
               <h1 className="confirm-delete">{dictionary.confirmDelete}</h1>
               <button
-                onClick={() => deleteAppointment(appointment.id)}
+                onClick={() => deleteAppointment(id)}
                 className={helpers.class("button", "delete")}
               >
                 {dictionary.yes}
@@ -91,22 +120,7 @@ export default function Appointment({
                 {dictionary.cancel}
               </button>
             </>
-          ) : (
-            <>
-              <button
-                className={helpers.class("button", "edit")}
-                onClick={() => setEdit(!edit)}
-              >
-                {dictionary.edit}
-              </button>
-              <button
-                className={helpers.class("button", "delete")}
-                onClick={() => setToggle(!toggle)}
-              >
-                {dictionary.delete}
-              </button>
-            </>
-          )}
+          ) : null}
         </div>
       </td>
     </tr>

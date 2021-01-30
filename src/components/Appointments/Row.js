@@ -4,7 +4,12 @@ import { LanguageContext } from "../../containers/Language";
 import Appointment from "./Appointment";
 import Edit from "./Edit";
 
-export default function Row({ appointment, updateAppointmentsList }) {
+export default function Row({
+  appointment,
+  updateAppointmentsList,
+  index,
+  mobile,
+}) {
   const { dictionary, userLanguage } = useContext(LanguageContext);
   const [edit, setEdit] = useState(false);
 
@@ -26,6 +31,8 @@ export default function Row({ appointment, updateAppointmentsList }) {
           edit={edit}
           setEdit={setEdit}
           updateAppointmentsList={updateAppointmentsList}
+          index={index}
+          mobile={mobile}
         />
       )}
     </>

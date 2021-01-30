@@ -1,7 +1,6 @@
 @charset "UTF-8";
-button {
-  width: 100px;
-  height: 50px;
+.vertical-buttons {
+  display: inline-grid;
 }
 
 .hidden-button-en {
@@ -152,39 +151,34 @@ button {
   cursor: pointer;
 }
 
-.lang-btn-en {
-  padding-left: 10px;
-  padding-right: 10px;
-  float: right;
-  font-size: 0.75rem;
-}
-
-.lang-btn-he {
-  padding-left: 10px;
-  padding-right: 10px;
-  float: left;
-  font-size: 0.75rem;
-}
-
 .button-save {
   height: 35px;
   max-width: 70px;
   margin: 3px;
   color: #57b4b4;
+  background-color: #222222;
+  border: 1px solid #616161;
+  border-radius: 3px;
 }
 
 .button-cancel {
   height: 35px;
   max-width: 70px;
   margin: 3px;
-  color: #e5e3dd;
+  color: #b4b2b2;
+  background-color: #222222;
+  border: 1px solid #616161;
+  border-radius: 3px;
 }
 
 .button-delete {
   height: 35px;
   max-width: 70px;
   margin: 3px;
-  color: #e99af7;
+  color: #9b001afc;
+  background-color: #222222;
+  border: 1px solid #616161;
+  border-radius: 3px;
 }
 
 .button-edit {
@@ -192,6 +186,18 @@ button {
   max-width: 70px;
   margin: 3px;
   color: #57b4b4;
+  background-color: #222222;
+  border: 1px solid #616161;
+  border-radius: 3px;
+}
+
+.svg-button {
+  border: none;
+  background-color: transparent;
+  margin: 0;
+  padding: 0;
+  height: auto;
+  width: auto;
 }
 
 .container {
@@ -259,16 +265,54 @@ ul button:hover {
     padding: 5px;
   }
 }
+.select-he {
+  border: 1px solid #616161;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 1.5em;
+  width: 300px;
+  padding: 5px;
+  margin: 0 auto;
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) #ddd;
+  background-position: right;
+  background-repeat: no-repeat;
+  -webkit-appearance: none;
+  background-position-x: 10px;
+}
+.select-he:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
+.select-en {
+  border: 1px solid #616161;
+  border-radius: 4px;
+  display: inline-block;
+  line-height: 1.5em;
+  width: 300px;
+  padding: 5px;
+  margin: 0 auto;
+  background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) #ddd;
+  background-position: right;
+  background-repeat: no-repeat;
+  -webkit-appearance: none;
+  background-position-x: 270px;
+}
+.select-en:-moz-focusring {
+  color: transparent;
+  text-shadow: 0 0 0 #000;
+}
+
 svg {
   margin: 5px;
 }
 
 path {
-  fill: #ce9f3c;
+  fill: #616161;
 }
 
 .confirm-delete {
-  color: #e99af7;
+  color: #9b001afc;
 }
 
 .title {
@@ -280,7 +324,6 @@ path {
   text-align: center;
   padding-bottom: 20px;
   margin: auto;
-  width: 50%;
   padding: 10px;
 }
 
@@ -506,10 +549,15 @@ th {
 }
 
 tr {
-  background-color: #b4b2b2;
+  background-color: #e5e3dd;
 }
 tr:hover {
-  background-color: #e5e3dd;
+  background-color: #b4b2b2;
+}
+
+thead tr th:first-child,
+tbody tr td:first-child {
+  width: 2.15em;
 }
 
 td input[type=text], td input[type=date], td input[type=time] {
@@ -578,6 +626,9 @@ thead tr:hover {
     vertical-align: middle;
     white-space: pre-line;
     padding-bottom: 5px;
+  }
+  .table-en td:nth-of-type(1) {
+    width: 100%;
   }
   .table-en td:nth-of-type(1):before {
     content: "Date";
@@ -656,6 +707,9 @@ thead tr:hover {
     vertical-align: middle;
     white-space: pre-line;
     padding-bottom: 5px;
+  }
+  .table-he td:nth-of-type(1) {
+    width: 100%;
   }
   .table-he td:nth-of-type(1):before {
     content: "תאריך";
@@ -736,6 +790,9 @@ thead tr:hover {
     white-space: pre-line;
     padding-bottom: 5px;
   }
+  .table-en td:nth-of-type(1) {
+    width: 100%;
+  }
   .table-en td:nth-of-type(1):before {
     content: "Date";
   }
@@ -814,6 +871,9 @@ thead tr:hover {
     white-space: pre-line;
     padding-bottom: 5px;
   }
+  .table-he td:nth-of-type(1) {
+    width: 100%;
+  }
   .table-he td:nth-of-type(1):before {
     content: "תאריך";
   }
@@ -852,6 +912,14 @@ thead tr:hover {
 * {
   font-family: Inconsolata;
   box-sizing: border-box;
+}
+*:clicked {
+  border: none;
+}
+*:focus {
+  background-repeat: no-repeat;
+  border-color: #616161;
+  outline: 0;
 }
 
 /*# sourceMappingURL=App.css.map */

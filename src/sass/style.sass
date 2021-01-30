@@ -3,6 +3,7 @@
 @import '2-elements/button'
 @import '2-elements/div'
 @import '2-elements/navbar'
+@import '2-elements/select'
 @import '2-elements/svg'
 @import '2-elements/text'
 @import '3-componenets/filter'
@@ -12,3 +13,9 @@
 *
     font-family: Inconsolata
     box-sizing: border-box
+    &:clicked
+        border: none
+    &:focus
+        background-repeat: no-repeat
+        border-color: $secondary
+        outline: 0

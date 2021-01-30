@@ -38,7 +38,10 @@ const deleteIcon = (
     height="24"
     focusable="false"
   >
-    <path d="M20 4v1H4V4a1 1 0 011-1h4a1 1 0 011-1h4a1 1 0 011 1h4a1 1 0 011 1zM5 6h14v13a3 3 0 01-3 3H8a3 3 0 01-3-3zm9 12h1V8h-1zm-5 0h1V8H9z"></path>
+    <path
+      className="delete"
+      d="M20 4v1H4V4a1 1 0 011-1h4a1 1 0 011-1h4a1 1 0 011 1h4a1 1 0 011 1zM5 6h14v13a3 3 0 01-3 3H8a3 3 0 01-3-3zm9 12h1V8h-1zm-5 0h1V8H9z"
+    ></path>
   </svg>
 );
 
@@ -52,11 +55,11 @@ const arrowDown = (
     <path d="M8.8 10.66L14 5.12a.07.07 0 00-.07-.12H2.07a.07.07 0 00-.07.12l5.2 5.54a1.1 1.1 0 001.6 0z"></path>
   </svg>
 );
-let svgs = {
+let svg = {
   edit: edit,
   filter: filter,
   deleteIcon: deleteIcon,
   arrowDown: arrowDown,
 };
 
-export default svgs;
+export default svg;
