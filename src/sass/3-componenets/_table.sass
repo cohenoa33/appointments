@@ -1,5 +1,6 @@
 table, th, td
-    border: 1px solid $clicked
+    border-top: $border
+    border-bottom: $border
     border-collapse: collapse
     text-align: center
     vertical-align: top
@@ -10,21 +11,28 @@ table, th, td
     padding-left: 0
     table-layout: fixed
     margin: 0 auto
+
+table
+    border: $border
 th
     height: 100px
+    background-color: $table-header
 tr
+    background-color: $table
     &:hover
-        background-color: $clicked
+        background-color: $row-hover
 td input[type="text"], td input[type="date"], td input[type="time"]
+    background-color: transparent
+    border: $light-border
     line-height: 2em
     max-width: 95%
 td textarea
-    line-height: 3em
+    line-height: 2em
     max-width: 95%
 thead tr
-    background-color: $hover-table
+    background-color: $table-header
     &:hover
-        background-color: $hover-table
+        background-color: $table-header
 .additional-info
     margin-top: 20px
 
