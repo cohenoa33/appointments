@@ -62,6 +62,12 @@ export default function Appointment({
       </button>
     </>
   );
+  const renderAdditionalInfo = (dictionary, info) => (
+    <>
+      <p className="title">{dictionary}</p>
+      <p className="description">{info}</p>
+    </>
+  );
 
   return (
     <tr>
@@ -87,33 +93,34 @@ export default function Appointment({
         {appointment_notes || symptoms ? (
           <>
             {appointment_notes
-              ? `${dictionary.notes}: ${appointment_notes}`
+              ? renderAdditionalInfo(dictionary.notes, appointment_notes)
               : null}
             <br />
-            {symptoms ? `${dictionary.symptoms}: ${symptoms}` : null}
+            {symptoms
+              ? renderAdditionalInfo(dictionary.symptoms, symptoms)
+              : null}
           </>
         ) : null}
         <div className="buttons">
           {toggle ? (
             <>
-              <h1 className="confirm-delete">{dictionary.confirmDelete}</h1>
               <button
                 onClick={() => deleteAppointment(id)}
                 className={helpers.class("button", "delete")}
               >
-                {dictionary.yes}
+                {dictionary.delete}
               </button>{" "}
               <button
                 onClick={() => setToggle(!toggle)}
                 className={helpers.class("button", "cancel")}
               >
-                {" "}
                 {dictionary.cancel}
               </button>
             </>
           ) : null}
         </div>
       </td>
+      {mobile ? <td>{toggle ? null : renderEditDeleteButtons()}</td> : null}
     </tr>
   );
 }

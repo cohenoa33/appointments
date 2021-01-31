@@ -28,14 +28,6 @@ const createClassName = (name, language) => {
   return `${name}-${language}`;
 };
 
-function getWindowDimensions() {
-  const { innerWidth: width, innerHeight: height } = window;
-  return {
-    width,
-    height,
-  };
-}
-
 let helpers = {
   validate: validate,
   class: createClassName,

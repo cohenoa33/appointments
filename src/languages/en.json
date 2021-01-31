@@ -32,7 +32,7 @@
     "edit" : "Edit", 
     "save": "Save", 
     "back" : "Back", 
-    "delete": "Delete", 
+    "delete": "Yes, delete", 
     "confirmDelete": "Are you sure?", 
     "cancel": "Cancel"
 

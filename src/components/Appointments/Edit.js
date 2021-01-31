@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import api from "../../services/api";
 import helpers from "../../services/helpers";
+import svg from "../../services/svg";
 
 export default function Edit({
   dictionary,
@@ -8,6 +9,7 @@ export default function Edit({
   edit,
   setEdit,
   updateAppointmentsList,
+  mobile,
 }) {
   const [updatedAppointment, setUpdatedAppointment] = useState(appointment);
 
@@ -37,28 +39,29 @@ export default function Edit({
   const checkNull = (value) => {
     return value === null ? "" : value;
   };
+  const renderButtons = () => (
+    <div className="buttons">
+      <button
+        className={helpers.class("button", "save")}
+        onClick={handleSubmit}
+      >
+        {dictionary.save}
+      </button>
+      <button
+        className={helpers.class("button", "cancel")}
+        onClick={() => setEdit(!edit)}
+      >
+        {dictionary.back}
+      </button>
+    </div>
+  );
 
   return (
-    <tr>
+    <tr className="edit">
+      {!mobile ? <td> {renderButtons()}</td> : null}
       <td>
-        {" "}
-        <div className="buttons">
-          <button
-            className={helpers.class("button", "save")}
-            onClick={handleSubmit}
-          >
-            {dictionary.save}{" "}
-          </button>
-          <button
-            className={helpers.class("button", "cancel")}
-            onClick={() => setEdit(!edit)}
-          >
-            {dictionary.cancel}
-          </button>
-        </div>
-      </td>
-      <td>
-        {/* <label>{dictionary.date} </label> */}
+        <label>{dictionary.date} </label>
+        <br />
         <input
           type="date"
           name="date"
@@ -76,7 +79,8 @@ export default function Edit({
         />
       </td>
       <td>
-        {/* <label>{dictionary.doctor} </label> */}
+        <label>{dictionary.doctor} </label>
+        <br />
         <input
           type="text"
           name="doctor"
@@ -94,7 +98,7 @@ export default function Edit({
         />
       </td>
       <td>
-        {" "}
+        <label>{dictionary.patientName} </label>
         <input
           type="text"
           name="patient"
@@ -103,7 +107,7 @@ export default function Edit({
         />
       </td>
       <td>
-        {" "}
+        <label>{dictionary.address} </label>
         <input
           type="text"
           name="location"
@@ -111,7 +115,6 @@ export default function Edit({
           onChange={handleChange}
         />
       </td>
-
       <td>
         <input
           name="need_insurance"
@@ -128,8 +131,8 @@ export default function Edit({
           onChange={handleChange}
         />
       </td>
-      <td className="additional-info">
-        {/* <label>{dictionary.additionalInformation}</label> */}
+      <td>
+        <label>{dictionary.additionalInformation}</label>
         <textarea
           type="text"
           name="appointment_notes"
@@ -145,6 +148,7 @@ export default function Edit({
           value={checkNull(updatedAppointment.symptoms)}
           onChange={handleChange}
         />
+        {mobile ? renderButtons() : null}
       </td>
     </tr>
   );
