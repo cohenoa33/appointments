@@ -12,7 +12,6 @@ export default function Appointment({
   setEdit,
   userLanguage,
   updateAppointmentsList,
-  index,
   mobile,
 }) {
   const {
@@ -55,18 +54,10 @@ export default function Appointment({
   };
   const renderEditDeleteButtons = () => (
     <>
-      <button
-        // className={helpers.class("button", "edit")}
-        className="svg-button"
-        onClick={() => setEdit(!edit)}
-      >
+      <button className="svg-button" onClick={() => setEdit(!edit)}>
         {svg.edit}
       </button>
-      <button
-        // className={helpers.class("button", "delete")}
-        className="svg-button"
-        onClick={() => setToggle(!toggle)}
-      >
+      <button className="svg-button" onClick={() => setToggle(!toggle)}>
         {svg.deleteIcon}
       </button>
     </>
@@ -75,7 +66,7 @@ export default function Appointment({
   return (
     <tr>
       {!mobile ? (
-        <td>
+        <td className="first-column">
           <div className="vertical-buttons">
             {toggle ? null : renderEditDeleteButtons()}
           </div>

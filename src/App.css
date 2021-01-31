@@ -310,6 +310,15 @@ svg {
 path {
   fill: #616161;
 }
+path:hover {
+  fill: #ce9f3c;
+  cursor: pointer;
+}
+
+.delete:hover {
+  fill: #9b001afc;
+  cursor: pointer;
+}
 
 .confirm-delete {
   color: #9b001afc;
@@ -555,9 +564,8 @@ tr:hover {
   background-color: #b4b2b2;
 }
 
-thead tr th:first-child,
-tbody tr td:first-child {
-  width: 2.15em;
+.first-column {
+  width: 2.25em;
 }
 
 td input[type=text], td input[type=date], td input[type=time] {
@@ -626,9 +634,6 @@ thead tr:hover {
     vertical-align: middle;
     white-space: pre-line;
     padding-bottom: 5px;
-  }
-  .table-en td:nth-of-type(1) {
-    width: 100%;
   }
   .table-en td:nth-of-type(1):before {
     content: "Date";
@@ -707,9 +712,6 @@ thead tr:hover {
     vertical-align: middle;
     white-space: pre-line;
     padding-bottom: 5px;
-  }
-  .table-he td:nth-of-type(1) {
-    width: 100%;
   }
   .table-he td:nth-of-type(1):before {
     content: "תאריך";
@@ -790,9 +792,6 @@ thead tr:hover {
     white-space: pre-line;
     padding-bottom: 5px;
   }
-  .table-en td:nth-of-type(1) {
-    width: 100%;
-  }
   .table-en td:nth-of-type(1):before {
     content: "Date";
   }
@@ -870,9 +869,6 @@ thead tr:hover {
     vertical-align: middle;
     white-space: pre-line;
     padding-bottom: 5px;
-  }
-  .table-he td:nth-of-type(1) {
-    width: 100%;
   }
   .table-he td:nth-of-type(1):before {
     content: "תאריך";

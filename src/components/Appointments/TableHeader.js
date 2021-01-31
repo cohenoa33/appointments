@@ -16,7 +16,7 @@ export default function TableHeader({
     <thead>
       <tr>
         {!mobile ? (
-          <th>
+          <th className="first-column">
             <button className={setClassNameNoSorting()}>#</button>
           </th>
         ) : null}

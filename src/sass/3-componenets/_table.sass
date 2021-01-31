@@ -11,6 +11,7 @@ table, th, td
     padding-left: 0
     table-layout: fixed
     margin: 0 auto
+
 table
     border: $border
 th
@@ -20,9 +21,10 @@ tr
     background-color: $table
     &:hover
         background-color: $row-hover
-thead tr th:first-child,
-tbody tr td:first-child
-    width: 2.15em
+
+.first-column
+    width: 2.25em
+
 td input[type="text"], td input[type="date"], td input[type="time"]
     background-color: transparent
     border: $light-border
