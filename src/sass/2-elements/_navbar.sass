@@ -1,27 +1,38 @@
-ul
-    margin: 0
-    padding: 0
+.navbar
     background-color: $table-header
-    width: 100%
-    height: 100px
+
+    ul
+        margin: 0
+        padding: 0
+        width: 100%
+        height: 100px
+        padding-top: 20px
+        padding-bottom: 20px
 
     li
-        display: inline
+        display: inline-block
         margin-left: 20px
         margin-right: 20px
+        font-size: 1.15rem
+        select
+            background-color: transparent
+            border: none
+            font-size: 1.2rem
 
     button
-        border: none
         background-color: transparent
+        border: none
         margin: 0
         height: 50px
-        padding: 0
+        padding: 5px
         width: auto
         font-size: 1.1em
         +cancel-outline()
         +button-hover($clicked)
 
 =responsive-nevbar()
+    .navbar
+        text-align: center
     ul
         li
             display: inherit

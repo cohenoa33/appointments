@@ -225,37 +225,47 @@
   padding: 0;
 }
 
-ul {
+.navbar {
+  background-color: #56b9c8;
+}
+.navbar ul {
   margin: 0;
   padding: 0;
-  background-color: #56b9c8;
   width: 100%;
   height: 100px;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
-ul li {
-  display: inline;
+.navbar li {
+  display: inline-block;
   margin-left: 20px;
   margin-right: 20px;
+  font-size: 1.15rem;
 }
-ul button {
-  border: none;
+.navbar li select {
   background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+}
+.navbar button {
+  background-color: transparent;
+  border: none;
   margin: 0;
   height: 50px;
-  padding: 0;
+  padding: 5px;
   width: auto;
   font-size: 1.1em;
 }
-ul button:active {
+.navbar button:active {
   outline: 0;
 }
-ul button:focus {
+.navbar button:focus {
   outline: 0;
 }
-ul button:checked {
+.navbar button:checked {
   outline: 0;
 }
-ul button:hover {
+.navbar button:hover {
   outline: 0;
   color: #ce9f3c;
   font-weight: bolder;
@@ -263,6 +273,10 @@ ul button:hover {
 }
 
 @media only screen and (max-width: 760px) {
+  .navbar {
+    text-align: center;
+  }
+
   ul li {
     display: inherit;
   }
@@ -271,6 +285,10 @@ ul button:hover {
   }
 }
 @media (min-device-width: 768px) and (max-device-width: 1024px) {
+  .navbar {
+    text-align: center;
+  }
+
   ul li {
     display: inherit;
   }
@@ -340,6 +358,12 @@ path:hover {
   margin-top: 20px;
 }
 
+.no-results {
+  font-size: 1.55em;
+  text-align: center;
+  color: #616161;
+}
+
 .edit label {
   font-weight: light;
   font-size: 0.85rem;
@@ -395,6 +419,66 @@ path:hover {
     padding: 5px;
   }
 }
+.login-signup {
+  width: 70%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  margin-top: 30px;
+  background-color: #888888;
+  text-align: center;
+}
+.login-signup button {
+  height: 50px;
+  width: 150px;
+  font-size: 0.85em;
+  font-weight: normal;
+  background-color: #56b9c8;
+  border: none;
+  border-radius: 4px;
+  padding: 0px;
+  margin-top: 30px;
+}
+.login-signup button:hover {
+  cursor: pointer;
+  color: #ce9f3c;
+}
+
+.login-signup-form {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #f9f7f7;
+}
+.login-signup-form input[type=text] {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.login-signup-form input[type=password] {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.login-signup-form button {
+  height: 50px;
+  width: 150px;
+  font-size: 1.15em;
+  font-weight: bold;
+  background-color: #57b4b4;
+  border: none;
+  border-radius: 4px;
+  padding: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.login-signup-form button:hover {
+  cursor: pointer;
+  color: #ce9f3c;
+}
+
 .submit {
   text-align: center;
 }
@@ -405,7 +489,12 @@ path:hover {
   font-weight: bold;
   background-color: #57b4b4;
   border: none;
+  border-radius: 4px;
   padding: 0px;
+}
+.submit input[type=submit]:hover {
+  cursor: pointer;
+  color: #ce9f3c;
 }
 
 .new-appointment-form-en {

@@ -54,29 +54,30 @@ export default function Appointments({ appointments, updateAppointmentsList }) {
 
   const renderTable = (mobile) => (
     <div>
-      <table className={helpers.class("table", userLanguage)}>
-        <TableHeader
-          sort={sort}
-          sortingBy={sortingBy}
-          dictionary={dictionary}
-          buttonLang={userLanguage}
-          mobile={mobile}
-        />
-
-        <tbody>
-          {list
-            ? list.map((appointment, index) => (
-                <Appointment
-                  appointment={appointment}
-                  index={index}
-                  key={appointment.id}
-                  updateAppointmentsList={updateAppointmentsList}
-                  mobile={mobile}
-                />
-              ))
-            : null}
-        </tbody>
-      </table>
+      {list && list.length > 0 ? (
+        <table className={helpers.class("table", userLanguage)}>
+          <TableHeader
+            sort={sort}
+            sortingBy={sortingBy}
+            dictionary={dictionary}
+            buttonLang={userLanguage}
+            mobile={mobile}
+          />
+          <tbody>
+            {list.map((appointment, index) => (
+              <Appointment
+                appointment={appointment}
+                index={index}
+                key={appointment.id}
+                updateAppointmentsList={updateAppointmentsList}
+                mobile={mobile}
+              />
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <div className="no-results"> {dictionary.noResults} </div>
+      )}
     </div>
   );
 

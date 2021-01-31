@@ -7,15 +7,11 @@ export default function Navbar({
   jwt,
 }) {
   return (
-    <div>
+    <div className="navbar">
       <ul>
+        {jwt ? <li>{renderAddNewButton()}</li> : null}
         <li> {renderLanguages()}</li>
-        {jwt ? (
-          <>
-            <li>{renderAddNewButton()}</li>
-            <li>{renderSignUp()}</li>
-          </>
-        ) : null}
+        {jwt ? <li>{renderSignUp()}</li> : null}
       </ul>
     </div>
   );

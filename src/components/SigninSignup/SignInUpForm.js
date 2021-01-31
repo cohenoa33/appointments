@@ -43,7 +43,7 @@ export default function SignInUpForm({
     <div>
       {toggle ? (
         <div>
-          <form onSubmit={(e) => handleSubmit(e)}>
+          <form className="login-signup-form" onSubmit={(e) => handleSubmit(e)}>
             {emailInput}
             <br />
             {passwordInput}
@@ -59,7 +59,7 @@ export default function SignInUpForm({
         </div>
       ) : (
         <div>
-          <form onSubmit={(e) => handleSubmit(e)}>
+          <form className="login-signup-form" onSubmit={(e) => handleSubmit(e)}>
             {emailInput}
             <br />
             {passwordInput}
