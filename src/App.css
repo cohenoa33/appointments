@@ -3,7 +3,7 @@
   display: inline-grid;
 }
 
-.hidden-button-en {
+.hidden-button {
   background-color: transparent;
   border: none;
   font-size: 1rem;
@@ -13,23 +13,14 @@
   margin-top: -1px;
   vertical-align: center;
 }
-.hidden-button-en:active {
-  outline: 0;
-}
-.hidden-button-en:focus {
-  outline: 0;
-}
-.hidden-button-en:checked {
-  outline: 0;
-}
-.hidden-button-en:hover {
+.hidden-button:hover {
   outline: 0;
   color: #ce9f3c;
   font-weight: bolder;
   cursor: pointer;
 }
 
-.hidden-button-he {
+.hidden-button-no-sorting {
   background-color: transparent;
   border: none;
   font-size: 1rem;
@@ -38,61 +29,6 @@
   padding-top: 0;
   margin-top: -1px;
   vertical-align: center;
-}
-.hidden-button-he:active {
-  outline: 0;
-}
-.hidden-button-he:focus {
-  outline: 0;
-}
-.hidden-button-he:checked {
-  outline: 0;
-}
-.hidden-button-he:hover {
-  outline: 0;
-  color: #ce9f3c;
-  font-weight: bolder;
-  cursor: pointer;
-}
-
-.hidden-button-en-no {
-  background-color: transparent;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  padding-top: 0;
-  margin-top: -1px;
-  vertical-align: center;
-}
-.hidden-button-en-no:active {
-  outline: 0;
-}
-.hidden-button-en-no:focus {
-  outline: 0;
-}
-.hidden-button-en-no:checked {
-  outline: 0;
-}
-
-.hidden-button-he-no {
-  background-color: transparent;
-  border: none;
-  font-size: 1rem;
-  font-weight: bold;
-  text-align: center;
-  padding-top: 0;
-  margin-top: -1px;
-  vertical-align: center;
-}
-.hidden-button-he-no:active {
-  outline: 0;
-}
-.hidden-button-he-no:focus {
-  outline: 0;
-}
-.hidden-button-he-no:checked {
-  outline: 0;
 }
 
 .sorting {
@@ -106,15 +42,6 @@
   vertical-align: center;
   color: #ce9f3c;
 }
-.sorting:active {
-  outline: 0;
-}
-.sorting:focus {
-  outline: 0;
-}
-.sorting:checked {
-  outline: 0;
-}
 
 .x-btn {
   background-color: transparent;
@@ -126,24 +53,6 @@
   margin-top: -1px;
   vertical-align: center;
 }
-.x-btn:active {
-  outline: 0;
-}
-.x-btn:focus {
-  outline: 0;
-}
-.x-btn:checked {
-  outline: 0;
-}
-.x-btn:active {
-  outline: 0;
-}
-.x-btn:focus {
-  outline: 0;
-}
-.x-btn:checked {
-  outline: 0;
-}
 .x-btn:hover {
   outline: 0;
   color: #616161;
@@ -152,6 +61,7 @@
 }
 
 .button-save {
+  margin: 5px;
   margin-top: 10px;
   background-color: #57b4b4;
   border: none;
@@ -164,6 +74,7 @@
 }
 
 .button-cancel {
+  margin: 5px;
   margin-top: 10px;
   background-color: #616161;
   border: none;
@@ -176,6 +87,7 @@
 }
 
 .button-delete {
+  margin: 5px;
   margin-top: 10px;
   background-color: #9b001afc;
   border: none;
@@ -206,18 +118,6 @@
 
 .buttons {
   margin-top: 15px;
-}
-
-.title {
-  font-weight: bold;
-  font-size: 0.8rem;
-  margin-top: 3px;
-  margin-bottom: 0;
-}
-
-.description {
-  margin-bottom: 0;
-  margin-top: 0;
 }
 
 .additional-info {
@@ -255,15 +155,6 @@
   padding: 5px;
   width: auto;
   font-size: 1.1em;
-}
-.navbar button:active {
-  outline: 0;
-}
-.navbar button:focus {
-  outline: 0;
-}
-.navbar button:checked {
-  outline: 0;
 }
 .navbar button:hover {
   outline: 0;
@@ -347,308 +238,6 @@ path:hover {
   cursor: pointer;
 }
 
-.title {
-  text-align: center;
-}
-
-.h1-title {
-  text-align: center;
-  font-size: 2em;
-  font-weight: bold;
-  margin-top: 20px;
-}
-
-.no-results {
-  font-size: 1.55em;
-  text-align: center;
-  color: #616161;
-}
-
-.edit label {
-  font-weight: light;
-  font-size: 0.85rem;
-  color: #616161;
-}
-.edit td input[type=text], .edit td input[type=date], .edit td input[type=time], .edit td textarea {
-  border: 0.25px solid #616161;
-  border-radius: 4px;
-  line-height: 2em;
-  max-width: 95%;
-}
-.edit td input[type=checkbox] {
-  margin-top: 10px;
-}
-
-.filter {
-  display: block;
-  text-align: center;
-  padding-bottom: 20px;
-  margin: auto;
-  padding: 10px;
-}
-
-.filter-label {
-  display: block;
-  text-align: center;
-  width: 100%;
-}
-.filter-label select {
-  font-size: 1.15rem;
-  padding: 10px;
-  margin: 0 auto;
-  margin-bottom: 10px;
-}
-
-@media only screen and (max-width: 760px) {
-  .filter {
-    margin-inline-start: 0;
-    padding: 0;
-  }
-
-  .filter-label {
-    padding: 5px;
-  }
-}
-@media (min-device-width: 768px) and (max-device-width: 1024px) {
-  .filter {
-    margin-inline-start: 0;
-    padding: 0;
-  }
-
-  .filter-label {
-    padding: 5px;
-  }
-}
-.login-signup {
-  width: 70%;
-  max-width: 700px;
-  margin: 0 auto;
-  padding: 30px;
-  margin-top: 30px;
-  background-color: #888888;
-  text-align: center;
-}
-.login-signup button {
-  height: 50px;
-  width: 150px;
-  font-size: 0.85em;
-  font-weight: normal;
-  background-color: #56b9c8;
-  border: none;
-  border-radius: 4px;
-  padding: 0px;
-  margin-top: 30px;
-}
-.login-signup button:hover {
-  cursor: pointer;
-  color: #ce9f3c;
-}
-
-.login-signup-form {
-  width: 90%;
-  margin: 0 auto;
-  padding: 10px;
-  background-color: #f9f7f7;
-}
-.login-signup-form input[type=text] {
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.login-signup-form input[type=password] {
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 3px;
-  margin-bottom: 3px;
-}
-.login-signup-form button {
-  height: 50px;
-  width: 150px;
-  font-size: 1.15em;
-  font-weight: bold;
-  background-color: #57b4b4;
-  border: none;
-  border-radius: 4px;
-  padding: 0px;
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.login-signup-form button:hover {
-  cursor: pointer;
-  color: #ce9f3c;
-}
-
-.submit {
-  text-align: center;
-}
-.submit input[type=submit] {
-  height: 50px;
-  width: 150px;
-  font-size: 1.15em;
-  font-weight: bold;
-  background-color: #57b4b4;
-  border: none;
-  border-radius: 4px;
-  padding: 0px;
-}
-.submit input[type=submit]:hover {
-  cursor: pointer;
-  color: #ce9f3c;
-}
-
-.new-appointment-form-en {
-  background-color: #888888;
-  padding: 20px;
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-.new-appointment-form-en h1 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-.new-appointment-form-en form {
-  line-height: 2em;
-  display: inline-block;
-  width: 95%;
-  text-align: center;
-}
-.new-appointment-form-en label {
-  width: 30%;
-  float: left;
-  text-align: left;
-  margin-left: 50px;
-  margin-right: 0;
-}
-.new-appointment-form-en input[type=text], .new-appointment-form-en input[type=date], .new-appointment-form-en input[type=time] {
-  width: 50%;
-  height: 1.85em;
-}
-.new-appointment-form-en input[type=text]:focus, .new-appointment-form-en input[type=date]:focus, .new-appointment-form-en input[type=time]:focus {
-  outline: 0;
-}
-.new-appointment-form-en textarea {
-  height: 3.5em;
-  width: 50%;
-}
-.new-appointment-form-en .checkbox {
-  width: 100%;
-  float: left;
-  display: inline-block;
-  margin-bottom: 10px;
-}
-.new-appointment-form-en .checkbox label {
-  padding-left: 50px;
-  padding-right: 0;
-  width: 80%;
-}
-
-.new-appointment-form-he {
-  background-color: #888888;
-  padding: 20px;
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 20px;
-}
-.new-appointment-form-he h1 {
-  text-align: center;
-  margin-bottom: 10px;
-}
-.new-appointment-form-he form {
-  line-height: 2em;
-  display: inline-block;
-  width: 95%;
-  text-align: center;
-}
-.new-appointment-form-he label {
-  width: 30%;
-  float: right;
-  text-align: right;
-  margin-left: 0;
-  margin-right: 50px;
-}
-.new-appointment-form-he input[type=text], .new-appointment-form-he input[type=date], .new-appointment-form-he input[type=time] {
-  width: 50%;
-  height: 1.85em;
-}
-.new-appointment-form-he input[type=text]:focus, .new-appointment-form-he input[type=date]:focus, .new-appointment-form-he input[type=time]:focus {
-  outline: 0;
-}
-.new-appointment-form-he textarea {
-  height: 3.5em;
-  width: 50%;
-}
-.new-appointment-form-he .checkbox {
-  width: 100%;
-  float: right;
-  display: inline-block;
-  margin-bottom: 10px;
-}
-.new-appointment-form-he .checkbox label {
-  padding-left: 0;
-  padding-right: 50px;
-  width: 80%;
-}
-
-@media only screen and (max-width: 760px) {
-  .new-appointment-form-en {
-    width: 100%;
-    padding: 0;
-    padding-bottom: 30px;
-  }
-  .new-appointment-form-en label {
-    margin-left: 5px;
-    margin-right: 0;
-  }
-
-  .new-appointment-form-he {
-    width: 100%;
-    padding: 0;
-    padding-bottom: 30px;
-  }
-  .new-appointment-form-he label {
-    margin-left: 0;
-    margin-right: 5px;
-  }
-
-  .new-appointment-form-en .checkbox, .new-appointment-form-he .checkbox {
-    display: block;
-  }
-
-  label {
-    width: 100%;
-  }
-}
-@media (min-device-width: 768px) and (max-device-width: 1024px) {
-  .new-appointment-form-en {
-    width: 100%;
-    padding: 0;
-    padding-bottom: 30px;
-  }
-  .new-appointment-form-en label {
-    margin-left: 5px;
-    margin-right: 0;
-  }
-
-  .new-appointment-form-he {
-    width: 100%;
-    padding: 0;
-    padding-bottom: 30px;
-  }
-  .new-appointment-form-he label {
-    margin-left: 0;
-    margin-right: 5px;
-  }
-
-  .new-appointment-form-en .checkbox, .new-appointment-form-he .checkbox {
-    display: block;
-  }
-
-  label {
-    width: 100%;
-  }
-}
 table, th, td {
   border-top: 1px solid #616161;
   border-bottom: 1px solid #616161;
@@ -1017,6 +606,318 @@ thead tr:hover {
     margin: 8px;
   }
 }
+.h1-title {
+  text-align: center;
+  font-size: 2em;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 0.8rem;
+  margin-top: 3px;
+  margin-bottom: 0;
+}
+
+.description {
+  margin-bottom: 0;
+  margin-top: 0;
+  line-height: 1em;
+}
+
+.no-results {
+  font-size: 1.55em;
+  text-align: center;
+  color: #616161;
+}
+
+.edit label {
+  font-weight: light;
+  font-size: 0.85rem;
+  color: #616161;
+}
+.edit td input[type=text], .edit td input[type=date], .edit td input[type=time] {
+  border: 0.25px solid #616161;
+  border-radius: 4px;
+  max-width: 95%;
+  height: 2em;
+}
+.edit td textarea {
+  border: 0.25px solid #616161;
+  max-width: 95%;
+  border-radius: 4px;
+  line-height: 1.2em;
+  height: 4em;
+}
+.edit td input[type=checkbox] {
+  margin-top: 10px;
+}
+
+.filter {
+  display: block;
+  text-align: center;
+  padding-bottom: 20px;
+  margin: auto;
+  padding: 10px;
+}
+
+.filter-label {
+  display: block;
+  text-align: center;
+  width: 100%;
+}
+.filter-label select {
+  font-size: 1.15rem;
+  padding: 10px;
+  margin: 0 auto;
+  margin-bottom: 10px;
+}
+
+@media only screen and (max-width: 760px) {
+  .filter {
+    margin-inline-start: 0;
+    padding: 0;
+  }
+
+  .filter-label {
+    padding: 5px;
+  }
+}
+@media (min-device-width: 768px) and (max-device-width: 1024px) {
+  .filter {
+    margin-inline-start: 0;
+    padding: 0;
+  }
+
+  .filter-label {
+    padding: 5px;
+  }
+}
+.login-signup {
+  width: 70%;
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 30px;
+  margin-top: 30px;
+  background-color: #888888;
+  text-align: center;
+}
+.login-signup button {
+  height: 50px;
+  width: 150px;
+  font-size: 0.85em;
+  font-weight: normal;
+  background-color: #56b9c8;
+  border: none;
+  border-radius: 4px;
+  padding: 0px;
+  margin-top: 30px;
+}
+.login-signup button:hover {
+  cursor: pointer;
+  color: #ce9f3c;
+}
+
+.login-signup-form {
+  width: 90%;
+  margin: 0 auto;
+  padding: 10px;
+  background-color: #f9f7f7;
+}
+.login-signup-form input[type=text] {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+.login-signup-form input[type=password] {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 3px;
+  margin-bottom: 3px;
+}
+.login-signup-form button {
+  height: 50px;
+  width: 150px;
+  font-size: 1.15em;
+  font-weight: bold;
+  background-color: #57b4b4;
+  border: none;
+  border-radius: 4px;
+  padding: 0px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+.login-signup-form button:hover {
+  cursor: pointer;
+  color: #ce9f3c;
+}
+
+.submit {
+  text-align: center;
+}
+.submit input[type=submit] {
+  height: 50px;
+  width: 150px;
+  font-size: 1.15em;
+  font-weight: bold;
+  background-color: #57b4b4;
+  border: none;
+  border-radius: 4px;
+  padding: 0px;
+}
+.submit input[type=submit]:hover {
+  cursor: pointer;
+  color: #ce9f3c;
+}
+
+.new-appointment-form-en {
+  background-color: #888888;
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.new-appointment-form-en h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.new-appointment-form-en form {
+  line-height: 2em;
+  display: inline-block;
+  width: 95%;
+  text-align: center;
+}
+.new-appointment-form-en label {
+  width: 30%;
+  float: left;
+  text-align: left;
+  margin-left: 50px;
+  margin-right: 0;
+}
+.new-appointment-form-en input[type=text], .new-appointment-form-en input[type=date], .new-appointment-form-en input[type=time] {
+  width: 50%;
+  height: 1.85em;
+}
+.new-appointment-form-en textarea {
+  height: 3.5em;
+  width: 50%;
+}
+.new-appointment-form-en .checkbox {
+  width: 100%;
+  float: left;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.new-appointment-form-en .checkbox label {
+  padding-left: 50px;
+  padding-right: 0;
+  width: 80%;
+}
+
+.new-appointment-form-he {
+  background-color: #888888;
+  padding: 20px;
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20px;
+}
+.new-appointment-form-he h1 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+.new-appointment-form-he form {
+  line-height: 2em;
+  display: inline-block;
+  width: 95%;
+  text-align: center;
+}
+.new-appointment-form-he label {
+  width: 30%;
+  float: right;
+  text-align: right;
+  margin-left: 0;
+  margin-right: 50px;
+}
+.new-appointment-form-he input[type=text], .new-appointment-form-he input[type=date], .new-appointment-form-he input[type=time] {
+  width: 50%;
+  height: 1.85em;
+}
+.new-appointment-form-he textarea {
+  height: 3.5em;
+  width: 50%;
+}
+.new-appointment-form-he .checkbox {
+  width: 100%;
+  float: right;
+  display: inline-block;
+  margin-bottom: 10px;
+}
+.new-appointment-form-he .checkbox label {
+  padding-left: 0;
+  padding-right: 50px;
+  width: 80%;
+}
+
+@media only screen and (max-width: 760px) {
+  .new-appointment-form-en {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 30px;
+  }
+  .new-appointment-form-en label {
+    margin-left: 5px;
+    margin-right: 0;
+  }
+
+  .new-appointment-form-he {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 30px;
+  }
+  .new-appointment-form-he label {
+    margin-left: 0;
+    margin-right: 5px;
+  }
+
+  .new-appointment-form-en .checkbox, .new-appointment-form-he .checkbox {
+    display: block;
+  }
+
+  label {
+    width: 100%;
+  }
+}
+@media (min-device-width: 768px) and (max-device-width: 1024px) {
+  .new-appointment-form-en {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 30px;
+  }
+  .new-appointment-form-en label {
+    margin-left: 5px;
+    margin-right: 0;
+  }
+
+  .new-appointment-form-he {
+    width: 100%;
+    padding: 0;
+    padding-bottom: 30px;
+  }
+  .new-appointment-form-he label {
+    margin-left: 0;
+    margin-right: 5px;
+  }
+
+  .new-appointment-form-en .checkbox, .new-appointment-form-he .checkbox {
+    display: block;
+  }
+
+  label {
+    width: 100%;
+  }
+}
 * {
   font-family: Heebo;
   box-sizing: border-box;
@@ -1027,6 +928,12 @@ thead tr:hover {
 *:focus {
   background-repeat: no-repeat;
   border-color: #616161;
+  outline: 0;
+}
+*:active {
+  outline: 0;
+}
+*:checked {
   outline: 0;
 }
 

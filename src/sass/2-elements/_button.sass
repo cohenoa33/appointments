@@ -1,20 +1,15 @@
 
 .vertical-buttons
     display: inline-grid
-.hidden-button-en
-    +table-header-sort()
-.hidden-button-he
-    +table-header-sort()
-.hidden-button-en-no
+.hidden-button
     +table-header()
-.hidden-button-he-no
+    +button-hover($hover)
+.hidden-button-no-sorting
     +table-header()
-
 .sorting
     +table-header()
     color: $clicked
 .x-btn
-    +cancel-outline()
     +table-header()
     +button-hover($secondary)
 .button-save

@@ -1,11 +1,6 @@
-= cancel-outline()
-    &:active
-        outline: 0
-    &:focus
-        outline: 0
-    &:checked
-        outline: 0
+
 =button-edit-save($color)
+    margin: 5px
     margin-top: 10px
     background-color: $color
     border: none
@@ -21,103 +16,6 @@
         color: $color
         font-weight: bolder
         cursor: pointer
-
-=table-header-sort()
-    +table-header()
-    +button-hover($hover)
-
-=table-header()
-    background-color: transparent
-    border: none
-    font-size: 1rem
-    font-weight: bold
-    text-align: center
-    padding-top: 0
-    margin-top: -1px
-    vertical-align: center
-    +cancel-outline()
-
-=table-layout($text-align)
-    display: block
-    border: none
-    text-align: $text-align
-
-=responsive-table($side, $th-tr-l, $th-tr-r, $td-padding-l, $td-padding-r, $before-td-padding-l, $before-td-padding-r, $date, $doctor, $patientName, $address, $needInsurance, $approvedByInsurance, $additionalInformation)
-    table
-        +table-layout($side)
-
-    thead
-        +table-layout($side)
-        tr
-            position: absolute
-            color: transparent
-            padding: 0
-            top: -9999px
-            left: $th-tr-l //-9999px
-            right: $th-tr-r // 0
-
-    td
-        +table-layout($side)
-        border: none
-        vertical-align: middle
-        position: relative
-        padding: 0.05rem
-        padding-left: $td-padding-l //60%
-        padding-top: 10px
-        padding-right: $td-padding-r //10px
-        margin-bottom: 10px
-
-        &:before
-            position: absolute
-            left: 6px
-            right: 6px
-            width: 40%
-            padding-left: $before-td-padding-l // 0
-            padding-right: $before-td-padding-r //10px
-            white-space: nowrap
-            vertical-align: middle
-            white-space: pre-line
-            padding-bottom: 5px
-
-        &:nth-of-type(1)
-            &:before
-                content: $date
-
-        &:nth-of-type(2)
-            &:before
-                content: $doctor
-
-        &:nth-of-type(3)
-            &:before
-                content: $patientName
-
-        &:nth-of-type(4)
-            &:before
-                content: $address
-
-        &:nth-of-type(5)
-            &:before
-                content: $needInsurance
-
-        &:nth-of-type(6)
-            &:before
-                content: $approvedByInsurance
-
-        &:nth-of-type(7)
-            &:before
-                content: $additionalInformation
-
-    tr
-        +table-layout($side)
-        vertical-align: end
-        border: none
-        padding-bottom: 20px
-        padding-top: 20px
-        border-bottom: 1px dashed
-        &:nth-child(odd)
-            background-color: $secondary-background
-    svg
-        margin: 8px
 
 =primary-button($height, $width, $font, $f-weight, $background)
     height: $height

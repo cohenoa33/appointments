@@ -1,33 +1,26 @@
 import React from "react";
 
-export default function TableHeader({
-  dictionary,
-  sort,
-  sortingBy,
-  buttonLang,
-  mobile,
-}) {
-  const setClassName = () =>
-    buttonLang === "he" ? "hidden-button-he" : "hidden-button-en";
-  const setClassNameNoSorting = () =>
-    buttonLang === "he" ? "hidden-button-he-no" : "hidden-button-en-no";
-
+export default function TableHeader({ dictionary, sort, sortingBy, mobile }) {
+  console.log(sort);
   return (
     <thead>
       <tr>
         {!mobile ? (
           <th className="first-column">
-            <button className={setClassNameNoSorting()}></button>
+            <button className="hidden-button-no-sorting"></button>
           </th>
         ) : null}
         <th>
-          <button className={setClassName()} onClick={() => sortingBy("date")}>
+          <button
+            className={sort === "date" ? "sorting" : "hidden-button"}
+            onClick={() => sortingBy("date")}
+          >
             {dictionary.date}
           </button>
         </th>
         <th>
           <button
-            className={setClassName()}
+            className={sort === "doctor" ? "sorting" : "hidden-button"}
             onClick={() => sortingBy("doctor")}
           >
             {dictionary.doctor}
@@ -35,33 +28,35 @@ export default function TableHeader({
         </th>
         <th>
           <button
-            className={setClassName()}
+            className={sort === "patient" ? "sorting" : "hidden-button"}
             onClick={() => sortingBy("patient")}
           >
             {dictionary.patientName}
           </button>
         </th>
         <th>
-          <button className={setClassNameNoSorting()}>
+          <button className="hidden-button-no-sorting">
             {dictionary.address}
           </button>
         </th>
         <th>
           <button
-            className={setClassName()}
+            className={
+              sort === "insurance_approval" ? "sorting" : "hidden-button"
+            }
             onClick={() => sortingBy("insurance_approval")}
           >
             {dictionary.needInsuranceApproval}
           </button>
         </th>
         <th>
-          <button className={setClassNameNoSorting()}>
+          <button className="hidden-button-no-sorting">
             {dictionary.approvedByInsurance}
           </button>
         </th>
         <th>
           {" "}
-          <button className={setClassNameNoSorting()}>
+          <button className="hidden-button-no-sorting">
             {dictionary.additionalInformation}
           </button>
         </th>

@@ -97,7 +97,7 @@ function App() {
     <AddNewButton setAddNew={() => setAddNew(!addNew)} />
   );
   const renderSignUp = () => <SignOut setLogout={setLogout} />;
-
+  console.log(jwt);
   return (
     <LanguageProvider>
       <UserProvider user={user}>

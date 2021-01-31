@@ -60,7 +60,6 @@ export default function Appointments({ appointments, updateAppointmentsList }) {
             sort={sort}
             sortingBy={sortingBy}
             dictionary={dictionary}
-            buttonLang={userLanguage}
             mobile={mobile}
           />
           <tbody>
