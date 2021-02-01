@@ -125,15 +125,36 @@
   padding: 0;
 }
 
+.content {
+  padding-top: 80px;
+}
+
+.footer {
+  overflow: hidden;
+  background-color: #222222;
+  height: 50px;
+  padding: 20px;
+  text-align: center;
+  font-size: 0.8em;
+  color: #616161;
+  margin-top: 50px;
+  bottom: 0;
+  width: 100%;
+}
+
 .navbar {
-  background-color: #56b9c8;
+  background-color: #222222;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
 }
 .navbar ul {
   margin: 0;
   padding: 0;
   width: 100%;
-  height: 100px;
-  padding-top: 20px;
+  height: 80px;
+  padding-top: 10px;
   padding-bottom: 20px;
 }
 .navbar li {
@@ -146,9 +167,11 @@
   background-color: transparent;
   border: none;
   font-size: 1.2rem;
+  color: #f9f7f7;
 }
 .navbar button {
   background-color: transparent;
+  color: #f9f7f7;
   border: none;
   margin: 0;
   height: 50px;
@@ -165,26 +188,44 @@
 
 @media only screen and (max-width: 760px) {
   .navbar {
-    text-align: center;
+    background-color: #56b9c8;
   }
-
-  ul li {
-    display: inherit;
+  .navbar ul {
+    justify-content: space-between;
   }
-  ul button {
-    padding: 5px;
+  .navbar li {
+    display: inline-block;
+    margin: 5px;
+    flex: 0 1 auto;
+  }
+  .navbar li select {
+    font-size: 1.1rem;
+    color: #222222;
+  }
+  .navbar button {
+    font-size: 1.1rem;
+    color: #222222;
   }
 }
 @media (min-device-width: 768px) and (max-device-width: 1024px) {
   .navbar {
-    text-align: center;
+    background-color: #56b9c8;
   }
-
-  ul li {
-    display: inherit;
+  .navbar ul {
+    justify-content: space-between;
   }
-  ul button {
-    padding: 5px;
+  .navbar li {
+    display: inline-block;
+    margin: 5px;
+    flex: 0 1 auto;
+  }
+  .navbar li select {
+    font-size: 1.1rem;
+    color: #222222;
+  }
+  .navbar button {
+    font-size: 1.1rem;
+    color: #222222;
   }
 }
 .select-he {
@@ -243,7 +284,7 @@ table, th, td {
   border-bottom: 1px solid #616161;
   border-collapse: collapse;
   text-align: center;
-  vertical-align: top;
+  vertical-align: center;
   margin: 5px;
   width: 95%;
   padding-top: 10px;
@@ -632,6 +673,11 @@ thead tr:hover {
   color: #616161;
 }
 
+.error-message {
+  color: #9b001afc;
+  padding: 20px;
+}
+
 .edit label {
   font-weight: light;
   font-size: 0.85rem;
@@ -702,6 +748,7 @@ thead tr:hover {
   margin-top: 30px;
   background-color: #888888;
   text-align: center;
+  margin-top: 100px;
 }
 .login-signup button {
   height: 50px;

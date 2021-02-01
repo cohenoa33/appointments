@@ -1,16 +1,16 @@
 import { createContext } from "react";
 
 export const themes = {
-  light: {
+  ltr: {
     textAlign: "left",
     direction: "ltr",
     float: "left",
   },
-  dark: {
+  rtl: {
     textAlign: "right",
     direction: "rtl",
     float: "right",
   },
 };
 
-export const ThemeContext = createContext({ themes: themes.dark });
+export const ThemeContext = createContext({ themes: themes.rtl });

@@ -2,7 +2,7 @@ import React, { useState, useContext } from "react";
 import { LanguageContext } from "../../containers/Language";
 import SignInUpForm from "./SignInUpForm";
 
-function LoginSignup({ handleSignInUp }) {
+function LoginSignup({ handleSignInUp, error }) {
   const initialState = {
     email: "",
     password: "",
@@ -33,7 +33,6 @@ function LoginSignup({ handleSignInUp }) {
     handleSignInUp(user);
     clearState();
   };
-
   return (
     <div className="login-signup">
       <SignInUpForm
@@ -41,6 +40,7 @@ function LoginSignup({ handleSignInUp }) {
         handleChange={handleChange}
         dictionary={dictionary}
         email={email}
+        error={error}
         password={password}
         password_confirmation={password_confirmation}
       />

@@ -1,7 +1,6 @@
 import React from "react";
 
 export default function TableHeader({ dictionary, sort, sortingBy, mobile }) {
-  console.log(sort);
   return (
     <thead>
       <tr>

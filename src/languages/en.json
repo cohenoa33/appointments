@@ -35,6 +35,7 @@
     "delete": "Yes, delete", 
     "confirmDelete": "Are you sure?", 
     "cancel": "Cancel", 
-    "noResults": "There no matching appointments"
+    "noResults": "There no matching appointments", 
+    "print": "Print"
 
 }

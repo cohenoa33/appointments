@@ -7,6 +7,7 @@ export default function SignInUpForm({
   email,
   password,
   password_confirmation,
+  error,
 }) {
   const [toggle, setToggle] = useState(true);
 
@@ -41,6 +42,7 @@ export default function SignInUpForm({
 
   return (
     <div>
+      <div className="error-message">{error ? error : null}</div>
       {toggle ? (
         <div>
           <form className="login-signup-form" onSubmit={(e) => handleSubmit(e)}>

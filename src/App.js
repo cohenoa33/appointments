@@ -10,6 +10,7 @@ import Title from "./components/Appointments/Title";
 import SignOut from "./components/Navbar/SignOut";
 import Navbar from "./components/Navbar/Navbar";
 import AddNewButton from "./components/Navbar/AddNewButton";
+import Footer from "./components/Footer/Footer";
 import { ThemeContext, themes } from "./containers/Theme";
 import api from "./services/api";
 import NewAppointment from "./components/Appointments/NewAppointment";
@@ -18,8 +19,8 @@ function App() {
   const [theme, setTheme] = useState(
     window.localStorage.getItem("user-lang") === "en" ||
       window.localStorage.getItem("user-lang") == null
-      ? themes.light
-      : themes.dark
+      ? themes.ltr
+      : themes.rtl
   );
 
   const [user, setUser] = useState({});
@@ -27,6 +28,7 @@ function App() {
     localStorage.token ? localStorage.token : null
   );
   const [addNew, setAddNew] = useState(false);
+  const [error, setError] = useState();
 
   useEffect(() => {
     if (localStorage.token) {
@@ -34,7 +36,7 @@ function App() {
         if (!data.message) {
           setUser(data.user);
         } else {
-          alert(data.message);
+          setError(data.message);
         }
       });
     }
@@ -45,7 +47,7 @@ function App() {
       ? api.auth.signup(user)
       : api.auth.login(user)
     ).then((data) => {
-      !data.error ? handleAuthResponse(data) : alert(data.error);
+      !data.error ? handleAuthResponse(data) : setError(data.error);
     });
   };
 
@@ -53,6 +55,7 @@ function App() {
     !data.user ? alert(data) : (localStorage.token = data.jwt);
     setUser(data.user);
     setJwt(data.jwt);
+    setError();
   };
   const addNewAppointment = (appointment) => {
     const updateList = user.appointments.concat(appointment);
@@ -82,22 +85,22 @@ function App() {
       changeTheme={() =>
         setTheme(
           window.localStorage.getItem("user-lang") === "en"
-            ? themes.light
-            : themes.dark
+            ? themes.ltr
+            : themes.rtl
         )
       }
     />
   );
 
   const renderLoginSignup = () => (
-    <LoginSignup handleSignInUp={handleSignInUp} />
+    <LoginSignup handleSignInUp={handleSignInUp} error={error} />
   );
 
   const renderAddNewButton = () => (
     <AddNewButton setAddNew={() => setAddNew(!addNew)} />
   );
   const renderSignUp = () => <SignOut setLogout={setLogout} />;
-  console.log(jwt);
+
   return (
     <LanguageProvider>
       <UserProvider user={user}>
@@ -112,7 +115,7 @@ function App() {
             {!jwt ? (
               renderLoginSignup()
             ) : (
-              <div>
+              <div className="content">
                 {!addNew ? (
                   <div>
                     <Title />
@@ -131,6 +134,7 @@ function App() {
                 )}
               </div>
             )}
+            <Footer />
           </div>
         </ThemeContext.Provider>
       </UserProvider>
