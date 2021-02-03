@@ -55,7 +55,7 @@ export default function SignInUpForm({
             </button>
             <br />
           </form>
-          <button onClick={() => setToggle(false)}>
+          <button className="toggle" onClick={() => setToggle(false)}>
             {dictionary.changeToSignup}
           </button>
         </div>
@@ -73,7 +73,7 @@ export default function SignInUpForm({
             </button>
             <br />
           </form>
-          <button onClick={() => setToggle(true)}>
+          <button className="toggle" onClick={() => setToggle(true)}>
             {dictionary.changeToLogin}
           </button>
         </div>

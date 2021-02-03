@@ -130,16 +130,13 @@
 }
 
 .footer {
-  overflow: hidden;
   background-color: #222222;
-  height: 50px;
-  padding: 20px;
-  text-align: center;
-  font-size: 0.8em;
   color: #616161;
-  margin-top: 50px;
+  height: 50px;
+  position: fixed;
   bottom: 0;
   width: 100%;
+  text-align: center;
 }
 
 .navbar {
@@ -385,6 +382,7 @@ thead tr:hover {
   }
   .table-en td:nth-of-type(7):before {
     content: "Additional Information";
+    padding-bottom: 400px;
   }
   .table-en tr {
     display: block;
@@ -466,6 +464,7 @@ thead tr:hover {
   }
   .table-he td:nth-of-type(7):before {
     content: "מידע נוסף";
+    padding-bottom: 400px;
   }
   .table-he tr {
     display: block;
@@ -548,6 +547,7 @@ thead tr:hover {
   }
   .table-en td:nth-of-type(7):before {
     content: "Additional Information";
+    padding-bottom: 400px;
   }
   .table-en tr {
     display: block;
@@ -629,6 +629,7 @@ thead tr:hover {
   }
   .table-he td:nth-of-type(7):before {
     content: "מידע נוסף";
+    padding-bottom: 400px;
   }
   .table-he tr {
     display: block;
@@ -765,6 +766,9 @@ thead tr:hover {
   cursor: pointer;
   color: #ce9f3c;
 }
+.login-signup .toggle {
+  color: #616161;
+}
 
 .login-signup-form {
   width: 90%;
@@ -799,6 +803,9 @@ thead tr:hover {
 .login-signup-form button:hover {
   cursor: pointer;
   color: #ce9f3c;
+}
+.login-signup-form button .toggle {
+  color: #616161;
 }
 
 .submit {
