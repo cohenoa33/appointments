@@ -25,6 +25,15 @@
     "notes" : "הערות", 
     "at": "בשעה", 
     "newAppointment": "הוסף תור חדש",
-    "specialty" : "התמחות"
+    "specialty" : "התמחות",
+    "edit":"עריכה" ,
+    "time": "שעה", 
+    "save": "שמור", 
+    "delete" : "אשר מחיקה", 
+    "confirmDelete": "האם אתה בטוח?", 
+    "cancel": "בטל", 
+    "back" : "חזור", 
+    "noResults": "אין תורים מתאימים להגדרות החיפוש", 
+    "print": "הדפס"
 
 }

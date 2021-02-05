@@ -11,6 +11,20 @@ const filter = (
     <path d="M15 2v2H6.72a2 2 0 01-3.44 0H1V2h2.28a2 2 0 013.44 0H15zm-4 4a2 2 0 00-1.72 1H1v2h8.28a2 2 0 003.45 0H15V7h-2.28A2 2 0 0011 6zm-6 5a2 2 0 00-1.72 1H1v2h2.28a2 2 0 003.45 0H15v-2H6.72A2 2 0 005 11z"></path>
   </svg>
 );
+const add = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 24 24"
+    data-supported-dps="24x24"
+    fill="currentColor"
+    className="mercado-match"
+    width="24"
+    height="24"
+    focusable="false"
+  >
+    <path d="M13.42 12L20 18.58 18.58 20 12 13.42 5.42 20 4 18.58 10.58 12 4 5.42 5.42 4 12 10.58 18.58 4 20 5.42z"></path>
+  </svg>
+);
 
 const edit = (
   <svg
@@ -38,7 +52,10 @@ const deleteIcon = (
     height="24"
     focusable="false"
   >
-    <path d="M20 4v1H4V4a1 1 0 011-1h4a1 1 0 011-1h4a1 1 0 011 1h4a1 1 0 011 1zM5 6h14v13a3 3 0 01-3 3H8a3 3 0 01-3-3zm9 12h1V8h-1zm-5 0h1V8H9z"></path>
+    <path
+      className="delete"
+      d="M20 4v1H4V4a1 1 0 011-1h4a1 1 0 011-1h4a1 1 0 011 1h4a1 1 0 011 1zM5 6h14v13a3 3 0 01-3 3H8a3 3 0 01-3-3zm9 12h1V8h-1zm-5 0h1V8H9z"
+    ></path>
   </svg>
 );
 
@@ -52,11 +69,43 @@ const arrowDown = (
     <path d="M8.8 10.66L14 5.12a.07.07 0 00-.07-.12H2.07a.07.07 0 00-.07.12l5.2 5.54a1.1 1.1 0 001.6 0z"></path>
   </svg>
 );
-let svgs = {
+const v = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    data-supported-dps="16x16"
+    fill="currentColor"
+    className="mercado-match"
+    width="16"
+    height="16"
+    focusable="false"
+  >
+    <path d="M12.57 2H15L6 15l-5-5 1.41-1.41 3.31 3.3z"></path>
+  </svg>
+);
+
+const close = (
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    viewBox="0 0 16 16"
+    data-supported-dps="16x16"
+    fill="currentColor"
+    className="mercado-match"
+    width="16"
+    height="16"
+    focusable="false"
+  >
+    <path d="M13.42 12L20 18.58 18.58 20 12 13.42 5.42 20 4 18.58 10.58 12 4 5.42 5.42 4 12 10.58 18.58 4 20 5.42z"></path>
+  </svg>
+);
+let svg = {
   edit: edit,
   filter: filter,
   deleteIcon: deleteIcon,
   arrowDown: arrowDown,
+  close: close,
+  add: add,
+  v: v,
 };
 
-export default svgs;
+export default svg;

@@ -1,0 +1,38 @@
+.login-signup
+    width: 70%
+    max-width: 700px
+    margin: 0 auto
+    padding: 30px
+    margin-top: 30px
+    background-color: $secondary-background
+    text-align: center
+    margin-top: 100px
+    button
+        +primary-button(50px, 150px, 0.85em, normal, $table-header)
+        margin-top: 30px
+    .toggle
+        color: $secondary
+
+.login-signup-form
+    width: 90%
+    margin: 0 auto
+    padding: 10px
+    background-color: $background
+
+    input[type="text"]
+        width: 80%
+        margin: 0 auto
+        margin-top: 10px
+        margin-bottom: 10px
+
+    input[type="password"]
+        width: 80%
+        margin: 0 auto
+        margin-top: 3px
+        margin-bottom: 3px
+    button
+        +primary-button(50px, 150px, 1.15em, bold, $text-button)
+        margin-top: 20px
+        margin-bottom: 20px
+        .toggle
+            color: $secondary

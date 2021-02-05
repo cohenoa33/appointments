@@ -1,0 +1,44 @@
+
+table, th, td
+    border-top: $border
+    border-bottom: $border
+    border-collapse: collapse
+    text-align: center
+    vertical-align: center
+    margin: 5px
+    width: 95%
+    padding-top: 10px
+    padding-right: 0
+    padding-left: 0
+    table-layout: fixed
+    margin: 0 auto
+
+table
+    border: $border
+th
+    height: 100px
+    background-color: $table-header
+tr
+    background-color: $table
+    &:hover
+        background-color: $row-hover
+
+.first-column
+    width: 2.75em
+
+thead tr
+    background-color: $table-header
+    &:hover
+        background-color: $table-header
+
+@media only screen and (max-width: 760px)
+    .table-en
+        +responsive-table(left, -9999px, 0, 40%, 10px, 0, 10px, "Date", "Doctor", "Patient Name", "Address", "Need Insurance", "Approved By Insurance", "Additional Information")
+    .table-he
+        +responsive-table(right, 0, -9999px, 10px, 40%, 10px, 0, "תאריך", "רופא", "עבור מי", "כתובת", "ממתין לאישור", "אושר", "מידע נוסף")
+
+@media (min-device-width: 768px) and (max-device-width: 1024px)
+    .table-en
+        +responsive-table(left, -9999px, 0, 40%, 10px, 0, 10px, "Date", "Doctor", "Patient Name", "Address", "Need Insurance", "Approved By Insurance", "Additional Information")
+    .table-he
+        +responsive-table(right, 0, -9999px, 10px, 40%, 10px, 0, "תאריך", "רופא", "עבור מי", "כתובת", "ממתין לאישור", "אושר", "מידע נוסף")

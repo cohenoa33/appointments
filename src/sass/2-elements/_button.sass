@@ -1,9 +1,27 @@
-.hidden-button-en
-    +table-header()
-.hidden-button-he
-    +table-header()
-    color: $secondary
 
+.vertical-buttons
+    display: inline-grid
+.hidden-button
+    +table-header()
+    +button-hover($hover)
+.hidden-button-no-sorting
+    +table-header()
 .sorting
     +table-header()
     color: $clicked
+.x-btn
+    +table-header()
+    +button-hover($secondary)
+.button-save
+    +button-edit-save($text-button)
+.button-cancel
+    +button-edit-save($secondary)
+.button-delete
+    +button-edit-save($hazard)
+.svg-button
+    border: none
+    background-color: transparent
+    margin: 0
+    padding: 0
+    height: auto
+    width: auto

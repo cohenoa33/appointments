@@ -1,0 +1,21 @@
+=select($position)
+    border: $border
+    border-radius: 4px
+    display: inline-block
+    line-height: 1.5em
+    width: 300px
+    padding: 5px
+    margin: 0 auto
+    background: url(http://cdn1.iconfinder.com/data/icons/cc_mono_icon_set/blacks/16x16/br_down.png) #ddd
+    background-position: right
+    background-repeat: no-repeat
+    -webkit-appearance: none
+    background-position-x: $position
+    &:-moz-focusring
+        color: transparent
+        text-shadow: 0 0 0 #000
+
+.select-he
+    +select(10px)
+.select-en
+    +select(270px)

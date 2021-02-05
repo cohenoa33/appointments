@@ -7,6 +7,7 @@ export default function SignInUpForm({
   email,
   password,
   password_confirmation,
+  error,
 }) {
   const [toggle, setToggle] = useState(true);
 
@@ -41,9 +42,10 @@ export default function SignInUpForm({
 
   return (
     <div>
+      <div className="error-message">{error ? error : null}</div>
       {toggle ? (
         <div>
-          <form onSubmit={(e) => handleSubmit(e)}>
+          <form className="login-signup-form" onSubmit={(e) => handleSubmit(e)}>
             {emailInput}
             <br />
             {passwordInput}
@@ -53,13 +55,13 @@ export default function SignInUpForm({
             </button>
             <br />
           </form>
-          <button onClick={() => setToggle(false)}>
+          <button className="toggle" onClick={() => setToggle(false)}>
             {dictionary.changeToSignup}
           </button>
         </div>
       ) : (
         <div>
-          <form onSubmit={(e) => handleSubmit(e)}>
+          <form className="login-signup-form" onSubmit={(e) => handleSubmit(e)}>
             {emailInput}
             <br />
             {passwordInput}
@@ -71,7 +73,7 @@ export default function SignInUpForm({
             </button>
             <br />
           </form>
-          <button onClick={() => setToggle(true)}>
+          <button className="toggle" onClick={() => setToggle(true)}>
             {dictionary.changeToLogin}
           </button>
         </div>
