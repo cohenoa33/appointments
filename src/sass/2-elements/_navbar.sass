@@ -1,4 +1,4 @@
-.navbar
+=nevbar-general($padding-top)
     background-color: $primary
     top: 0
     position: fixed
@@ -9,7 +9,7 @@
         padding: 0
         width: 100%
         height: 80px
-        padding-top: 10px
+        padding-top: $padding-top
         padding-bottom: 20px
 
     li
@@ -22,6 +22,8 @@
             border: none
             font-size: 1.2rem
             color: $background
+            &:hover
+                color: $hover
 
     button
         background-color: transparent
@@ -33,6 +35,14 @@
         width: auto
         font-size: 1.1em
         +button-hover($clicked)
+        path
+            fill: $background
+
+.navbar-lang-only
+    +nevbar-general(20px)
+
+.navbar
+    +nevbar-general(10px)
 
 =responsive-nevbar()
     .navbar

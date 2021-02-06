@@ -11,21 +11,25 @@ export default function Filter({ setFilter }) {
   };
 
   return (
-    <label className="filter-label">
-      <select
-        value={selected}
-        onChange={filter}
-        className={helpers.class("select", userLanguage)}
-      >
-        <option value="future">{dictionary.nextAppointments}</option>
-        <option value="past_only">{dictionary.archive}</option>
-        <option value="need_insurance">
-          {" "}
-          {dictionary.needInsuranceApproval}
-        </option>
-        <option value="insurance_done">{dictionary.approvedByInsurance}</option>
-        <option value="all">{dictionary.allAppointments}</option>
-      </select>
-    </label>
+    <>
+      <label className="filter-label">
+        <select
+          value={selected}
+          onChange={filter}
+          className={helpers.class("select", userLanguage)}
+        >
+          <option value="future">{dictionary.nextAppointments}</option>
+          <option value="past_only">{dictionary.archive}</option>
+          <option value="need_insurance">
+            {" "}
+            {dictionary.needInsuranceApproval}
+          </option>
+          <option value="insurance_done">
+            {dictionary.approvedByInsurance}
+          </option>
+          <option value="all">{dictionary.allAppointments}</option>
+        </select>
+      </label>
+    </>
   );
 }

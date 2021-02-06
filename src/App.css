@@ -18,6 +18,7 @@
   color: #ce9f3c;
   font-weight: bolder;
   cursor: pointer;
+  fill: #ce9f3c;
 }
 
 .hidden-button-no-sorting {
@@ -40,7 +41,7 @@
   padding-top: 0;
   margin-top: -1px;
   vertical-align: center;
-  color: #ce9f3c;
+  color: #616161;
 }
 
 .x-btn {
@@ -58,6 +59,7 @@
   color: #616161;
   font-weight: bolder;
   cursor: pointer;
+  fill: #616161;
 }
 
 .button-save {
@@ -139,6 +141,57 @@
   text-align: center;
 }
 
+.navbar-lang-only {
+  background-color: #222222;
+  top: 0;
+  position: fixed;
+  width: 100%;
+  z-index: 1;
+}
+.navbar-lang-only ul {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 80px;
+  padding-top: 20px;
+  padding-bottom: 20px;
+}
+.navbar-lang-only li {
+  display: inline-block;
+  margin-left: 20px;
+  margin-right: 20px;
+  font-size: 1.15rem;
+}
+.navbar-lang-only li select {
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+  color: #f9f7f7;
+}
+.navbar-lang-only li select:hover {
+  color: #ce9f3c;
+}
+.navbar-lang-only button {
+  background-color: transparent;
+  color: #f9f7f7;
+  border: none;
+  margin: 0;
+  height: 50px;
+  padding: 5px;
+  width: auto;
+  font-size: 1.1em;
+}
+.navbar-lang-only button:hover {
+  outline: 0;
+  color: #ce9f3c;
+  font-weight: bolder;
+  cursor: pointer;
+  fill: #ce9f3c;
+}
+.navbar-lang-only button path {
+  fill: #f9f7f7;
+}
+
 .navbar {
   background-color: #222222;
   top: 0;
@@ -166,6 +219,9 @@
   font-size: 1.2rem;
   color: #f9f7f7;
 }
+.navbar li select:hover {
+  color: #ce9f3c;
+}
 .navbar button {
   background-color: transparent;
   color: #f9f7f7;
@@ -181,6 +237,10 @@
   color: #ce9f3c;
   font-weight: bolder;
   cursor: pointer;
+  fill: #ce9f3c;
+}
+.navbar button path {
+  fill: #f9f7f7;
 }
 
 @media only screen and (max-width: 760px) {
@@ -226,10 +286,10 @@
   }
 }
 .select-he {
+  line-height: 1.5em;
   border: 1px solid #616161;
   border-radius: 4px;
   display: inline-block;
-  line-height: 1.5em;
   width: 300px;
   padding: 5px;
   margin: 0 auto;
@@ -245,10 +305,10 @@
 }
 
 .select-en {
+  line-height: 1.5em;
   border: 1px solid #616161;
   border-radius: 4px;
   display: inline-block;
-  line-height: 1.5em;
   width: 300px;
   padding: 5px;
   margin: 0 auto;
@@ -267,6 +327,14 @@ path {
   fill: #616161;
 }
 path:hover {
+  fill: #ce9f3c;
+  cursor: pointer;
+}
+
+.print path {
+  fill: #f9f7f7;
+}
+.print path:hover {
   fill: #ce9f3c;
   cursor: pointer;
 }
@@ -702,7 +770,7 @@ thead tr:hover {
 }
 
 .filter {
-  display: block;
+  display: flex;
   text-align: center;
   padding-bottom: 20px;
   margin: auto;
@@ -972,6 +1040,11 @@ thead tr:hover {
     width: 100%;
   }
 }
+.print:hover {
+  fill: #ce9f3c;
+  cursor: pointer;
+}
+
 * {
   font-family: Heebo;
   box-sizing: border-box;
