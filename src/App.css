@@ -835,7 +835,11 @@ thead tr:hover {
   color: #ce9f3c;
 }
 .login-signup .toggle {
-  color: #ce9f3c;
+  background-color: #ce9f3c;
+  color: #616161;
+}
+.login-signup .toggle:hover {
+  color: #222222;
 }
 
 .login-signup-form {

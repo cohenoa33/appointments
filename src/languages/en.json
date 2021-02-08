@@ -36,5 +36,10 @@
   "confirmDelete": "Are you sure?",
   "cancel": "Cancel",
   "noResults": "There no matching appointments",
-  "print": "Print"
+  "print": "Print",
+  "checkPassword": "Wrong password, Please try again",
+  "checkEmail": "Wrong email, Please try again",
+  "emailTaken": "This email address already in use",
+  "checkPasswordConfirmation": "Password confirmation doesn't match",
+  "error": "Something went wrong"
 }
