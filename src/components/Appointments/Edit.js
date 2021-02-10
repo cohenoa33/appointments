@@ -8,7 +8,7 @@ export default function Edit({
   edit,
   setEdit,
   updateAppointmentsList,
-  mobile,
+  mobile
 }) {
   const [updatedAppointment, setUpdatedAppointment] = useState(appointment);
 
@@ -20,11 +20,9 @@ export default function Edit({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    let isValid = helpers.validate(updatedAppointment);
-    if (isValid !== true) {
-      alert(`${isValid}`);
-      setUpdatedAppointment(appointment);
-    } else {
+
+    let valid = helpers.validate(updatedAppointment, dictionary);
+    if (valid === true) {
       api.appointment.update(updatedAppointment).then((data) => {
         if (!data.error) {
           updateAppointmentsList(data, "edit");
@@ -33,11 +31,16 @@ export default function Edit({
           alert(data.error);
         }
       });
+    } else {
+      alert(`${valid}`);
+      setUpdatedAppointment(appointment);
     }
   };
+
   const checkNull = (value) => {
     return value === null ? "" : value;
   };
+
   const renderButtons = () => (
     <div className="buttons">
       <button

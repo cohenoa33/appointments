@@ -9,7 +9,7 @@ export default function NewAppointment({
   user,
   appointment,
   addNew,
-  setAddNew,
+  setAddNew
 }) {
   const initialState = appointment
     ? appointment
@@ -23,7 +23,7 @@ export default function NewAppointment({
         symptoms: "",
         appointment_notes: "",
         need_insurance: true,
-        insurance_approval: false,
+        insurance_approval: false
       };
 
   const { dictionary, userLanguage } = useContext(LanguageContext);
@@ -38,9 +38,9 @@ export default function NewAppointment({
       symptoms,
       appointment_notes,
       need_insurance,
-      insurance_approval,
+      insurance_approval
     },
-    setState,
+    setState
   ] = useState(initialState);
 
   const handleChange = (e) => {
@@ -54,7 +54,6 @@ export default function NewAppointment({
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     let appointment = {
       doctor,
       date,
@@ -66,8 +65,14 @@ export default function NewAppointment({
       appointment_notes,
       need_insurance,
       insurance_approval,
-      user_id: user,
+      user_id: user
     };
+    let valid = helpers.validate(appointment, dictionary);
+
+    valid === true ? fetchAppointment(appointment) : alert(valid);
+  };
+
+  const fetchAppointment = (appointment) => {
     api.appointment.add(appointment).then((data) => {
       if (!data.error) {
         addNewAppointment(data);

@@ -39,5 +39,8 @@
   "checkEmail": "כתובת המייל שגויה, נסה שנית",
   "emailTaken": "כתובת המייל שהקלדת כבר בשימוש",
   "checkPasswordConfirmation": "אימות הסיסמא אינו תואם את הסיסמא",
-  "error": "אירעה שגיאה"
+  "error": "אירעה שגיאה",
+  "minTwoChar": "צריך להכיל 2 אותיות לפחות",
+  "includeDate": "יש לבחור תאריך",
+  "includeTime": "יש לבחור שעה כולל AM-PM"
 }

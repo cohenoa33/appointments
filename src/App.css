@@ -191,6 +191,9 @@
 .navbar-lang-only button path {
   fill: #f9f7f7;
 }
+.navbar-lang-only button:hover path {
+  fill: #ce9f3c;
+}
 
 .navbar {
   background-color: #222222;
@@ -241,6 +244,9 @@
 }
 .navbar button path {
   fill: #f9f7f7;
+}
+.navbar button:hover path {
+  fill: #ce9f3c;
 }
 
 @media only screen and (max-width: 760px) {
