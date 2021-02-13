@@ -1,4 +1,5 @@
 import React from "react";
+import Print from "./Print";
 
 export default function Navbar({
   renderLanguages,
@@ -6,13 +7,26 @@ export default function Navbar({
   renderAddNewButton,
   jwt,
 }) {
-  return (
+  const renderNavAfterLogin = () => (
     <div className="navbar">
       <ul>
-        {jwt ? <li>{renderAddNewButton()}</li> : null}
+        <li>{renderAddNewButton()}</li>
+        <li>
+          <Print />
+        </li>
         <li> {renderLanguages()}</li>
-        {jwt ? <li>{renderSignUp()}</li> : null}
+        <li>{renderSignUp()}</li>
       </ul>
     </div>
   );
+
+  const renderNav = () => (
+    <div className="navbar-lang-only">
+      <ul>
+        <li> {renderLanguages()}</li>
+      </ul>
+    </div>
+  );
+
+  return <>{jwt ? renderNavAfterLogin() : renderNav()}</>;
 }
