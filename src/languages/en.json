@@ -43,9 +43,9 @@
   "emailTaken": "You already have an account for this email address! Click on the Sign in option below.",
   "checkPasswordConfirmation": "Passwords don't match, please try again.",
   "error": "Something went wrong",
-  "minTwoChar": "must contain a minimum of 2 letters.",
-  "includeDate": "please choose a valid date.",
-  "includeTime": "please choose hour, minutes and AM-PM.",
+  "minTwoChar": "must contain a minimum of 2 letters",
+  "includeDate": "Please choose a valid date",
+  "includeTime": "Please choose hour, minutes and AM-PM",
   "invalidPassword": "Password must be at least 6 characters and to include one lowercase letter, one uppercase letter and one special character.",
   "credit": "Noa Rabin-Cohen @All rights reserved."
 }
