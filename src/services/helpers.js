@@ -1,25 +1,32 @@
 const validate = (appointment, dictionary) => {
-  let lengthError = "",
+  const minTwoChar = ` ${dictionary.minTwoChar}. `;
+  let message = "",
     date = "",
     time = "";
+  if (appointment.doctor === "") {
+    message = `${dictionary.doctor}, `;
+  }
+  if (appointment.patient === "") {
+    message = message + `${dictionary.patientName}, `;
+  }
+  if (appointment.location === "") {
+    message = message + `${dictionary.address}, `;
+  }
+  if (!appointment.date || !validateDate(appointment.date)) {
+    date = `${dictionary.includeDate}. `;
+  }
+  if (!appointment.time) {
+    time = `${dictionary.includeTime}. `;
+  }
 
-  if (appointment.doctor && appointment.doctor.length <= 1)
-    lengthError = lengthError + `${dictionary.doctor}, `;
-  if (appointment.patient && appointment.patient.length <= 1)
-    lengthError = lengthError + `${dictionary.patientName}, `;
-  if (appointment.location && appointment.location.length <= 1)
-    lengthError = lengthError + `${dictionary.address}, `;
-
-  if (lengthError)
-    lengthError = lengthError.slice(0, -2) + ` ${dictionary.minTwoChar}`;
-
-  if (!appointment.date || !validateDate(appointment.date))
-    date = `${dictionary.includeDate}`;
-  if (!appointment.time) time = `${dictionary.includeTime}`;
-
-  return !lengthError && !date && !time
+  return !time && !date && !message
     ? true
-    : lengthError + " " + date + " " + time;
+    : createErrorMessage(date, time, message, minTwoChar);
+};
+const createErrorMessage = (date, time, message, minTwoChar) => {
+  return !message
+    ? (date + time).slice(0, -2) + "."
+    : message.slice(0, -2) + ":" + minTwoChar + date + time;
 };
 
 const validateDate = (date) => {

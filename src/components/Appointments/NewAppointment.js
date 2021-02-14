@@ -67,6 +67,7 @@ export default function NewAppointment({
       insurance_approval,
       user_id: user
     };
+
     let valid = helpers.validate(appointment, dictionary);
 
     valid === true ? fetchAppointment(appointment) : alert(valid);

@@ -3,24 +3,22 @@ import { Text } from "../../containers/Language";
 
 export default function Error({ error }) {
   const errorToPrint = (error) => {
-    // debugger;
-    console.log(typeof error);
+    // errors for login
     if (typeof error === "string") {
-      return error === "Please check your password"
-        ? "checkPassword"
-        : "checkEmail";
-    }
-    if (typeof error === "object") {
-      if (error.length === 1) {
-        return error[0] === "Email has already been taken"
-          ? "emailTaken"
-          : "checkPasswordConfirmation";
-      }
-      if (error.length === 2) {
-        return "emailTaken";
+      if (error === "Please check your password") return "checkPassword";
+      if (error === "Please check your email") return "checkEmail";
+      else {
+        return "checkEmailPassword";
       }
     }
+    // errors for signup
 
+    if (error.length > 0) {
+      if (error.includes("Email has already been taken")) return "emailTaken";
+      if (error.includes("Password is invalid")) return "invalidPassword";
+      if (error.includes("Password confirmation doesn't match Password"))
+        return "checkPasswordConfirmation";
+    }
     return "error";
   };
 
