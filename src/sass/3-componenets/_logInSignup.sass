@@ -3,39 +3,40 @@
     max-width: 700px
     margin: 0 auto
     padding: 30px
-    margin-top: 30px
     background-color: $secondary-background
     text-align: center
     margin-top: 100px
+    border-radius: 4px
     button
         +primary-button(50px, 150px, 0.85em, normal, $secondary)
-        margin-top: 30px
+        margin-top: 20px
+        width: 80%
+        margin-bottom: 20px
     .toggle
-        background-color: $hover
-        color: $secondary
+        background-color: $secondary-background
+        font-size: 1.10em
         &:hover
-            color: $primary
+            color: $hover
 
 .login-signup-form
-    width: 90%
     margin: 0 auto
-    padding: 10px
+    padding: 30px
+    border-radius: 4px
     background-color: $background
 
-    input[type="text"]
-        width: 80%
+    input[type="text"],  input[type="password"]
+        width: 90%
+        max-width: 300px
         margin: 0 auto
-        margin-top: 10px
-        margin-bottom: 10px
-
-    input[type="password"]
-        width: 80%
-        margin: 0 auto
-        margin-top: 3px
-        margin-bottom: 3px
+        line-height: 1.75em
+        margin-top: 5px
+        margin-bottom: 5px
     button
         +primary-button(50px, 150px, 1.15em, bold, $text-button)
         margin-top: 20px
         margin-bottom: 20px
         .toggle
             color: $secondary
+@media only screen and (max-width: 500px)
+    .login-signup
+        width: 90%

@@ -111,6 +111,7 @@
 }
 
 .container {
+  min-height: 100%;
   width: 100%;
 }
 
@@ -131,14 +132,19 @@
   padding-top: 80px;
 }
 
-.footer {
-  background-color: #222222;
+#footer {
+  background-image: linear-gradient(transparent, #222222 5%);
   color: #616161;
   height: 50px;
+  margin-top: 100px;
   position: fixed;
   bottom: 0;
+  border-top: none;
   width: 100%;
+  font-size: 85%;
+  padding-top: 15px;
   text-align: center;
+  border-radius: none;
 }
 
 .navbar-lang-only {
@@ -269,6 +275,9 @@
     font-size: 1.1rem;
     color: #222222;
   }
+  .navbar button path {
+    fill: #222222;
+  }
 }
 @media (min-device-width: 768px) and (max-device-width: 1024px) {
   .navbar {
@@ -289,6 +298,9 @@
   .navbar button {
     font-size: 1.1rem;
     color: #222222;
+  }
+  .navbar button path {
+    fill: #222222;
   }
 }
 .select-he {
@@ -457,6 +469,8 @@ thead tr:hover {
   .table-en td:nth-of-type(7):before {
     content: "Additional Information";
     padding-bottom: 400px;
+    padding-left: 10px;
+    padding-right: 0;
   }
   .table-en tr {
     display: block;
@@ -539,6 +553,8 @@ thead tr:hover {
   .table-he td:nth-of-type(7):before {
     content: "מידע נוסף";
     padding-bottom: 400px;
+    padding-left: 0;
+    padding-right: 10px;
   }
   .table-he tr {
     display: block;
@@ -622,6 +638,8 @@ thead tr:hover {
   .table-en td:nth-of-type(7):before {
     content: "Additional Information";
     padding-bottom: 400px;
+    padding-left: 0;
+    padding-right: 0;
   }
   .table-en tr {
     display: block;
@@ -704,6 +722,8 @@ thead tr:hover {
   .table-he td:nth-of-type(7):before {
     content: "מידע נוסף";
     padding-bottom: 400px;
+    padding-left: 0;
+    padding-right: 0;
   }
   .table-he tr {
     display: block;
@@ -820,10 +840,10 @@ thead tr:hover {
   max-width: 700px;
   margin: 0 auto;
   padding: 30px;
-  margin-top: 30px;
   background-color: #888888;
   text-align: center;
   margin-top: 100px;
+  border-radius: 4px;
 }
 .login-signup button {
   height: 50px;
@@ -834,37 +854,35 @@ thead tr:hover {
   border: none;
   border-radius: 4px;
   padding: 0px;
-  margin-top: 30px;
+  margin-top: 20px;
+  width: 80%;
+  margin-bottom: 20px;
 }
 .login-signup button:hover {
   cursor: pointer;
   color: #ce9f3c;
 }
 .login-signup .toggle {
-  background-color: #ce9f3c;
-  color: #616161;
+  background-color: #888888;
+  font-size: 1.1em;
 }
 .login-signup .toggle:hover {
-  color: #222222;
+  color: #ce9f3c;
 }
 
 .login-signup-form {
-  width: 90%;
   margin: 0 auto;
-  padding: 10px;
+  padding: 30px;
+  border-radius: 4px;
   background-color: #f9f7f7;
 }
-.login-signup-form input[type=text] {
-  width: 80%;
+.login-signup-form input[type=text], .login-signup-form input[type=password] {
+  width: 90%;
+  max-width: 300px;
   margin: 0 auto;
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-.login-signup-form input[type=password] {
-  width: 80%;
-  margin: 0 auto;
-  margin-top: 3px;
-  margin-bottom: 3px;
+  line-height: 1.75em;
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .login-signup-form button {
   height: 50px;
@@ -886,6 +904,11 @@ thead tr:hover {
   color: #616161;
 }
 
+@media only screen and (max-width: 500px) {
+  .login-signup {
+    width: 90%;
+  }
+}
 .submit {
   text-align: center;
 }

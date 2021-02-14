@@ -1,6 +1,7 @@
 import moment from "moment";
 
 const convertTime = (time) => {
+  if (!time) return "00:00 AM";
   let hour = time.split(":")[0];
   let ampm = hour >= 12 ? "PM" : "AM";
   if (hour > 12) hour = hour - 12;
@@ -18,7 +19,7 @@ const convertDate = (date) => {
     Wednesday: "רביעי",
     Thursday: "חמישי",
     Friday: "שישי",
-    Saturday: "שבת",
+    Saturday: "שבת"
   };
 
   const months = {
@@ -33,7 +34,7 @@ const convertDate = (date) => {
     September: "ספטמבר",
     October: "אוקטובר",
     November: "נובמבר",
-    December: "דצמבר",
+    December: "דצמבר"
   };
   let dateToConvert = moment(date).format("dddd, MMMM Do YYYY");
   let dayWeek = dateToConvert.split(",")[0];
@@ -47,7 +48,7 @@ const convertDate = (date) => {
 
 let convertors = {
   convertTime: convertTime,
-  convertDate: convertDate,
+  convertDate: convertDate
 };
 
 export default convertors;

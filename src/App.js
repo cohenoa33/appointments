@@ -29,6 +29,7 @@ function App() {
   );
   const [addNew, setAddNew] = useState(false);
   const [error, setError] = useState();
+  const [footer, setFooter] = useState(true);
 
   useEffect(() => {
     if (localStorage.token) {
@@ -36,6 +37,7 @@ function App() {
         if (!data.message) {
           setUser(data.user);
         } else {
+          debugger;
           setError(data.message);
         }
       });
@@ -134,7 +136,7 @@ function App() {
                 )}
               </div>
             )}
-            <Footer />
+            {footer ? <Footer /> : null}
           </div>
         </ThemeContext.Provider>
       </UserProvider>
