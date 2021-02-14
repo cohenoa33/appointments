@@ -123,11 +123,6 @@
   margin-top: 15px;
 }
 
-.additional-info {
-  margin: 0;
-  padding: 0;
-}
-
 .content {
   padding-top: 80px;
 }
@@ -469,8 +464,6 @@ thead tr:hover {
   .table-en td:nth-of-type(7):before {
     content: "Additional Information";
     padding-bottom: 400px;
-    padding-left: 10px;
-    padding-right: 0;
   }
   .table-en tr {
     display: block;
@@ -553,8 +546,6 @@ thead tr:hover {
   .table-he td:nth-of-type(7):before {
     content: "מידע נוסף";
     padding-bottom: 400px;
-    padding-left: 0;
-    padding-right: 10px;
   }
   .table-he tr {
     display: block;
@@ -638,8 +629,6 @@ thead tr:hover {
   .table-en td:nth-of-type(7):before {
     content: "Additional Information";
     padding-bottom: 400px;
-    padding-left: 0;
-    padding-right: 0;
   }
   .table-en tr {
     display: block;
@@ -722,8 +711,6 @@ thead tr:hover {
   .table-he td:nth-of-type(7):before {
     content: "מידע נוסף";
     padding-bottom: 400px;
-    padding-left: 0;
-    padding-right: 0;
   }
   .table-he tr {
     display: block;

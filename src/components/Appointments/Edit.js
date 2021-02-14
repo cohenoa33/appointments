@@ -101,6 +101,7 @@ export default function Edit({
       </td>
       <td>
         <label>{dictionary.patientName} </label>
+        <br />
         <input
           type="text"
           name="patient"
@@ -110,6 +111,7 @@ export default function Edit({
       </td>
       <td>
         <label>{dictionary.address} </label>
+        <br />
         <input
           type="text"
           name="location"
@@ -135,6 +137,7 @@ export default function Edit({
       </td>
       <td>
         <label>{dictionary.additionalInformation}</label>
+        <br />
         <textarea
           type="text"
           name="appointment_notes"

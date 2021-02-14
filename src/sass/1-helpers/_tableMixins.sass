@@ -1,4 +1,4 @@
-=responsive-table($side,  $nth-of-type7-padding-l, $nth-of-type7-padding-r, $th-tr-l, $th-tr-r, $td-padding-l, $td-padding-r, $before-td-padding-l, $before-td-padding-r, $date, $doctor, $patientName, $address, $needInsurance, $approvedByInsurance, $additionalInformation)
+=responsive-table($side, $th-tr-l, $th-tr-r, $td-padding-l, $td-padding-r, $before-td-padding-l, $before-td-padding-r, $date, $doctor, $patientName, $address, $needInsurance, $approvedByInsurance, $additionalInformation)
     table
         +table-layout($side)
 
@@ -63,8 +63,6 @@
             &:before
                 content: $additionalInformation
                 padding-bottom: 400px
-                padding-left: $nth-of-type7-padding-l
-                padding-right: $nth-of-type7-padding-r
 
     tr
         +table-layout($side)

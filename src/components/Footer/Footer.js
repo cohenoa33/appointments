@@ -1,7 +1,10 @@
 import React from "react";
+import { Text } from "../../containers/Language";
 
 export default function Footer() {
   return (
-    <footer id="footer">Created by Noa Rabin-Cohen @All rights reserved</footer>
+    <footer id="footer">
+      <Text tid="credit" />
+    </footer>
   );
 }
