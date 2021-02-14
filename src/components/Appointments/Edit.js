@@ -53,7 +53,7 @@ export default function Edit({
         className={helpers.class("button", "cancel")}
         onClick={() => setEdit(!edit)}
       >
-        {dictionary.back}
+        {dictionary.cancel}
       </button>
     </div>
   );
