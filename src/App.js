@@ -29,7 +29,6 @@ function App() {
   );
   const [addNew, setAddNew] = useState(false);
   const [error, setError] = useState();
-  const [footer, setFooter] = useState(true);
 
   useEffect(() => {
     if (localStorage.token) {
@@ -136,7 +135,7 @@ function App() {
                 )}
               </div>
             )}
-            {footer ? <Footer /> : null}
+            <Footer />
           </div>
         </ThemeContext.Provider>
       </UserProvider>

@@ -8,7 +8,7 @@ export default function AddNewButton({ setAddNew }) {
 
   return (
     <button onClick={setAddNew} className="add-new">
-      {element} <Text tid="newAppointment" />
+      {element} <Text tid="add" />
     </button>
   );
 }

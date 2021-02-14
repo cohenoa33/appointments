@@ -123,7 +123,7 @@ export default function NewAppointment({
     <div className="new-appointment-container">
       <div className={helpers.class("new-appointment-form", userLanguage)}>
         <button className="x-btn" onClick={() => setAddNew(!addNew)}>
-          {dictionary.back}
+          {dictionary.cancel}
         </button>
         <br />
         <h1>
