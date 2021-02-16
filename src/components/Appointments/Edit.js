@@ -11,6 +11,7 @@ export default function Edit({
   mobile
 }) {
   const [updatedAppointment, setUpdatedAppointment] = useState(appointment);
+  const [error, setError] = useState(true);
 
   const handleChange = (e) => {
     const value =
@@ -28,11 +29,11 @@ export default function Edit({
           updateAppointmentsList(data, "edit");
           setEdit(!edit);
         } else {
-          alert(data.error);
+          setError(data.error);
         }
       });
     } else {
-      alert(`${valid}`);
+      setError(valid);
       setUpdatedAppointment(appointment);
     }
   };
@@ -59,102 +60,109 @@ export default function Edit({
   );
 
   return (
-    <tr className="edit">
-      {!mobile ? <td> {renderButtons()}</td> : null}
-      <td>
-        <label>{dictionary.date} </label>
-        <br />
-        <input
-          type="date"
-          name="date"
-          value={updatedAppointment.date}
-          onChange={handleChange}
-        />
-        <br />
-        <label>{dictionary.time} </label>
-        <br />
-        <input
-          type="time"
-          name="time"
-          value={updatedAppointment.time}
-          onChange={handleChange}
-        />
-      </td>
-      <td>
-        <label>{dictionary.doctor} </label>
-        <br />
-        <input
-          type="text"
-          name="doctor"
-          value={checkNull(updatedAppointment.doctor)}
-          onChange={handleChange}
-        />
-        <br />
-        <label>{dictionary.specialty} </label>
-        <br />
-        <input
-          type="text"
-          name="specialty"
-          value={checkNull(updatedAppointment.specialty)}
-          onChange={handleChange}
-        />
-      </td>
-      <td>
-        <label>{dictionary.patientName} </label>
-        <br />
-        <input
-          type="text"
-          name="patient"
-          value={updatedAppointment.patient}
-          onChange={handleChange}
-        />
-      </td>
-      <td>
-        <label>{dictionary.address} </label>
-        <br />
-        <input
-          type="text"
-          name="location"
-          value={updatedAppointment.location}
-          onChange={handleChange}
-        />
-      </td>
-      <td>
-        <input
-          name="need_insurance"
-          type="checkbox"
-          checked={updatedAppointment.need_insurance}
-          onChange={handleChange}
-        />
-      </td>
-      <td>
-        <input
-          name="insurance_approval"
-          type="checkbox"
-          checked={updatedAppointment.insurance_approval}
-          onChange={handleChange}
-        />
-      </td>
-      <td>
-        <label>{dictionary.additionalInformation}</label>
-        <br />
-        <textarea
-          type="text"
-          name="appointment_notes"
-          value={checkNull(updatedAppointment.appointment_notes)}
-          onChange={handleChange}
-        />
-        <br />
-        <label>{checkNull(dictionary.symptoms)}</label>
-        <br />
-        <textarea
-          type="text"
-          name="symptoms"
-          value={checkNull(updatedAppointment.symptoms)}
-          onChange={handleChange}
-        />
-        {mobile ? renderButtons() : null}
-      </td>
-    </tr>
+    <>
+      <tr className="edit">
+        {!mobile ? <td> {renderButtons()}</td> : null}
+        <td>
+          <label>{dictionary.date} </label>
+          <br />
+          <input
+            type="date"
+            name="date"
+            value={updatedAppointment.date}
+            onChange={handleChange}
+          />
+          <br />
+          <label>{dictionary.time} </label>
+          <br />
+          <input
+            type="time"
+            name="time"
+            value={updatedAppointment.time}
+            onChange={handleChange}
+          />
+        </td>
+        <td>
+          <label>{dictionary.doctor} </label>
+          <br />
+          <input
+            type="text"
+            name="doctor"
+            value={checkNull(updatedAppointment.doctor)}
+            onChange={handleChange}
+          />
+          <br />
+          <label>{dictionary.specialty} </label>
+          <br />
+          <input
+            type="text"
+            name="specialty"
+            value={checkNull(updatedAppointment.specialty)}
+            onChange={handleChange}
+          />
+        </td>
+        <td>
+          <label>{dictionary.patientName} </label>
+          <br />
+          <input
+            type="text"
+            name="patient"
+            value={updatedAppointment.patient}
+            onChange={handleChange}
+          />
+        </td>
+        <td>
+          <label>{dictionary.address} </label>
+          <br />
+          <input
+            type="text"
+            name="location"
+            value={updatedAppointment.location}
+            onChange={handleChange}
+          />
+        </td>
+        <td>
+          <input
+            name="need_insurance"
+            type="checkbox"
+            checked={updatedAppointment.need_insurance}
+            onChange={handleChange}
+          />
+        </td>
+        <td>
+          <input
+            name="insurance_approval"
+            type="checkbox"
+            checked={updatedAppointment.insurance_approval}
+            onChange={handleChange}
+          />
+        </td>
+        <td>
+          <label>{dictionary.additionalInformation}</label>
+          <br />
+          <textarea
+            type="text"
+            name="appointment_notes"
+            value={checkNull(updatedAppointment.appointment_notes)}
+            onChange={handleChange}
+          />
+          <br />
+          <label>{checkNull(dictionary.symptoms)}</label>
+          <br />
+          <textarea
+            type="text"
+            name="symptoms"
+            value={checkNull(updatedAppointment.symptoms)}
+            onChange={handleChange}
+          />
+          {mobile ? renderButtons() : null}
+        </td>
+      </tr>
+      {error ? (
+        <tr className="table-errors">
+          <td colSpan="8">{error}</td>
+        </tr>
+      ) : null}
+    </>
   );
 }

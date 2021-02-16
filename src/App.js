@@ -36,7 +36,6 @@ function App() {
         if (!data.message) {
           setUser(data.user);
         } else {
-          debugger;
           setError(data.message);
         }
       });
