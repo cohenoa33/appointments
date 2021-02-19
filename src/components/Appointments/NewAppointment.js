@@ -1,8 +1,7 @@
 import { LanguageContext, Text } from "../../containers/Language";
 import React, { useContext, useState } from "react";
 
-import api from "../../services/api";
-import helpers from "../../services/helpers";
+import { addAppointment, createClassName, validate } from "../../services";
 
 export default function NewAppointment({
   addNewAppointment,
@@ -68,13 +67,13 @@ export default function NewAppointment({
       user_id: user
     };
 
-    let valid = helpers.validate(appointment, dictionary);
+    let valid = validate(appointment, dictionary);
 
     valid === true ? fetchAppointment(appointment) : alert(valid);
   };
 
   const fetchAppointment = (appointment) => {
-    api.appointment.add(appointment).then((data) => {
+    addAppointment(appointment).then((data) => {
       if (!data.error) {
         addNewAppointment(data);
       } else {
@@ -121,7 +120,7 @@ export default function NewAppointment({
 
   return (
     <div className="new-appointment-container">
-      <div className={helpers.class("new-appointment-form", userLanguage)}>
+      <div className={createClassName("new-appointment-form", userLanguage)}>
         <button className="x-btn" onClick={() => setAddNew(!addNew)}>
           {dictionary.cancel}
         </button>

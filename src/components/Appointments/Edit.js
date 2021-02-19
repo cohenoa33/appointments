@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import api from "../../services/api";
-import helpers from "../../services/helpers";
+import { updateAppointment, validate, createClassName } from "../../services";
 
 export default function Edit({
   dictionary,
@@ -22,9 +21,9 @@ export default function Edit({
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    let valid = helpers.validate(updatedAppointment, dictionary);
+    let valid = validate(updatedAppointment, dictionary);
     if (valid === true) {
-      api.appointment.update(updatedAppointment).then((data) => {
+      updateAppointment(updatedAppointment).then((data) => {
         if (!data.error) {
           updateAppointmentsList(data, "edit");
           setEdit(!edit);
@@ -45,13 +44,13 @@ export default function Edit({
   const renderButtons = () => (
     <div className="buttons">
       <button
-        className={helpers.class("button", "save")}
+        className={createClassName("button", "save")}
         onClick={handleSubmit}
       >
         {dictionary.save}
       </button>
       <button
-        className={helpers.class("button", "cancel")}
+        className={createClassName("button", "cancel")}
         onClick={() => setEdit(!edit)}
       >
         {dictionary.cancel}

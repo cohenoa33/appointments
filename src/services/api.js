@@ -8,7 +8,7 @@ const headers = {
   Authorization: `Bearers ${token}`
 };
 
-const login = (user) => {
+export const login = (user) => {
   return fetch(`${API_ROOT}/login`, {
     method: "POST",
     headers: headers,
@@ -16,52 +16,37 @@ const login = (user) => {
   }).then((res) => res.json());
 };
 
-const signup = (user) => {
+export const signup = (user) => {
   return fetch(`${API_ROOT}/users`, {
     method: "POST",
     headers: headers,
     body: JSON.stringify({ user })
   }).then((res) => res.json());
 };
-const reauth = () => {
+export const reAuthentication = () => {
   return fetch(`${API_ROOT}/reauth`, {
     method: "GET",
     headers: headers
   }).then((res) => res.json());
 };
 
-const deleteAppointment = (id) => {
+export const deleteAppointment = (id) => {
   return fetch(`${API_ROOT}/appointments/${id}`, {
     method: "DELETE",
     headers: headers
   }).then((res) => res.json());
 };
-const updateAppointment = (appointment) => {
+export const updateAppointment = (appointment) => {
   return fetch(`${API_ROOT}/appointments/${appointment.id}`, {
     method: "PATCH",
     headers: headers,
     body: JSON.stringify({ appointment })
   }).then((res) => res.json());
 };
-const addAppointment = (appointment) => {
+export const addAppointment = (appointment) => {
   return fetch(`${API_ROOT}/appointments`, {
     method: "POST",
     headers: headers,
     body: JSON.stringify(appointment)
   }).then((res) => res.json());
 };
-
-let auth = {
-  auth: {
-    login: login,
-    signup: signup,
-    reauth: reauth
-  },
-  appointment: {
-    add: addAppointment,
-    delete: deleteAppointment,
-    update: updateAppointment
-  }
-};
-
-export default auth;

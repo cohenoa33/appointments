@@ -1,6 +1,6 @@
 import moment from "moment";
 
-const convertTime = (time) => {
+export const convertTime = (time) => {
   if (!time) return "00:00 AM";
   let hour = time.split(":")[0];
   let ampm = hour >= 12 ? "PM" : "AM";
@@ -11,7 +11,7 @@ const convertTime = (time) => {
   return hour + ":" + minuets + " " + ampm;
 };
 
-const convertDate = (date) => {
+export const convertDate = (date) => {
   const days = {
     Sunday: "ראשון",
     Monday: "שני",
@@ -45,10 +45,3 @@ const convertDate = (date) => {
   month = months[month];
   return dayWeek + ", " + day + " ב" + month + " " + year;
 };
-
-let convertors = {
-  convertTime: convertTime,
-  convertDate: convertDate
-};
-
-export default convertors;

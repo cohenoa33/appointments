@@ -12,7 +12,7 @@ import Navbar from "./components/Navbar/Navbar";
 import AddNewButton from "./components/Navbar/AddNewButton";
 import Footer from "./components/Footer/Footer";
 import { ThemeContext, themes } from "./containers/Theme";
-import api from "./services/api";
+import { reAuthentication, signup, login } from "./services";
 import NewAppointment from "./components/Appointments/NewAppointment";
 
 function App() {
@@ -32,7 +32,7 @@ function App() {
 
   useEffect(() => {
     if (localStorage.token) {
-      api.auth.reauth().then((data) => {
+      reAuthentication().then((data) => {
         if (!data.message) {
           setUser(data.user);
         } else {
@@ -43,10 +43,7 @@ function App() {
   }, []);
 
   const handleSignInUp = (user) => {
-    (user.password_confirmation
-      ? api.auth.signup(user)
-      : api.auth.login(user)
-    ).then((data) => {
+    (user.password_confirmation ? signup(user) : login(user)).then((data) => {
       !data.error ? handleAuthResponse(data) : setError(data.error);
     });
   };

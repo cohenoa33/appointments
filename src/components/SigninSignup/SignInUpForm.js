@@ -7,7 +7,7 @@ export default function SignInUpForm({
   email,
   password,
   password_confirmation,
-  error,
+  error
 }) {
   const [toggle, setToggle] = useState(true);
 
@@ -61,7 +61,7 @@ export default function SignInUpForm({
             <br />
           </form>
           <button className="toggle" onClick={() => setToggle(false)}>
-            {dictionary.changeToSignup}
+            {dictionary.changeToSignUp}
           </button>
         </div>
       ) : (
@@ -74,7 +74,7 @@ export default function SignInUpForm({
             {passwordConfInput}
             <br />
             <button type="submit" color="primary" size="lg">
-              {dictionary.signup}
+              {dictionary.signUp}
             </button>
             <br />
           </form>

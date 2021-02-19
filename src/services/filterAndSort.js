@@ -1,6 +1,6 @@
 import moment from "moment";
 
-const sortBy = (array, name, order) => {
+export const sortBy = (array, name, order) => {
   switch (name) {
     case "date": {
       return array.sort((a, b) =>
@@ -45,7 +45,7 @@ const returnDate = (a, b) => {
       : -1
     : -1;
 };
-const filterBy = (array, fieldName) => {
+export const filterBy = (array, fieldName) => {
   if (array) {
     if (fieldName === "need_insurance")
       return array.filter(
@@ -66,9 +66,3 @@ const filterBy = (array, fieldName) => {
   }
   return array;
 };
-let filterAndSort = {
-  sortBy: sortBy,
-  filterBy: filterBy,
-};
-
-export default filterAndSort;

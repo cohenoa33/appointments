@@ -1,6 +1,6 @@
 import React, { useState, useContext } from "react";
 import { LanguageContext } from "../../containers/Language";
-import helpers from "../../services/helpers";
+import { createClassName } from "../../services";
 
 export default function Filter({ setFilter }) {
   const { dictionary, userLanguage } = useContext(LanguageContext);
@@ -16,7 +16,7 @@ export default function Filter({ setFilter }) {
         <select
           value={selected}
           onChange={filter}
-          className={helpers.class("select", userLanguage)}
+          className={createClassName("select", userLanguage)}
         >
           <option value="future">{dictionary.nextAppointments}</option>
           <option value="past_only">{dictionary.archive}</option>
