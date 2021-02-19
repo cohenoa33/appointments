@@ -1,4 +1,4 @@
-const validate = (appointment, dictionary) => {
+export const validate = (appointment, dictionary) => {
   const minTwoChar = ` ${dictionary.minTwoChar}. `;
   let message = "",
     date = "",
@@ -34,12 +34,6 @@ const validateDate = (date) => {
   return +date.split("-")[0] >= fiveYearsYear ? true : false;
 };
 
-const createClassName = (name, language) => {
+export const createClassName = (name, language) => {
   return `${name}-${language}`;
 };
-
-let helpers = {
-  validate: validate,
-  class: createClassName
-};
-export default helpers;

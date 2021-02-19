@@ -3,14 +3,13 @@ import Appointment from "./Row";
 import TableHeader from "./TableHeader";
 import Filter from "./Filter";
 import { LanguageContext } from "../../containers/Language";
-import filterAndSort from "../../services/filterAndSort";
-import helpers from "../../services/helpers";
+import { filterBy, sortBy, createClassName } from "../../services";
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
   return {
     width,
-    height,
+    height
   };
 }
 function useWindowDimensions() {
@@ -45,18 +44,14 @@ export default function Appointments({ appointments, updateAppointmentsList }) {
   };
 
   let list = appointments
-    ? filterAndSort.sortBy(
-        filterAndSort.filterBy(appointments, filter),
-        sort,
-        isSort[`${sort}`]
-      )
+    ? sortBy(filterBy(appointments, filter), sort, isSort[`${sort}`])
     : appointments;
 
   const renderTable = (mobile) => (
     <div>
       {list && list.length > 0 ? (
         <div>
-          <table className={helpers.class("table", userLanguage)}>
+          <table className={createClassName("table", userLanguage)}>
             <TableHeader
               sort={sort}
               sortingBy={sortingBy}

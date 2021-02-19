@@ -1,9 +1,13 @@
 import React, { useState } from "react";
 import moment from "moment";
-import convertors from "../../services/convertors";
-import api from "../../services/api";
-import helpers from "../../services/helpers";
-import svg from "../../services/svg";
+import {
+  deleteSVG,
+  editSVG,
+  createClassName,
+  deleteAppointment,
+  convertTime,
+  convertDate
+} from "../../services";
 
 export default function Appointment({
   dictionary,
@@ -12,7 +16,7 @@ export default function Appointment({
   setEdit,
   userLanguage,
   updateAppointmentsList,
-  mobile,
+  mobile
 }) {
   const {
     doctor,
@@ -25,7 +29,7 @@ export default function Appointment({
     date,
     time,
     symptoms,
-    id,
+    id
   } = appointment;
 
   const checkSpecialty = (specialty) => {
@@ -35,16 +39,16 @@ export default function Appointment({
   const checkDate = () => {
     return userLanguage === "en"
       ? moment(date).format("dddd, MMMM Do YYYY")
-      : convertors.convertDate(date);
+      : convertDate(date);
   };
 
   const checkTime = () => {
-    return userLanguage === "en" ? convertors.convertTime(time) : time;
+    return userLanguage === "en" ? convertTime(time) : time;
   };
   const [toggle, setToggle] = useState(false);
 
-  const deleteAppointment = (id) => {
-    api.appointment.delete(id).then((data) => {
+  const handelDelete = (id) => {
+    deleteAppointment(id).then((data) => {
       if (!data.error) {
         updateAppointmentsList(id, "delete");
       } else {
@@ -55,10 +59,10 @@ export default function Appointment({
   const renderEditDeleteButtons = () => (
     <>
       <button className="svg-button" onClick={() => setEdit(!edit)}>
-        {svg.edit}
+        {editSVG}
       </button>
       <button className="svg-button" onClick={() => setToggle(!toggle)}>
-        {svg.deleteIcon}
+        {deleteSVG}
       </button>
     </>
   );
@@ -105,14 +109,14 @@ export default function Appointment({
           {toggle ? (
             <>
               <button
-                onClick={() => deleteAppointment(id)}
-                className={helpers.class("button", "delete")}
+                onClick={() => handelDelete(id)}
+                className={createClassName("button", "delete")}
               >
                 {dictionary.delete}
               </button>{" "}
               <button
                 onClick={() => setToggle(!toggle)}
-                className={helpers.class("button", "cancel")}
+                className={createClassName("button", "cancel")}
               >
                 {dictionary.cancel}
               </button>
