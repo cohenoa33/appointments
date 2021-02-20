@@ -41,31 +41,7 @@
     input[type="submit"]
         +primary-button(50px, 150px, 1.15em, bold, $text-button)
 
-=responsive-form-column($padding-left, $padding-right)
-    width: 100%
-    padding: 0
-    padding-bottom: 30px
-    label
-        margin-left: $padding-left
-        margin-right: $padding-right
-
-=responsive-form()
-    .new-appointment-form-en
-        +responsive-form-column(5px, 0)
-    .new-appointment-form-he
-        +responsive-form-column(0, 5px)
-    .new-appointment-form-en .checkbox, .new-appointment-form-he .checkbox
-        display: block
-    label
-        width: 100%
-
 .new-appointment-form-en
     +appointment-form(left, 50px, 0,)
 .new-appointment-form-he
     +appointment-form(right, 0, 50px)
-
-@media only screen and (max-width: 760px)
-    +responsive-form()
-
-@media (min-device-width: 768px) and (max-device-width: 1024px)
-    +responsive-form()

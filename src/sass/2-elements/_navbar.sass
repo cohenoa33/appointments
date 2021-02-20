@@ -9,6 +9,7 @@
         padding: 0
         width: 100%
         height: 80px
+        padding: 20px
         padding-top: $padding-top
         padding-bottom: 20px
 
@@ -17,6 +18,7 @@
         margin-left: 20px
         margin-right: 20px
         font-size: 1.15rem
+
         select
             background-color: transparent
             border: none
@@ -47,10 +49,9 @@
 .navbar
     +nevbar-general(10px)
 
-=responsive-nevbar()
+=responsive-nevbar( $font)
     .navbar
         background-color: $table-header
-
         ul
             justify-content: space-between
         li
@@ -58,16 +59,10 @@
             margin: 5px
             flex: 0 1 auto
             select
-                font-size: 1.1rem
+                font-size: $font
                 color: $primary
         button
-            font-size: 1.1rem
+            font-size: $font
             color: $primary
             path
                 fill: $primary
-
-@media only screen and (max-width: 760px)
-    +responsive-nevbar()
-
-@media (min-device-width: 768px) and (max-device-width: 1024px)
-    +responsive-nevbar()

@@ -124,15 +124,26 @@
 }
 
 .content {
-  padding-top: 80px;
+  padding-top: 120px;
+}
+
+.navbar-hello {
+  color: #7268a6;
+  font-weight: bold;
+  font-size: 1.1rem;
+  padding: 20px;
+  padding-bottom: 0;
+  margin: 20px;
+  margin-bottom: 0;
+  margin-top: 0;
+  text-transform: uppercase;
 }
 
 #footer {
   background-image: linear-gradient(transparent, #222222 5%);
   color: #616161;
   height: 50px;
-  margin-top: 100px;
-  position: fixed;
+  margin-top: 400px;
   bottom: 0;
   border-top: none;
   width: 100%;
@@ -154,6 +165,7 @@
   padding: 0;
   width: 100%;
   height: 80px;
+  padding: 20px;
   padding-top: 20px;
   padding-bottom: 20px;
 }
@@ -208,6 +220,7 @@
   padding: 0;
   width: 100%;
   height: 80px;
+  padding: 20px;
   padding-top: 10px;
   padding-bottom: 20px;
 }
@@ -250,54 +263,6 @@
   fill: #ce9f3c;
 }
 
-@media only screen and (max-width: 760px) {
-  .navbar {
-    background-color: #56b9c8;
-  }
-  .navbar ul {
-    justify-content: space-between;
-  }
-  .navbar li {
-    display: inline-block;
-    margin: 5px;
-    flex: 0 1 auto;
-  }
-  .navbar li select {
-    font-size: 1.1rem;
-    color: #222222;
-  }
-  .navbar button {
-    font-size: 1.1rem;
-    color: #222222;
-  }
-  .navbar button path {
-    fill: #222222;
-  }
-}
-@media (min-device-width: 768px) and (max-device-width: 1024px) {
-  .navbar {
-    background-color: #56b9c8;
-  }
-  .navbar ul {
-    justify-content: space-between;
-  }
-  .navbar li {
-    display: inline-block;
-    margin: 5px;
-    flex: 0 1 auto;
-  }
-  .navbar li select {
-    font-size: 1.1rem;
-    color: #222222;
-  }
-  .navbar button {
-    font-size: 1.1rem;
-    color: #222222;
-  }
-  .navbar button path {
-    fill: #222222;
-  }
-}
 .select-he {
   line-height: 1.5em;
   border: 1px solid #616161;
@@ -334,6 +299,21 @@
 .select-en:-moz-focusring {
   color: transparent;
   text-shadow: 0 0 0 #000;
+}
+
+*:clicked {
+  border: none;
+}
+*:focus {
+  background-repeat: no-repeat;
+  border-color: #616161;
+  outline: 0;
+}
+*:active {
+  outline: 0;
+}
+*:checked {
+  outline: 0;
 }
 
 path {
@@ -399,336 +379,14 @@ thead tr:hover {
   background-color: #56b9c8;
 }
 
-@media only screen and (max-width: 760px) {
-  .table-en table {
-    display: block;
-    border: none;
-    text-align: left;
-  }
-  .table-en thead {
-    display: block;
-    border: none;
-    text-align: left;
-  }
-  .table-en thead tr {
-    position: absolute;
-    color: transparent;
-    padding: 0;
-    top: -9999px;
-    left: -9999px;
-    right: 0;
-  }
-  .table-en td {
-    display: block;
-    border: none;
-    text-align: left;
-    border: none;
-    vertical-align: middle;
-    position: relative;
-    padding: 0.05rem;
-    padding-left: 40%;
-    padding-top: 10px;
-    padding-right: 10px;
-    margin-bottom: 10px;
-  }
-  .table-en td:before {
-    position: absolute;
-    left: 6px;
-    right: 6px;
-    width: 40%;
-    padding-left: 0;
-    padding-right: 10px;
-    white-space: nowrap;
-    vertical-align: middle;
-    white-space: pre-line;
-    padding-bottom: 5px;
-  }
-  .table-en td:nth-of-type(1):before {
-    content: "Date";
-  }
-  .table-en td:nth-of-type(2):before {
-    content: "Doctor";
-  }
-  .table-en td:nth-of-type(3):before {
-    content: "Patient Name";
-  }
-  .table-en td:nth-of-type(4):before {
-    content: "Address";
-  }
-  .table-en td:nth-of-type(5):before {
-    content: "Need Insurance";
-  }
-  .table-en td:nth-of-type(6):before {
-    content: "Approved By Insurance";
-  }
-  .table-en td:nth-of-type(7):before {
-    content: "Additional Information";
-    padding-bottom: 400px;
-  }
-  .table-en tr {
-    display: block;
-    border: none;
-    text-align: left;
-    vertical-align: end;
-    border: none;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    border-bottom: 1px dashed;
-  }
-  .table-en tr:nth-child(odd) {
-    background-color: #888888;
-  }
-  .table-en svg {
-    margin: 8px;
-  }
-
-  .table-he table {
-    display: block;
-    border: none;
-    text-align: right;
-  }
-  .table-he thead {
-    display: block;
-    border: none;
-    text-align: right;
-  }
-  .table-he thead tr {
-    position: absolute;
-    color: transparent;
-    padding: 0;
-    top: -9999px;
-    left: 0;
-    right: -9999px;
-  }
-  .table-he td {
-    display: block;
-    border: none;
-    text-align: right;
-    border: none;
-    vertical-align: middle;
-    position: relative;
-    padding: 0.05rem;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-right: 40%;
-    margin-bottom: 10px;
-  }
-  .table-he td:before {
-    position: absolute;
-    left: 6px;
-    right: 6px;
-    width: 40%;
-    padding-left: 10px;
-    padding-right: 0;
-    white-space: nowrap;
-    vertical-align: middle;
-    white-space: pre-line;
-    padding-bottom: 5px;
-  }
-  .table-he td:nth-of-type(1):before {
-    content: "תאריך";
-  }
-  .table-he td:nth-of-type(2):before {
-    content: "רופא";
-  }
-  .table-he td:nth-of-type(3):before {
-    content: "עבור מי";
-  }
-  .table-he td:nth-of-type(4):before {
-    content: "כתובת";
-  }
-  .table-he td:nth-of-type(5):before {
-    content: "ממתין לאישור";
-  }
-  .table-he td:nth-of-type(6):before {
-    content: "אושר";
-  }
-  .table-he td:nth-of-type(7):before {
-    content: "מידע נוסף";
-    padding-bottom: 400px;
-  }
-  .table-he tr {
-    display: block;
-    border: none;
-    text-align: right;
-    vertical-align: end;
-    border: none;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    border-bottom: 1px dashed;
-  }
-  .table-he tr:nth-child(odd) {
-    background-color: #888888;
-  }
-  .table-he svg {
-    margin: 8px;
-  }
+.table-errors {
+  color: #e5e3dd;
+  background-color: #9b001afc;
 }
-@media (min-device-width: 768px) and (max-device-width: 1024px) {
-  .table-en table {
-    display: block;
-    border: none;
-    text-align: left;
-  }
-  .table-en thead {
-    display: block;
-    border: none;
-    text-align: left;
-  }
-  .table-en thead tr {
-    position: absolute;
-    color: transparent;
-    padding: 0;
-    top: -9999px;
-    left: -9999px;
-    right: 0;
-  }
-  .table-en td {
-    display: block;
-    border: none;
-    text-align: left;
-    border: none;
-    vertical-align: middle;
-    position: relative;
-    padding: 0.05rem;
-    padding-left: 40%;
-    padding-top: 10px;
-    padding-right: 10px;
-    margin-bottom: 10px;
-  }
-  .table-en td:before {
-    position: absolute;
-    left: 6px;
-    right: 6px;
-    width: 40%;
-    padding-left: 0;
-    padding-right: 10px;
-    white-space: nowrap;
-    vertical-align: middle;
-    white-space: pre-line;
-    padding-bottom: 5px;
-  }
-  .table-en td:nth-of-type(1):before {
-    content: "Date";
-  }
-  .table-en td:nth-of-type(2):before {
-    content: "Doctor";
-  }
-  .table-en td:nth-of-type(3):before {
-    content: "Patient Name";
-  }
-  .table-en td:nth-of-type(4):before {
-    content: "Address";
-  }
-  .table-en td:nth-of-type(5):before {
-    content: "Need Insurance";
-  }
-  .table-en td:nth-of-type(6):before {
-    content: "Approved By Insurance";
-  }
-  .table-en td:nth-of-type(7):before {
-    content: "Additional Information";
-    padding-bottom: 400px;
-  }
-  .table-en tr {
-    display: block;
-    border: none;
-    text-align: left;
-    vertical-align: end;
-    border: none;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    border-bottom: 1px dashed;
-  }
-  .table-en tr:nth-child(odd) {
-    background-color: #888888;
-  }
-  .table-en svg {
-    margin: 8px;
-  }
-
-  .table-he table {
-    display: block;
-    border: none;
-    text-align: right;
-  }
-  .table-he thead {
-    display: block;
-    border: none;
-    text-align: right;
-  }
-  .table-he thead tr {
-    position: absolute;
-    color: transparent;
-    padding: 0;
-    top: -9999px;
-    left: 0;
-    right: -9999px;
-  }
-  .table-he td {
-    display: block;
-    border: none;
-    text-align: right;
-    border: none;
-    vertical-align: middle;
-    position: relative;
-    padding: 0.05rem;
-    padding-left: 10px;
-    padding-top: 10px;
-    padding-right: 40%;
-    margin-bottom: 10px;
-  }
-  .table-he td:before {
-    position: absolute;
-    left: 6px;
-    right: 6px;
-    width: 40%;
-    padding-left: 10px;
-    padding-right: 0;
-    white-space: nowrap;
-    vertical-align: middle;
-    white-space: pre-line;
-    padding-bottom: 5px;
-  }
-  .table-he td:nth-of-type(1):before {
-    content: "תאריך";
-  }
-  .table-he td:nth-of-type(2):before {
-    content: "רופא";
-  }
-  .table-he td:nth-of-type(3):before {
-    content: "עבור מי";
-  }
-  .table-he td:nth-of-type(4):before {
-    content: "כתובת";
-  }
-  .table-he td:nth-of-type(5):before {
-    content: "ממתין לאישור";
-  }
-  .table-he td:nth-of-type(6):before {
-    content: "אושר";
-  }
-  .table-he td:nth-of-type(7):before {
-    content: "מידע נוסף";
-    padding-bottom: 400px;
-  }
-  .table-he tr {
-    display: block;
-    border: none;
-    text-align: right;
-    vertical-align: end;
-    border: none;
-    padding-bottom: 20px;
-    padding-top: 20px;
-    border-bottom: 1px dashed;
-  }
-  .table-he tr:nth-child(odd) {
-    background-color: #888888;
-  }
-  .table-he svg {
-    margin: 8px;
-  }
+.table-errors td {
+  padding-bottom: 10px;
 }
+
 .h1-title {
   text-align: center;
   font-size: 2em;
@@ -739,6 +397,7 @@ thead tr:hover {
 .title {
   font-weight: bold;
   font-size: 0.8rem;
+  padding-top: 10px;
   margin-top: 3px;
   margin-bottom: 0;
 }
@@ -802,26 +461,6 @@ thead tr:hover {
   margin-bottom: 10px;
 }
 
-@media only screen and (max-width: 760px) {
-  .filter {
-    margin-inline-start: 0;
-    padding: 0;
-  }
-
-  .filter-label {
-    padding: 5px;
-  }
-}
-@media (min-device-width: 768px) and (max-device-width: 1024px) {
-  .filter {
-    margin-inline-start: 0;
-    padding: 0;
-  }
-
-  .filter-label {
-    padding: 5px;
-  }
-}
 .login-signup {
   width: 70%;
   max-width: 700px;
@@ -891,11 +530,6 @@ thead tr:hover {
   color: #616161;
 }
 
-@media only screen and (max-width: 500px) {
-  .login-signup {
-    width: 90%;
-  }
-}
 .submit {
   text-align: center;
 }
@@ -1002,25 +636,57 @@ thead tr:hover {
   width: 80%;
 }
 
+.print:hover {
+  fill: #ce9f3c;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 760px) {
+  .filter {
+    margin-inline-start: 0;
+    padding: 0;
+  }
+
+  .filter-label {
+    padding: 5px;
+  }
+}
+@media (min-device-width: 768px) and (max-device-width: 1024px) {
+  .filter {
+    margin-inline-start: 0;
+    padding: 0;
+  }
+
+  .filter-label {
+    padding: 5px;
+  }
+}
+@media only screen and (max-width: 500px) {
+  .login-signup {
+    width: 90%;
+  }
+}
 @media only screen and (max-width: 760px) {
   .new-appointment-form-en {
     width: 100%;
-    padding: 0;
+    padding: 5px;
     padding-bottom: 30px;
   }
   .new-appointment-form-en label {
     margin-left: 5px;
     margin-right: 0;
+    line-height: 0.85em;
   }
 
   .new-appointment-form-he {
     width: 100%;
-    padding: 0;
+    padding: 5px;
     padding-bottom: 30px;
   }
   .new-appointment-form-he label {
     margin-left: 0;
     margin-right: 5px;
+    line-height: 0.85em;
   }
 
   .new-appointment-form-en .checkbox, .new-appointment-form-he .checkbox {
@@ -1034,22 +700,24 @@ thead tr:hover {
 @media (min-device-width: 768px) and (max-device-width: 1024px) {
   .new-appointment-form-en {
     width: 100%;
-    padding: 0;
+    padding: 5px;
     padding-bottom: 30px;
   }
   .new-appointment-form-en label {
     margin-left: 5px;
     margin-right: 0;
+    line-height: 0.85em;
   }
 
   .new-appointment-form-he {
     width: 100%;
-    padding: 0;
+    padding: 5px;
     padding-bottom: 30px;
   }
   .new-appointment-form-he label {
     margin-left: 0;
     margin-right: 5px;
+    line-height: 0.85em;
   }
 
   .new-appointment-form-en .checkbox, .new-appointment-form-he .checkbox {
@@ -1060,28 +728,416 @@ thead tr:hover {
     width: 100%;
   }
 }
-.print:hover {
-  fill: #ce9f3c;
-  cursor: pointer;
+@media only screen and (max-width: 760px) and (min-width: 360px) {
+  .navbar {
+    background-color: #56b9c8;
+  }
+  .navbar ul {
+    justify-content: space-between;
+  }
+  .navbar li {
+    display: inline-block;
+    margin: 5px;
+    flex: 0 1 auto;
+  }
+  .navbar li select {
+    font-size: 1.1rem;
+    color: #222222;
+  }
+  .navbar button {
+    font-size: 1.1rem;
+    color: #222222;
+  }
+  .navbar button path {
+    fill: #222222;
+  }
 }
+@media only screen and (max-width: 359px) {
+  .navbar {
+    background-color: #56b9c8;
+  }
+  .navbar ul {
+    justify-content: space-between;
+  }
+  .navbar li {
+    display: inline-block;
+    margin: 5px;
+    flex: 0 1 auto;
+  }
+  .navbar li select {
+    font-size: 0.75rem;
+    color: #222222;
+  }
+  .navbar button {
+    font-size: 0.75rem;
+    color: #222222;
+  }
+  .navbar button path {
+    fill: #222222;
+  }
 
+  .navbar ul {
+    padding: 0;
+    height: 90%;
+  }
+}
+@media (min-device-width: 768px) and (max-device-width: 1024px) {
+  .navbar {
+    background-color: #56b9c8;
+  }
+  .navbar ul {
+    justify-content: space-between;
+  }
+  .navbar li {
+    display: inline-block;
+    margin: 5px;
+    flex: 0 1 auto;
+  }
+  .navbar li select {
+    font-size: 1.1rem;
+    color: #222222;
+  }
+  .navbar button {
+    font-size: 1.1rem;
+    color: #222222;
+  }
+  .navbar button path {
+    fill: #222222;
+  }
+}
+@media only screen and (max-width: 760px) {
+  .table-en table {
+    display: block;
+    border: none;
+    text-align: left;
+  }
+  .table-en thead {
+    display: block;
+    border: none;
+    text-align: left;
+  }
+  .table-en thead tr {
+    position: absolute;
+    color: transparent;
+    padding: 0;
+    top: -9999px;
+    left: -9999px;
+    right: 0;
+  }
+  .table-en td {
+    display: block;
+    border: none;
+    text-align: left;
+    border: none;
+    vertical-align: middle;
+    position: relative;
+    padding: 0.05rem;
+    padding-left: 40%;
+    padding-top: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+  }
+  .table-en td:before {
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    width: 40%;
+    padding-left: 0;
+    padding-right: 10px;
+    white-space: nowrap;
+    vertical-align: middle;
+    white-space: pre-line;
+    padding-bottom: 5px;
+  }
+  .table-en td:nth-of-type(1):before {
+    content: "Date";
+  }
+  .table-en td:nth-of-type(2):before {
+    content: "Doctor";
+  }
+  .table-en td:nth-of-type(3):before {
+    content: "Patient Name";
+  }
+  .table-en td:nth-of-type(4):before {
+    content: "Address";
+  }
+  .table-en td:nth-of-type(5):before {
+    content: "Need Insurance";
+  }
+  .table-en td:nth-of-type(6):before {
+    content: "Approved By Insurance";
+  }
+  .table-en td:nth-of-type(7):before {
+    content: "Additional Information";
+    padding-bottom: 400px;
+  }
+  .table-en tr {
+    display: block;
+    border: none;
+    text-align: left;
+    vertical-align: end;
+    border: none;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid;
+  }
+  .table-en tr:nth-child(odd) {
+    background-color: #888888;
+  }
+  .table-en svg {
+    margin: 8px;
+  }
+
+  .table-he table {
+    display: block;
+    border: none;
+    text-align: right;
+  }
+  .table-he thead {
+    display: block;
+    border: none;
+    text-align: right;
+  }
+  .table-he thead tr {
+    position: absolute;
+    color: transparent;
+    padding: 0;
+    top: -9999px;
+    left: 0;
+    right: -9999px;
+  }
+  .table-he td {
+    display: block;
+    border: none;
+    text-align: right;
+    border: none;
+    vertical-align: middle;
+    position: relative;
+    padding: 0.05rem;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 40%;
+    margin-bottom: 10px;
+  }
+  .table-he td:before {
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    width: 40%;
+    padding-left: 10px;
+    padding-right: 0;
+    white-space: nowrap;
+    vertical-align: middle;
+    white-space: pre-line;
+    padding-bottom: 5px;
+  }
+  .table-he td:nth-of-type(1):before {
+    content: "תאריך";
+  }
+  .table-he td:nth-of-type(2):before {
+    content: "רופא";
+  }
+  .table-he td:nth-of-type(3):before {
+    content: "עבור מי";
+  }
+  .table-he td:nth-of-type(4):before {
+    content: "כתובת";
+  }
+  .table-he td:nth-of-type(5):before {
+    content: "ממתין לאישור";
+  }
+  .table-he td:nth-of-type(6):before {
+    content: "אושר";
+  }
+  .table-he td:nth-of-type(7):before {
+    content: "מידע נוסף";
+    padding-bottom: 400px;
+  }
+  .table-he tr {
+    display: block;
+    border: none;
+    text-align: right;
+    vertical-align: end;
+    border: none;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid;
+  }
+  .table-he tr:nth-child(odd) {
+    background-color: #888888;
+  }
+  .table-he svg {
+    margin: 8px;
+  }
+}
+@media (min-device-width: 768px) and (max-device-width: 1024px) {
+  .table-en table {
+    display: block;
+    border: none;
+    text-align: left;
+  }
+  .table-en thead {
+    display: block;
+    border: none;
+    text-align: left;
+  }
+  .table-en thead tr {
+    position: absolute;
+    color: transparent;
+    padding: 0;
+    top: -9999px;
+    left: -9999px;
+    right: 0;
+  }
+  .table-en td {
+    display: block;
+    border: none;
+    text-align: left;
+    border: none;
+    vertical-align: middle;
+    position: relative;
+    padding: 0.05rem;
+    padding-left: 40%;
+    padding-top: 10px;
+    padding-right: 10px;
+    margin-bottom: 10px;
+  }
+  .table-en td:before {
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    width: 40%;
+    padding-left: 0;
+    padding-right: 10px;
+    white-space: nowrap;
+    vertical-align: middle;
+    white-space: pre-line;
+    padding-bottom: 5px;
+  }
+  .table-en td:nth-of-type(1):before {
+    content: "Date";
+  }
+  .table-en td:nth-of-type(2):before {
+    content: "Doctor";
+  }
+  .table-en td:nth-of-type(3):before {
+    content: "Patient Name";
+  }
+  .table-en td:nth-of-type(4):before {
+    content: "Address";
+  }
+  .table-en td:nth-of-type(5):before {
+    content: "Need Insurance";
+  }
+  .table-en td:nth-of-type(6):before {
+    content: "Approved By Insurance";
+  }
+  .table-en td:nth-of-type(7):before {
+    content: "Additional Information";
+    padding-bottom: 400px;
+  }
+  .table-en tr {
+    display: block;
+    border: none;
+    text-align: left;
+    vertical-align: end;
+    border: none;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid;
+  }
+  .table-en tr:nth-child(odd) {
+    background-color: #888888;
+  }
+  .table-en svg {
+    margin: 8px;
+  }
+
+  .table-he table {
+    display: block;
+    border: none;
+    text-align: right;
+  }
+  .table-he thead {
+    display: block;
+    border: none;
+    text-align: right;
+  }
+  .table-he thead tr {
+    position: absolute;
+    color: transparent;
+    padding: 0;
+    top: -9999px;
+    left: 0;
+    right: -9999px;
+  }
+  .table-he td {
+    display: block;
+    border: none;
+    text-align: right;
+    border: none;
+    vertical-align: middle;
+    position: relative;
+    padding: 0.05rem;
+    padding-left: 10px;
+    padding-top: 10px;
+    padding-right: 40%;
+    margin-bottom: 10px;
+  }
+  .table-he td:before {
+    position: absolute;
+    left: 6px;
+    right: 6px;
+    width: 40%;
+    padding-left: 10px;
+    padding-right: 0;
+    white-space: nowrap;
+    vertical-align: middle;
+    white-space: pre-line;
+    padding-bottom: 5px;
+  }
+  .table-he td:nth-of-type(1):before {
+    content: "תאריך";
+  }
+  .table-he td:nth-of-type(2):before {
+    content: "רופא";
+  }
+  .table-he td:nth-of-type(3):before {
+    content: "עבור מי";
+  }
+  .table-he td:nth-of-type(4):before {
+    content: "כתובת";
+  }
+  .table-he td:nth-of-type(5):before {
+    content: "ממתין לאישור";
+  }
+  .table-he td:nth-of-type(6):before {
+    content: "אושר";
+  }
+  .table-he td:nth-of-type(7):before {
+    content: "מידע נוסף";
+    padding-bottom: 400px;
+  }
+  .table-he tr {
+    display: block;
+    border: none;
+    text-align: right;
+    vertical-align: end;
+    border: none;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    border-bottom: 1px solid;
+  }
+  .table-he tr:nth-child(odd) {
+    background-color: #888888;
+  }
+  .table-he svg {
+    margin: 8px;
+  }
+}
 * {
   font-family: Heebo;
   box-sizing: border-box;
-}
-*:clicked {
-  border: none;
-}
-*:focus {
-  background-repeat: no-repeat;
-  border-color: #616161;
-  outline: 0;
-}
-*:active {
-  outline: 0;
-}
-*:checked {
-  outline: 0;
 }
 
 /*# sourceMappingURL=App.css.map */

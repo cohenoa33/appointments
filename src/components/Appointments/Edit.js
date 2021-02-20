@@ -10,7 +10,7 @@ export default function Edit({
   mobile
 }) {
   const [updatedAppointment, setUpdatedAppointment] = useState(appointment);
-  const [error, setError] = useState(true);
+  const [error, setError] = useState(false);
 
   const handleChange = (e) => {
     const value =
@@ -57,7 +57,7 @@ export default function Edit({
       </button>
     </div>
   );
-
+  console.log(error);
   return (
     <>
       <tr className="edit">

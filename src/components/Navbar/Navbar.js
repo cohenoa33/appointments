@@ -13,10 +13,10 @@ export default function Navbar({
   const { user } = useContext(UserContext);
   const renderNavAfterLogin = () => (
     <div className="navbar">
+      <div className="navbar-hello">
+        <Text tid="hello" /> {user.email} ,
+      </div>
       <ul>
-        <li className="navbar-hello">
-          <Text tid="hello" /> {user.email},
-        </li>
         <li>{renderAddNewButton()}</li>
         <li>
           <Print />

@@ -1,0 +1,24 @@
+
+=responsive-form-column($padding-left, $padding-right)
+    width: 100%
+    padding: 5px
+    padding-bottom: 30px
+    label
+        margin-left: $padding-left
+        margin-right: $padding-right
+        line-height: 0.85em
+=responsive-form()
+    .new-appointment-form-en
+        +responsive-form-column(5px, 0)
+    .new-appointment-form-he
+        +responsive-form-column(0, 5px)
+    .new-appointment-form-en .checkbox, .new-appointment-form-he .checkbox
+        display: block
+    label
+        width: 100%
+
+@media only screen and (max-width: 760px)
+    +responsive-form()
+
+@media (min-device-width: 768px) and (max-device-width: 1024px)
+    +responsive-form()
