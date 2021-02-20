@@ -99,7 +99,7 @@ function App() {
     <AddNewButton setAddNew={() => setAddNew(!addNew)} />
   );
   const renderSignUp = () => <SignOut setLogout={setLogout} />;
-
+  console.log(user);
   return (
     <LanguageProvider>
       <UserProvider user={user}>

@@ -1,15 +1,22 @@
-import React from "react";
+import React, { useContext } from "react";
+import { UserContext } from "../../containers/User";
+import { Text } from "../../containers/Language";
+
 import Print from "./Print";
 
 export default function Navbar({
   renderLanguages,
   renderSignUp,
   renderAddNewButton,
-  jwt,
+  jwt
 }) {
+  const { user } = useContext(UserContext);
   const renderNavAfterLogin = () => (
     <div className="navbar">
       <ul>
+        <li className="navbar-hello">
+          <Text tid="hello" /> {user.email},
+        </li>
         <li>{renderAddNewButton()}</li>
         <li>
           <Print />

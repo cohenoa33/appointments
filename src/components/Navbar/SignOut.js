@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React from "react";
 import { Text } from "../../containers/Language";
 
 export default function SignOut({ setLogout }) {
