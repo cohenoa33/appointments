@@ -3,6 +3,10 @@ import "./App.css";
 
 import { LanguageProvider } from "./containers/Language";
 import { UserProvider } from "./containers/User";
+import { ThemeContext, themes } from "./containers/Theme";
+
+import { reAuthentication, signup, login } from "./services";
+
 import LanguageSelector from "./components/Header/LanguageSelector";
 import LoginSignup from "./components/SigninSignup/LoginSignup";
 import Appointments from "./components/Appointments/Appointments";
@@ -11,8 +15,6 @@ import SignOut from "./components/Navbar/SignOut";
 import Navbar from "./components/Navbar/Navbar";
 import AddNewButton from "./components/Navbar/AddNewButton";
 import Footer from "./components/Footer/Footer";
-import { ThemeContext, themes } from "./containers/Theme";
-import { reAuthentication, signup, login } from "./services";
 import NewAppointment from "./components/Appointments/NewAppointment";
 
 function App() {
