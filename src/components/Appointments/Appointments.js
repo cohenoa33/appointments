@@ -33,6 +33,7 @@ export default function Appointments({ appointments, updateAppointmentsList }) {
   const [sort, setSort] = useState("date");
   const [isSort, setIsSort] = useState({ date: true });
   const [filter, setFilter] = useState("future");
+  const [search, setSearch] = useState();
 
   const sortingBy = (fieldName) => {
     setSort(fieldName);
@@ -44,7 +45,7 @@ export default function Appointments({ appointments, updateAppointmentsList }) {
   };
 
   let list = appointments
-    ? sortBy(filterBy(appointments, filter), sort, isSort[`${sort}`])
+    ? sortBy(filterBy(appointments, filter, search), sort, isSort[`${sort}`])
     : appointments;
 
   const renderTable = (mobile) => (
@@ -80,7 +81,11 @@ export default function Appointments({ appointments, updateAppointmentsList }) {
   return (
     <div>
       <div className="filter">
-        <Filter sortingBy={sortingBy} setFilter={setFilter} />
+        <Filter
+          sortingBy={sortingBy}
+          setFilter={setFilter}
+          setSearch={setSearch}
+        />
       </div>
       {useWindowDimensions().width > 760
         ? renderTable(false)

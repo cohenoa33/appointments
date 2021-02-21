@@ -5,6 +5,8 @@ import { createClassName } from "../../services";
 export default function Filter({ setFilter }) {
   const { dictionary, userLanguage } = useContext(LanguageContext);
   const [selected, setSelected] = useState("future");
+  const [isSearch, setSearchInput] = useState();
+
   const filter = (e) => {
     setSelected(e.target.value);
     setFilter(e.target.value);
@@ -27,6 +29,7 @@ export default function Filter({ setFilter }) {
           <option value="insurance_done">
             {dictionary.approvedByInsurance}
           </option>
+          {/* <option value="search">search</option> */}
           <option value="all">{dictionary.allAppointments}</option>
         </select>
       </label>
