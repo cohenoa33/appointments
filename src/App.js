@@ -32,6 +32,7 @@ function App() {
   const [addNew, setAddNew] = useState(false);
   const [error, setError] = useState();
   const [searchWindow, setSearchWindow] = useState(false);
+  const [search, setSearch] = useState(false);
 
   useEffect(() => {
     if (localStorage.token) {
@@ -45,6 +46,12 @@ function App() {
     }
   }, []);
 
+  useEffect(() => {
+    if (!searchWindow) {
+      setSearch(false);
+    }
+  }, [searchWindow]);
+
   const handleSignInUp = (user) => {
     (user.password_confirmation ? signup(user) : login(user)).then((data) => {
       !data.error ? handleAuthResponse(data) : setError(data.error);
@@ -57,11 +64,13 @@ function App() {
     setJwt(data.jwt);
     setError();
   };
+
   const addNewAppointment = (appointment) => {
     const updateList = user.appointments.concat(appointment);
     setUser((prevState) => ({ ...prevState, appointments: updateList }));
     setAddNew(!addNew);
   };
+
   const updateAppointmentsList = (appointment, action) => {
     let id = typeof appointment === "number" ? appointment : appointment.id;
     let filteredList = user.appointments.filter((a) => a.id !== id);
@@ -69,7 +78,9 @@ function App() {
       action === "edit" ? filteredList.concat(appointment) : filteredList;
     setUser((prevState) => ({ ...prevState, appointments: updateList }));
   };
+
   const [appointments, setAppointments] = useState(user.appointments);
+
   useEffect(() => {
     setAppointments(user.appointments);
   }, [user]);
@@ -107,6 +118,7 @@ function App() {
         <ThemeContext.Provider value={theme}>
           <div className="container" style={theme}>
             <Navbar
+              setSearch={setSearch}
               searchWindow={searchWindow}
               setSearchWindow={setSearchWindow}
               jwt={jwt}
@@ -125,6 +137,7 @@ function App() {
                       searchWindow={searchWindow}
                       setSearchWindow={setSearchWindow}
                       appointments={appointments}
+                      search={search}
                       updateAppointmentsList={updateAppointmentsList}
                     />
                   </div>

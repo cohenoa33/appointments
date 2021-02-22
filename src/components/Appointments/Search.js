@@ -1,37 +1,51 @@
 import React, { useState, useContext } from "react";
 import { LanguageContext } from "../../containers/Language";
+import { createClassName, xSVG } from "../../services";
 
-export default function Search({ setSearch }) {
+export default function Search({ setSearch, setSearchWindow }) {
   const [searchInput, setSearchInput] = useState();
-  const { dictionary } = useContext(LanguageContext);
+  const { dictionary, userLanguage } = useContext(LanguageContext);
 
   const [error, setError] = useState(false);
+  const [message, setMessage] = useState("");
 
   const handelSearchInput = (e) => {
     setSearchInput(e.target.value);
   };
 
   const clearSearch = () => {
-    document.getElementById("search").value("");
+    document.getElementById("search").value = "";
     setError(false);
   };
-  const handelSearchSubmit = () => {
+  const handelSearchSubmit = (e) => {
+    e.preventDefault();
     if (searchInput && searchInput.trim() === "") {
       setError(true);
-      setTimeout(clearSearch, 5000);
+      setTimeout(clearSearch, 3000);
     } else {
       setSearch(searchInput);
+      setMessage(`${dictionary.searchResults} ${searchInput}`);
     }
   };
   return (
     <>
-      {error ? (
-        <div className="error-message">{dictionary.searchError}</div>
-      ) : null}
-      <div className="search-area">
-        <input id="search" type="text" onChange={handelSearchInput} />
-        <button onClick={handelSearchSubmit}>{dictionary.search}</button>
-      </div>
+      <span className="open-search">
+        <button
+          className={createClassName("close-search-btn", userLanguage)}
+          onClick={() => setSearchWindow(false)}
+        >
+          {xSVG}
+        </button>
+        {/* {error ? (
+          <p className="error-message">{dictionary.searchError} </p>
+        ) : (
+          <p className="error-message"> {message}</p>
+        )} */}
+        <form onSubmit={handelSearchSubmit}>
+          <input id="search" type="text" onChange={handelSearchInput} />
+          <button onClick={handelSearchSubmit}>{dictionary.search}</button>
+        </form>
+      </span>
     </>
   );
 }

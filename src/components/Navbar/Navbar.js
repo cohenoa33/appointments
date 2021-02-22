@@ -3,6 +3,7 @@ import { UserContext } from "../../containers/User";
 import { Text } from "../../containers/Language";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faSearch } from "@fortawesome/free-solid-svg-icons";
+import Search from "../Appointments/Search";
 
 import Print from "./Print";
 
@@ -12,7 +13,8 @@ export default function Navbar({
   renderAddNewButton,
   jwt,
   setSearchWindow,
-  searchWindow
+  searchWindow,
+  setSearch
 }) {
   const { user } = useContext(UserContext);
   const element = <FontAwesomeIcon icon={faSearch} size="xs" />;
@@ -20,8 +22,7 @@ export default function Navbar({
   const renderSearch = () => (
     <div className="close-search">
       <button onClick={() => setSearchWindow(!searchWindow)}>
-        {element}
-        <Text tid="searchButton" />
+        {element} <Text tid="searchButton" />
       </button>
     </div>
   );
@@ -39,6 +40,9 @@ export default function Navbar({
         </li>
         <li> {renderLanguages()}</li>
         <li>{renderSignUp()}</li>
+        {searchWindow ? (
+          <Search setSearchWindow={setSearchWindow} setSearch={setSearch} />
+        ) : null}
       </ul>
     </div>
   );

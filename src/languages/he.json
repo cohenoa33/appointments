@@ -51,5 +51,6 @@
   "hello": "שלום",
   "search": "חפש",
   "searchButton": "חיפוש",
-  "searchError": "לא ניתן לחפש ערך ריק"
+  "searchError": "לא ניתן לחפש ערך ריק",
+  "searchResults": " תוצאות חיפוש עבור"
 }

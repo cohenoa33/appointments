@@ -53,5 +53,6 @@
   "hello": "Hello",
   "search": "Search",
   "searchButton": "Search",
-  "searchError": "Can't search for empty string"
+  "searchError": "Can't search for empty string",
+  "searchResults": "Appointments match for"
 }

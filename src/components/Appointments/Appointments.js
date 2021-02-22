@@ -2,15 +2,8 @@ import React, { useContext, useState, useEffect } from "react";
 import Appointment from "./Row";
 import TableHeader from "./TableHeader";
 import Filter from "./Filter";
-import Search from "./Search";
 import { LanguageContext } from "../../containers/Language";
-import {
-  filterBy,
-  sortBy,
-  searchBy,
-  createClassName,
-  xSVG
-} from "../../services";
+import { filterBy, sortBy, searchBy, createClassName } from "../../services";
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -39,13 +32,12 @@ export default function Appointments({
   appointments,
   updateAppointmentsList,
   searchWindow,
-  setSearchWindow
+  search
 }) {
   const { dictionary, userLanguage } = useContext(LanguageContext);
   const [sort, setSort] = useState("date");
   const [isSort, setIsSort] = useState({ date: true });
   const [filter, setFilter] = useState("future");
-  const [search, setSearch] = useState();
 
   const sortingBy = (fieldName) => {
     setSort(fieldName);
@@ -98,30 +90,9 @@ export default function Appointments({
       )}
     </div>
   );
-  const closeSearch = () => {
-    setSearchWindow(!searchWindow);
-    setSearch();
-  };
-
-  const renderSearch = () => {
-    if (searchWindow)
-      return (
-        <div className="open-search">
-          <button
-            className={createClassName("close-search-btn", userLanguage)}
-            onClick={closeSearch}
-          >
-            {xSVG}
-          </button>
-          <br />
-          <Search setSearch={setSearch} />
-        </div>
-      );
-  };
-
+  console.log(search);
   return (
     <div>
-      {renderSearch()}
       <div className="filter">
         <Filter sortingBy={sortingBy} setFilter={setFilter} />
       </div>
