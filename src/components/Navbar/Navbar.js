@@ -1,6 +1,8 @@
 import React, { useContext } from "react";
 import { UserContext } from "../../containers/User";
 import { Text } from "../../containers/Language";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 import Print from "./Print";
 
@@ -8,9 +10,22 @@ export default function Navbar({
   renderLanguages,
   renderSignUp,
   renderAddNewButton,
-  jwt
+  jwt,
+  setSearchWindow,
+  searchWindow
 }) {
   const { user } = useContext(UserContext);
+  const element = <FontAwesomeIcon icon={faSearch} size="xs" />;
+
+  const renderSearch = () => (
+    <div className="close-search">
+      <button onClick={() => setSearchWindow(!searchWindow)}>
+        {element}
+        <Text tid="searchButton" />
+      </button>
+    </div>
+  );
+
   const renderNavAfterLogin = () => (
     <div className="navbar">
       <div className="navbar-hello">
@@ -18,6 +33,7 @@ export default function Navbar({
       </div>
       <ul>
         <li>{renderAddNewButton()}</li>
+        <li>{renderSearch()}</li>
         <li>
           <Print />
         </li>

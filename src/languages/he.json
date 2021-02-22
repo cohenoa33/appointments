@@ -48,5 +48,8 @@
   "includeTime": "יש לבחור שעה כולל דקות ו- AM-PM",
   "credit": "נועה רבין-כהן@כל הזכויות שמורות",
   "connectAs": "מחובר בתור",
-  "hello": "שלום"
+  "hello": "שלום",
+  "search": "חפש",
+  "searchButton": "חיפוש",
+  "searchError": "לא ניתן לחפש ערך ריק"
 }

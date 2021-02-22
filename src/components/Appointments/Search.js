@@ -1,22 +1,37 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { LanguageContext } from "../../containers/Language";
 
-export default function Search({ setFilter }) {
-  const [search, setSearch] = useState();
+export default function Search({ setSearch }) {
+  const [searchInput, setSearchInput] = useState();
+  const { dictionary } = useContext(LanguageContext);
+
+  const [error, setError] = useState(false);
+
   const handelSearchInput = (e) => {
-    e.preventDefault();
-    setSearch(e.target.value);
-  };
-  const handelSearchSubmit = (e) => {
-    e.preventDefault();
-    setFilter(search);
-    // setSearch();
+    setSearchInput(e.target.value);
   };
 
+  const clearSearch = () => {
+    document.getElementById("search").value("");
+    setError(false);
+  };
+  const handelSearchSubmit = () => {
+    if (searchInput && searchInput.trim() === "") {
+      setError(true);
+      setTimeout(clearSearch, 5000);
+    } else {
+      setSearch(searchInput);
+    }
+  };
   return (
     <>
-      <form onSubmit={handelSearchSubmit}>
-        <input type="text" onChange={handelSearchInput} />
-      </form>
+      {error ? (
+        <div className="error-message">{dictionary.searchError}</div>
+      ) : null}
+      <div className="search-area">
+        <input id="search" type="text" onChange={handelSearchInput} />
+        <button onClick={handelSearchSubmit}>{dictionary.search}</button>
+      </div>
     </>
   );
 }

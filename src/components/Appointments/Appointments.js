@@ -2,8 +2,15 @@ import React, { useContext, useState, useEffect } from "react";
 import Appointment from "./Row";
 import TableHeader from "./TableHeader";
 import Filter from "./Filter";
+import Search from "./Search";
 import { LanguageContext } from "../../containers/Language";
-import { filterBy, sortBy, createClassName } from "../../services";
+import {
+  filterBy,
+  sortBy,
+  searchBy,
+  createClassName,
+  xSVG
+} from "../../services";
 
 function getWindowDimensions() {
   const { innerWidth: width, innerHeight: height } = window;
@@ -28,7 +35,12 @@ function useWindowDimensions() {
   return windowDimensions;
 }
 
-export default function Appointments({ appointments, updateAppointmentsList }) {
+export default function Appointments({
+  appointments,
+  updateAppointmentsList,
+  searchWindow,
+  setSearchWindow
+}) {
   const { dictionary, userLanguage } = useContext(LanguageContext);
   const [sort, setSort] = useState("date");
   const [isSort, setIsSort] = useState({ date: true });
@@ -44,9 +56,18 @@ export default function Appointments({ appointments, updateAppointmentsList }) {
     }
   };
 
-  let list = appointments
-    ? sortBy(filterBy(appointments, filter, search), sort, isSort[`${sort}`])
-    : appointments;
+  const listToRender = (appointments) => {
+    if (!appointments) return appointments;
+    if (searchWindow && search && search.length > 0) {
+      appointments = searchBy(appointments, search);
+    }
+    return sortBy(
+      filterBy(appointments, filter, search),
+      sort,
+      isSort[`${sort}`]
+    );
+  };
+  let list = listToRender(appointments);
 
   const renderTable = (mobile) => (
     <div>
@@ -77,15 +98,32 @@ export default function Appointments({ appointments, updateAppointmentsList }) {
       )}
     </div>
   );
+  const closeSearch = () => {
+    setSearchWindow(!searchWindow);
+    setSearch();
+  };
+
+  const renderSearch = () => {
+    if (searchWindow)
+      return (
+        <div className="open-search">
+          <button
+            className={createClassName("close-search-btn", userLanguage)}
+            onClick={closeSearch}
+          >
+            {xSVG}
+          </button>
+          <br />
+          <Search setSearch={setSearch} />
+        </div>
+      );
+  };
 
   return (
     <div>
+      {renderSearch()}
       <div className="filter">
-        <Filter
-          sortingBy={sortingBy}
-          setFilter={setFilter}
-          setSearch={setSearch}
-        />
+        <Filter sortingBy={sortingBy} setFilter={setFilter} />
       </div>
       {useWindowDimensions().width > 760
         ? renderTable(false)

@@ -50,5 +50,8 @@
   "invalidPassword": "Password must be at least 6 characters and to include one lowercase letter, one uppercase letter and one special character.",
   "credit": "Noa Rabin-Cohen @All rights reserved.",
   "connectAs": "Logged in as",
-  "hello": "Hello"
+  "hello": "Hello",
+  "search": "Search",
+  "searchButton": "Search",
+  "searchError": "Can't search for empty string"
 }

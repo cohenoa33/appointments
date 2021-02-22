@@ -45,7 +45,7 @@ const returnDate = (a, b) => {
       : -1
     : -1;
 };
-export const filterBy = (array, fieldName, search) => {
+export const filterBy = (array, fieldName) => {
   if (array) {
     if (fieldName === "need_insurance")
       return array.filter(
@@ -65,24 +65,7 @@ export const filterBy = (array, fieldName, search) => {
       });
 
     if (fieldName === "search") {
-      return array.filter((app) => search(app, search));
     }
   }
   return array;
-};
-
-const search = (appointment, search) => {
-  let keys = [
-    "doctor",
-    "patient",
-    "appointment_notes",
-    "location",
-    "specialty",
-    "symptoms"
-  ];
-  for (let key of keys) {
-    if (appointment[key].toLowerCase().includes(search.toLowerCase()))
-      return true;
-  }
-  return false;
 };

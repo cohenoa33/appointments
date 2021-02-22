@@ -31,6 +31,7 @@ function App() {
   );
   const [addNew, setAddNew] = useState(false);
   const [error, setError] = useState();
+  const [searchWindow, setSearchWindow] = useState(false);
 
   useEffect(() => {
     if (localStorage.token) {
@@ -99,13 +100,15 @@ function App() {
     <AddNewButton setAddNew={() => setAddNew(!addNew)} />
   );
   const renderSignUp = () => <SignOut setLogout={setLogout} />;
-  console.log(user);
+
   return (
     <LanguageProvider>
       <UserProvider user={user}>
         <ThemeContext.Provider value={theme}>
           <div className="container" style={theme}>
             <Navbar
+              searchWindow={searchWindow}
+              setSearchWindow={setSearchWindow}
               jwt={jwt}
               renderLanguages={renderLanguages}
               renderAddNewButton={renderAddNewButton}
@@ -119,6 +122,8 @@ function App() {
                   <div>
                     <Title />
                     <Appointments
+                      searchWindow={searchWindow}
+                      setSearchWindow={setSearchWindow}
                       appointments={appointments}
                       updateAppointmentsList={updateAppointmentsList}
                     />
