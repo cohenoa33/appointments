@@ -14,8 +14,10 @@ export default function Search({ setSearch, setSearchWindow }) {
   };
 
   const clearSearch = () => {
-    document.getElementById("search").value = "";
-    setError(false);
+    if (document.getElementById("search")) {
+      document.getElementById("search").value = "";
+      setError(false);
+    }
   };
   const handelSearchSubmit = (e) => {
     e.preventDefault();

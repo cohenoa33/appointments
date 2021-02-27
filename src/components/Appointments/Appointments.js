@@ -90,7 +90,7 @@ export default function Appointments({
       )}
     </div>
   );
-  console.log(search);
+
   return (
     <div>
       <div className="filter">
