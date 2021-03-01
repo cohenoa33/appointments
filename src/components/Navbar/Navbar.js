@@ -40,10 +40,10 @@ export default function Navbar({
         </li>
         <li> {renderLanguages()}</li>
         <li>{renderSignUp()}</li>
-        {searchWindow ? (
-          <Search setSearchWindow={setSearchWindow} setSearch={setSearch} />
-        ) : null}
       </ul>
+      {searchWindow ? (
+        <Search setSearchWindow={setSearchWindow} setSearch={setSearch} />
+      ) : null}
     </div>
   );
 
