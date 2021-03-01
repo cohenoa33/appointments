@@ -4,6 +4,10 @@
     position: fixed
     width: 100%
     z-index: 1
+    height: auto
+    display: block
+    transition: top 0.3s
+
     ul
         margin: 0
         padding: 0
@@ -26,6 +30,18 @@
             color: $background
             &:hover
                 color: $hover
+    .search-btn
+        color: $primary
+        background-color: $table-header
+        height: 50px
+        padding: 5px
+        font-weight: bold
+    input[type="text"]
+        // margin: 0 auto
+        height: 50px
+        width: 35%
+        padding: 0
+        border-radius: 0
 
     button
         background-color: transparent
@@ -48,21 +64,3 @@
 
 .navbar
     +nevbar-general(10px)
-
-=responsive-nevbar( $font)
-    .navbar
-        background-color: $table-header
-        ul
-            justify-content: space-between
-        li
-            display: inline-block
-            margin: 5px
-            flex: 0 1 auto
-            select
-                font-size: $font
-                color: $primary
-        button
-            font-size: $font
-            color: $primary
-            path
-                fill: $primary

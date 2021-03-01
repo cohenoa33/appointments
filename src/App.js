@@ -132,6 +132,7 @@ function App() {
               <div className="content">
                 {!addNew ? (
                   <div>
+                    <div className="hidden"></div>
                     <Title />
                     <Appointments
                       searchWindow={searchWindow}

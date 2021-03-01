@@ -1,17 +1,56 @@
+=responsive-nevbar( $font)
+    .navbar
+        background-color: $table-header
+        ul
+            justify-content: space-between
+        li
+            display: inline-block
+            margin: 5px
+            flex: 0 1 auto
+            select
+                font-size: $font
+                color: $primary
+        .search-btn
+            background-color: $primary
+            color: $table-header
+
+        button
+            font-size: $font
+            color: $primary
+            path
+                fill: $primary
+        input[type="text"]
+            width: 55%
+            border-radius: 0
+
 @media only screen and (max-width: 760px)
-    +responsive-nevbar(1.1rem)
+    +responsive-nevbar(1rem)
+    .navbar
+        button
+            margin: 0
+            padding: 0
+            height: 35px
 @media only screen and (max-width: 460px)
-    +responsive-nevbar(1.1rem)
+    +responsive-nevbar(1rem)
     .navbar
         ul
             padding: 0
             height: 90%
+        button
+            margin: 0
+            padding: 0
+            height: 35px
+
 @media only screen and (max-width: 351px)
-    +responsive-nevbar(1.1rem)
+    +responsive-nevbar(0.9rem)
     .navbar
         ul
             padding: 0
             height: 90%
+        button
+            margin: 0
+            padding: 0
+            height: 35px
 
 @media (min-device-width: 768px) and (max-device-width: 1024px)
     +responsive-nevbar(1.1rem)

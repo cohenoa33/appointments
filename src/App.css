@@ -131,8 +131,11 @@
 }
 
 .container {
-  min-height: 100%;
+  height: 100%;
   width: 100%;
+  display: block;
+  overflow: auto;
+  padding-bottom: 200px;
 }
 
 .new-appointment-container {
@@ -143,8 +146,13 @@
   margin-top: 15px;
 }
 
+.hidden {
+  height: 100px;
+}
+
 .content {
   padding-top: 120px;
+  display: block;
 }
 
 .navbar-hello {
@@ -163,14 +171,14 @@
   background-image: linear-gradient(transparent, #222222 5%);
   color: #616161;
   height: 50px;
-  margin-top: 400px;
   bottom: 0;
   border-top: none;
   width: 100%;
   font-size: 85%;
   padding-top: 15px;
   text-align: center;
-  border-radius: none;
+  position: fixed;
+  display: block;
 }
 
 .navbar-lang-only {
@@ -179,6 +187,9 @@
   position: fixed;
   width: 100%;
   z-index: 1;
+  height: auto;
+  display: block;
+  transition: top 0.3s;
 }
 .navbar-lang-only ul {
   margin: 0;
@@ -203,6 +214,19 @@
 }
 .navbar-lang-only li select:hover {
   color: #ce9f3c;
+}
+.navbar-lang-only .search-btn {
+  color: #222222;
+  background-color: #56b9c8;
+  height: 50px;
+  padding: 5px;
+  font-weight: bold;
+}
+.navbar-lang-only input[type=text] {
+  height: 50px;
+  width: 35%;
+  padding: 0;
+  border-radius: 0;
 }
 .navbar-lang-only button {
   background-color: transparent;
@@ -234,6 +258,9 @@
   position: fixed;
   width: 100%;
   z-index: 1;
+  height: auto;
+  display: block;
+  transition: top 0.3s;
 }
 .navbar ul {
   margin: 0;
@@ -258,6 +285,19 @@
 }
 .navbar li select:hover {
   color: #ce9f3c;
+}
+.navbar .search-btn {
+  color: #222222;
+  background-color: #56b9c8;
+  height: 50px;
+  padding: 5px;
+  font-weight: bold;
+}
+.navbar input[type=text] {
+  height: 50px;
+  width: 35%;
+  padding: 0;
+  border-radius: 0;
 }
 .navbar button {
   background-color: transparent;
@@ -666,6 +706,7 @@ thead tr:hover {
   text-align: center;
   margin: 0 auto;
   padding: 10px;
+  padding: 0;
 }
 
 .open-search {
@@ -673,7 +714,6 @@ thead tr:hover {
   text-align: center;
   margin: 0 auto;
   padding: 10px;
-  margin-bottom: 5px;
 }
 
 .search-area {
@@ -681,15 +721,6 @@ thead tr:hover {
   text-align: center;
   margin: 0 auto;
   width: 300px;
-}
-.search-area input[type=text] {
-  padding: 10px;
-  margin: 0 auto;
-  width: 75%;
-}
-.search-area button {
-  width: 25%;
-  padding: 10px;
 }
 
 @media only screen and (max-width: 760px) {
@@ -818,15 +849,29 @@ thead tr:hover {
     flex: 0 1 auto;
   }
   .navbar li select {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #222222;
   }
+  .navbar .search-btn {
+    background-color: #222222;
+    color: #56b9c8;
+  }
   .navbar button {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #222222;
   }
   .navbar button path {
     fill: #222222;
+  }
+  .navbar input[type=text] {
+    width: 55%;
+    border-radius: 0;
+  }
+
+  .navbar button {
+    margin: 0;
+    padding: 0;
+    height: 35px;
   }
 }
 @media only screen and (max-width: 460px) {
@@ -842,20 +887,33 @@ thead tr:hover {
     flex: 0 1 auto;
   }
   .navbar li select {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #222222;
   }
+  .navbar .search-btn {
+    background-color: #222222;
+    color: #56b9c8;
+  }
   .navbar button {
-    font-size: 1.1rem;
+    font-size: 1rem;
     color: #222222;
   }
   .navbar button path {
     fill: #222222;
   }
+  .navbar input[type=text] {
+    width: 55%;
+    border-radius: 0;
+  }
 
   .navbar ul {
     padding: 0;
     height: 90%;
+  }
+  .navbar button {
+    margin: 0;
+    padding: 0;
+    height: 35px;
   }
 }
 @media only screen and (max-width: 351px) {
@@ -871,20 +929,33 @@ thead tr:hover {
     flex: 0 1 auto;
   }
   .navbar li select {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: #222222;
   }
+  .navbar .search-btn {
+    background-color: #222222;
+    color: #56b9c8;
+  }
   .navbar button {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
     color: #222222;
   }
   .navbar button path {
     fill: #222222;
   }
+  .navbar input[type=text] {
+    width: 55%;
+    border-radius: 0;
+  }
 
   .navbar ul {
     padding: 0;
     height: 90%;
+  }
+  .navbar button {
+    margin: 0;
+    padding: 0;
+    height: 35px;
   }
 }
 @media (min-device-width: 768px) and (max-device-width: 1024px) {
@@ -903,12 +974,20 @@ thead tr:hover {
     font-size: 1.1rem;
     color: #222222;
   }
+  .navbar .search-btn {
+    background-color: #222222;
+    color: #56b9c8;
+  }
   .navbar button {
     font-size: 1.1rem;
     color: #222222;
   }
   .navbar button path {
     fill: #222222;
+  }
+  .navbar input[type=text] {
+    width: 55%;
+    border-radius: 0;
   }
 }
 @media only screen and (max-width: 760px) {
@@ -1254,6 +1333,15 @@ thead tr:hover {
 * {
   font-family: Heebo;
   box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  flex-direction: column;
 }
 
 /*# sourceMappingURL=App.css.map */

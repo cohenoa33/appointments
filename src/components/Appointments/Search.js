@@ -45,7 +45,9 @@ export default function Search({ setSearch, setSearchWindow }) {
         )} */}
         <form onSubmit={handelSearchSubmit}>
           <input id="search" type="text" onChange={handelSearchInput} />
-          <button onClick={handelSearchSubmit}>{dictionary.search}</button>
+          <button className="search-btn" onClick={handelSearchSubmit}>
+            {dictionary.search}
+          </button>
         </form>
       </span>
     </>
