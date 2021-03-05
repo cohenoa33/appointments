@@ -30,26 +30,21 @@ export default function Search({ setSearch, setSearchWindow }) {
     }
   };
   return (
-    <>
-      <span className="open-search">
+    <div className="open-search">
+      <div className="close-search">
         <button
           className={createClassName("close-search-btn", userLanguage)}
           onClick={() => setSearchWindow(false)}
         >
           {xSVG}
         </button>
-        {/* {error ? (
-          <p className="error-message">{dictionary.searchError} </p>
-        ) : (
-          <p className="error-message"> {message}</p>
-        )} */}
-        <form onSubmit={handelSearchSubmit}>
-          <input id="search" type="text" onChange={handelSearchInput} />
-          <button className="search-btn" onClick={handelSearchSubmit}>
-            {dictionary.search}
-          </button>
-        </form>
-      </span>
-    </>
+      </div>
+      <div className="search">
+        <input type="text" onChange={handelSearchInput} />
+      </div>
+      <button className="search-form-btn" onClick={handelSearchSubmit}>
+        {dictionary.search}
+      </button>
+    </div>
   );
 }

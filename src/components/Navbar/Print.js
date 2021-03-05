@@ -8,7 +8,7 @@ export default function Print() {
 
   return (
     <div>
-      <button onClick={() => window.print()} className="print">
+      <button className="navbar-button" onClick={() => window.print()}>
         {element} <Text tid="print" />
       </button>
     </div>
