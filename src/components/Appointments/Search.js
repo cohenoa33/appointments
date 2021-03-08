@@ -42,7 +42,11 @@ export default function Search({ setSearch, setSearchWindow }) {
       <div className="search">
         <input type="text" onChange={handelSearchInput} />
       </div>
-      <button className="search-form-btn" onClick={handelSearchSubmit}>
+      <button
+        disabled={!searchInput || searchInput.trim() === "" ? true : false}
+        className="search-form-btn"
+        onClick={handelSearchSubmit}
+      >
         {dictionary.search}
       </button>
     </div>
