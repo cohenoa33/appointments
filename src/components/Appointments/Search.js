@@ -32,11 +32,6 @@ export default function Search({ setSearch, setSearchWindow }) {
         >
           {xSVG}
         </button>
-        {/* {error ? (
-          <p className="error-message">{dictionary.searchError} </p>
-        ) : (
-          <p className="error-message"> {message}</p>
-        )} */}
         <form onSubmit={handelSearchSubmit}>
           <input id="search" type="text" onChange={handelSearchInput} />
           <button className="search-btn" onClick={handelSearchSubmit}>

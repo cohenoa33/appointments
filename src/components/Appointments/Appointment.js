@@ -45,6 +45,7 @@ export default function Appointment({
   const checkTime = () => {
     return userLanguage === "en" ? convertTime(time) : time;
   };
+
   const [toggle, setToggle] = useState(false);
 
   const handelDelete = (id) => {

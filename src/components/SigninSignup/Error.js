@@ -12,7 +12,6 @@ export default function Error({ error }) {
       }
     }
     // errors for signup
-
     if (error.length > 0) {
       if (error.includes("Email has already been taken")) return "emailTaken";
       if (error.includes("Password is invalid")) return "invalidPassword";
