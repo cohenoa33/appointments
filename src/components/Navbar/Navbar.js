@@ -20,8 +20,11 @@ export default function Navbar({
   const element = <FontAwesomeIcon icon={faSearch} size="xs" />;
 
   const renderSearch = () => (
-    <div className="close-search">
-      <button onClick={() => setSearchWindow(!searchWindow)}>
+    <div className="close-search-navbar">
+      <button
+        className="navbar-button"
+        onClick={() => setSearchWindow(!searchWindow)}
+      >
         {element} <Text tid="searchButton" />
       </button>
     </div>

@@ -24,8 +24,8 @@ export default function Search({ setSearch, setSearchWindow }) {
     }
   };
   return (
-    <>
-      <span className="open-search">
+    <div className="open-search">
+      <div className="close-search">
         <button
           className={createClassName("close-search-btn", userLanguage)}
           onClick={() => setSearchWindow(false)}
@@ -40,5 +40,6 @@ export default function Search({ setSearch, setSearchWindow }) {
         </form>
       </span>
     </>
+
   );
 }
