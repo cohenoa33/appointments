@@ -7,7 +7,7 @@ export default function AddNewButton({ setAddNew }) {
   const element = <FontAwesomeIcon icon={faPlus} size="xs" />;
 
   return (
-    <button onClick={setAddNew} className="add-new">
+    <button className="navbar-button" onClick={setAddNew}>
       {element} <Text tid="add" />
     </button>
   );

@@ -151,7 +151,7 @@
 }
 
 .content {
-  padding-top: 50px;
+  padding-top: 85px;
   display: block;
 }
 
@@ -187,19 +187,12 @@
   position: fixed;
   width: 100%;
   z-index: 1;
-  height: auto;
-  display: block;
-  transition: top 0.3s;
 }
 .navbar-lang-only ul {
-  margin: 0;
-  padding: 0;
   width: 100%;
   height: 80px;
   padding: 20px;
   padding-top: 20px;
-  padding-bottom: 0;
-  margin-bottom: -30px;
 }
 .navbar-lang-only li {
   display: inline-block;
@@ -229,7 +222,7 @@
   padding: 0;
   border-radius: 0;
 }
-.navbar-lang-only button {
+.navbar-lang-only .navbar-button {
   background-color: transparent;
   color: #f9f7f7;
   border: none;
@@ -239,17 +232,17 @@
   width: auto;
   font-size: 1.1em;
 }
-.navbar-lang-only button:hover {
+.navbar-lang-only .navbar-button:hover {
   outline: 0;
   color: #ce9f3c;
   font-weight: bolder;
   cursor: pointer;
   fill: #ce9f3c;
 }
-.navbar-lang-only button path {
+.navbar-lang-only .navbar-button path {
   fill: #f9f7f7;
 }
-.navbar-lang-only button:hover path {
+.navbar-lang-only .navbar-button:hover path {
   fill: #ce9f3c;
 }
 
@@ -259,19 +252,12 @@
   position: fixed;
   width: 100%;
   z-index: 1;
-  height: auto;
-  display: block;
-  transition: top 0.3s;
 }
 .navbar ul {
-  margin: 0;
-  padding: 0;
   width: 100%;
   height: 80px;
   padding: 20px;
   padding-top: 10px;
-  padding-bottom: 0;
-  margin-bottom: -30px;
 }
 .navbar li {
   display: inline-block;
@@ -301,7 +287,7 @@
   padding: 0;
   border-radius: 0;
 }
-.navbar button {
+.navbar .navbar-button {
   background-color: transparent;
   color: #f9f7f7;
   border: none;
@@ -311,17 +297,17 @@
   width: auto;
   font-size: 1.1em;
 }
-.navbar button:hover {
+.navbar .navbar-button:hover {
   outline: 0;
   color: #ce9f3c;
   font-weight: bolder;
   cursor: pointer;
   fill: #ce9f3c;
 }
-.navbar button path {
+.navbar .navbar-button path {
   fill: #f9f7f7;
 }
-.navbar button:hover path {
+.navbar .navbar-button:hover path {
   fill: #ce9f3c;
 }
 
@@ -615,7 +601,7 @@ thead tr:hover {
   padding: 20px;
   width: 80%;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 120px;
 }
 .new-appointment-form-en h1 {
   text-align: center;
@@ -659,7 +645,7 @@ thead tr:hover {
   padding: 20px;
   width: 80%;
   margin: 0 auto;
-  margin-top: 20px;
+  margin-top: 120px;
 }
 .new-appointment-form-he h1 {
   text-align: center;
@@ -698,24 +684,49 @@ thead tr:hover {
   width: 80%;
 }
 
-.print:hover {
-  fill: #ce9f3c;
-  cursor: pointer;
-}
-
-.close-search {
-  display: block;
+.open-search {
+  display: grid;
+  align-items: center;
   text-align: center;
   margin: 0 auto;
-  padding: 10px;
+  padding: 20px;
+  grid-template-rows: 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  padding-top: 0;
+  margin-top: -15px;
+}
+
+.search-btn {
   padding: 0;
 }
 
-.open-search {
-  display: block;
-  text-align: center;
-  margin: 0 auto;
-  padding: 10px;
+.close-search {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  padding-top: 0;
+}
+
+.search {
+  grid-column-start: 2;
+  grid-column-end: 3;
+}
+.search input[type=text] {
+  width: 100%;
+  border: none;
+  border-radius: none;
+}
+
+.search-form-btn {
+  grid-column-start: 3;
+  grid-column-end: 4;
+  padding: 0;
+  right: 0;
+  width: 20%;
+  height: 50px;
+  border: none;
+  border-radius: none;
+  font-size: 1.1em;
+  background: #888888;
 }
 
 @media only screen and (max-width: 760px) {
@@ -769,6 +780,8 @@ thead tr:hover {
     margin-left: 5px;
     margin-right: 0;
     line-height: 0.85em;
+    font-size: 0.85em;
+    padding-top: 5px;
   }
 
   .new-appointment-form-he {
@@ -780,6 +793,8 @@ thead tr:hover {
     margin-left: 0;
     margin-right: 5px;
     line-height: 0.85em;
+    font-size: 0.85em;
+    padding-top: 5px;
   }
 
   .new-appointment-form-en .checkbox, .new-appointment-form-he .checkbox {
@@ -804,6 +819,8 @@ thead tr:hover {
     margin-left: 5px;
     margin-right: 0;
     line-height: 0.85em;
+    font-size: 0.85em;
+    padding-top: 5px;
   }
 
   .new-appointment-form-he {
@@ -815,6 +832,8 @@ thead tr:hover {
     margin-left: 0;
     margin-right: 5px;
     line-height: 0.85em;
+    font-size: 0.85em;
+    padding-top: 5px;
   }
 
   .new-appointment-form-en .checkbox, .new-appointment-form-he .checkbox {
@@ -849,11 +868,11 @@ thead tr:hover {
     background-color: #222222;
     color: #56b9c8;
   }
-  .navbar button {
+  .navbar .navbar-button {
     font-size: 1rem;
     color: #222222;
   }
-  .navbar button path {
+  .navbar .navbar-button path {
     fill: #222222;
   }
   .navbar input[type=text] {
@@ -861,7 +880,7 @@ thead tr:hover {
     border-radius: 0;
   }
 
-  .navbar button {
+  .navbar .navbar-button {
     margin: 0;
     padding: 0;
     height: 35px;
@@ -887,11 +906,11 @@ thead tr:hover {
     background-color: #222222;
     color: #56b9c8;
   }
-  .navbar button {
+  .navbar .navbar-button {
     font-size: 1rem;
     color: #222222;
   }
-  .navbar button path {
+  .navbar .navbar-button path {
     fill: #222222;
   }
   .navbar input[type=text] {
@@ -904,7 +923,7 @@ thead tr:hover {
     height: 90%;
     margin-bottom: 0;
   }
-  .navbar button {
+  .navbar .navbar-button {
     margin: 0;
     padding: 0;
     height: 35px;
@@ -935,11 +954,11 @@ thead tr:hover {
     background-color: #222222;
     color: #56b9c8;
   }
-  .navbar button {
+  .navbar .navbar-button {
     font-size: 0.9rem;
     color: #222222;
   }
-  .navbar button path {
+  .navbar .navbar-button path {
     fill: #222222;
   }
   .navbar input[type=text] {
@@ -951,7 +970,7 @@ thead tr:hover {
     padding: 0;
     height: 90%;
   }
-  .navbar button {
+  .navbar .navbar-button {
     margin: 0;
     padding: 0;
     height: 35px;
@@ -977,11 +996,11 @@ thead tr:hover {
     background-color: #222222;
     color: #56b9c8;
   }
-  .navbar button {
+  .navbar .navbar-button {
     font-size: 1.1rem;
     color: #222222;
   }
-  .navbar button path {
+  .navbar .navbar-button path {
     fill: #222222;
   }
   .navbar input[type=text] {
@@ -990,13 +1009,44 @@ thead tr:hover {
   }
 }
 @media only screen and (max-width: 760px) {
-  .search-area {
-    width: 250px;
+  .content {
+    padding-top: 100px;
+  }
+
+  .open-search {
+    padding-top: 10px;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 6fr 2fr;
+  }
+
+  .search input[type=text] {
+    width: 100%;
+    border: none;
+    border-radius: none;
+  }
+
+  .search-form-btn {
+    width: 100%;
   }
 }
 @media (min-device-width: 768px) and (max-device-width: 1024px) {
-  .search-area {
-    width: 250px;
+  .content {
+    padding-top: 100px;
+  }
+
+  .open-search {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 6fr 2fr;
+  }
+
+  .search input[type=text] {
+    width: 100%;
+    border: none;
+    border-radius: none;
+  }
+
+  .search-form-btn {
+    width: 50%;
   }
 }
 @media only screen and (max-width: 760px) {
