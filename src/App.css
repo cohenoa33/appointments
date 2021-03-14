@@ -151,7 +151,7 @@
 }
 
 .content {
-  padding-top: 85px;
+  padding-top: 80px;
   display: block;
 }
 
@@ -193,6 +193,7 @@
   height: 80px;
   padding: 20px;
   padding-top: 20px;
+  margin-bottom: -20px;
 }
 .navbar-lang-only li {
   display: inline-block;
@@ -258,6 +259,7 @@
   height: 80px;
   padding: 20px;
   padding-top: 10px;
+  margin-bottom: -20px;
 }
 .navbar li {
   display: inline-block;
@@ -684,49 +686,19 @@ thead tr:hover {
   width: 80%;
 }
 
-.open-search {
-  display: grid;
-  align-items: center;
+.close-search {
+  display: block;
   text-align: center;
   margin: 0 auto;
-  padding: 20px;
-  grid-template-rows: 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  padding-top: 0;
-  margin-top: -15px;
-}
-
-.search-btn {
+  padding: 10px;
   padding: 0;
 }
 
-.close-search {
-  grid-column-start: 1;
-  grid-column-end: 2;
-  padding-top: 0;
-}
-
-.search {
-  grid-column-start: 2;
-  grid-column-end: 3;
-}
-.search input[type=text] {
-  width: 100%;
-  border: none;
-  border-radius: none;
-}
-
-.search-form-btn {
-  grid-column-start: 3;
-  grid-column-end: 4;
-  padding: 0;
-  right: 0;
-  width: 20%;
-  height: 50px;
-  border: none;
-  border-radius: none;
-  font-size: 1.1em;
-  background: #888888;
+.open-search {
+  display: block;
+  text-align: center;
+  margin: 0 auto;
+  padding: 10px;
 }
 
 @media only screen and (max-width: 760px) {
@@ -768,6 +740,10 @@ thead tr:hover {
 @media only screen and (max-width: 500px) {
   .login-signup {
     width: 90%;
+  }
+  .login-signup button {
+    width: 80%;
+    font-size: 14px;
   }
 }
 @media only screen and (max-width: 760px) {
