@@ -48,9 +48,7 @@ const returnDate = (a, b) => {
 export const filterBy = (array, fieldName) => {
   if (array) {
     if (fieldName === "need_insurance")
-      return array.filter(
-        (app) => app.insurance_approval === false && app.need_insurance === true
-      );
+      return array.filter((app) => app.need_insurance === true);
     if (fieldName === "insurance_done")
       return array.filter(
         (app) => app.insurance_approval === true && app.need_insurance === true

@@ -57,7 +57,7 @@ export default function Edit({
       </button>
     </div>
   );
-  console.log(error);
+
   return (
     <>
       <tr className="edit">

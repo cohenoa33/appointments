@@ -168,8 +168,7 @@
 }
 
 #footer {
-  background-image: linear-gradient(transparent, #222222 5%);
-  color: #616161;
+  color: #222222;
   height: 50px;
   bottom: 0;
   border-top: none;
@@ -179,6 +178,7 @@
   text-align: center;
   position: fixed;
   display: block;
+  z-index: -1;
 }
 
 .navbar-lang-only {
@@ -1172,6 +1172,7 @@ thead tr:hover {
 html, body {
   height: 100%;
   margin: 0;
+  margin-bottom: 60px;
 }
 
 body {
