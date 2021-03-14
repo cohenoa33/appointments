@@ -6,9 +6,6 @@ export default function Search({ setSearch, setSearchWindow }) {
   const [searchInput, setSearchInput] = useState();
   const { dictionary, userLanguage } = useContext(LanguageContext);
 
-  const [error, setError] = useState(false);
-  const [message, setMessage] = useState("");
-
   const handelSearchInput = (e) => {
     setSearchInput(e.target.value);
   };
@@ -16,17 +13,14 @@ export default function Search({ setSearch, setSearchWindow }) {
   const clearSearch = () => {
     if (document.getElementById("search")) {
       document.getElementById("search").value = "";
-      setError(false);
     }
   };
   const handelSearchSubmit = (e) => {
     e.preventDefault();
     if (searchInput && searchInput.trim() === "") {
-      setError(true);
       setTimeout(clearSearch, 3000);
     } else {
       setSearch(searchInput);
-      setMessage(`${dictionary.searchResults} ${searchInput}`);
     }
   };
   return (
