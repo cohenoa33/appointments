@@ -2,7 +2,10 @@
 
 ## Description:
 
-Multi-language application to keep track of medical appointments.
+
+The shortened version of FollowDoc allows the user to track medical appointments.
+
+This multi-language application supports English and Hebrew.
 
 
 ## Installations
@@ -37,3 +40,8 @@ Multi-language application to keep track of medical appointments.
 ## Backend
 
 [GitHub repo](https://github.com/cohenoa33/appointments-list-backend)
+
+## FollowDoc
+[Live App](http://follow-doc.surge.sh/)
+<br>
+[GitHub repo](https://github.com/cohenoa33/follow-doc-frontend)
