@@ -15,16 +15,13 @@ Multi-language application to keep track of medical appointments.
 
 - Users must be authorized to access the web application.
 
-
 - Users can view a table of appointments that needs preparation.
 
+- Users can add notes and update the data. 
 
-- Users can add notes and appointments.
+- Users can search for an appointment by a doctor, patient, notes, address.
 
-  
-- Users can search for an appointment by doctor, patient, notes, address.
-
-- Users can view all appointments, sort data and insurance approvle.
+- Users can sort the appointments by date, names, or the status of the insurance approval.
 
 
 
