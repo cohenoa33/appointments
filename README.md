@@ -21,9 +21,10 @@ This multi-language application supports English and Hebrew.
 
 - Users can view a table of appointments that needs preparation.
     <br><br/>
-![list](https://github.com/cohenoa33/appointments/blob/main/src/images/list.png?raw=true)
+![list](./src/images/list.png?raw=true "List")
     <br><br/>
-![add]https://github.com/cohenoa33/appointments/blob/main/src/images/add.png?raw=true)
+![add](./src/images/add.png?raw=true "Add")
+    <br><br/>
 
 - Users can add notes and update the data. 
 
