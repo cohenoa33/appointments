@@ -18,15 +18,15 @@ This multi-language application supports English and Hebrew.
 
 - Users must be authorized to access the web application.
     <br><br/>
-    ![user search](https://media.giphy.com/media/vpwr0poGz7H27X1jzX/giphy.gif)
 
 - Users can view a table of appointments that needs preparation.
     <br><br/>
-  ![user search](https://media.giphy.com/media/vpwr0poGz7H27X1jzX/giphy.gif)
+![list](https://github.com/cohenoa33/appointments/blob/main/src/images/list.png?raw=true)
+    <br><br/>
+![add]https://github.com/cohenoa33/appointments/blob/main/src/images/add.png?raw=true)
 
 - Users can add notes and update the data. 
-  <br><br/>
-  ![user search](https://media.giphy.com/media/vpwr0poGz7H27X1jzX/giphy.gif)
+
 
 - Users can search for an appointment by a doctor, patient, notes, address.
   <br><br/>
