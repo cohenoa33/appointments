@@ -21,17 +21,14 @@ This multi-language application supports English and Hebrew.
 
 - Users can view a table of appointments that needs preparation.
     <br><br/>
-![list](./src/images/list.png?raw=true "List" width=200)
-    <br><br/>
-![add](./src/images/add.png?raw=true "Add" width=200)
-    <br><br/>
+![list](./src/images/list.png?raw=true "List")
+ <br><br/>
 
 - Users can add notes and update the data. 
 
-
 - Users can search for an appointment by a doctor, patient, notes, address.
   <br><br/>
-  ![user search](https://media.giphy.com/media/vpwr0poGz7H27X1jzX/giphy.gif)
+  ![user search](https://media.giphy.com/media/dVQ02YhPCOY9XVu167/giphy.gif)
 - Users can sort the appointments by date, names, or the status of the insurance approval.
   <br><br/>
   ![user sort](https://media.giphy.com/media/vpwr0poGz7H27X1jzX/giphy.gif)
