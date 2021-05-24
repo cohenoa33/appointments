@@ -17,14 +17,23 @@ This multi-language application supports English and Hebrew.
 ## Features
 
 - Users must be authorized to access the web application.
+    <br><br/>
+    ![user search](https://media.giphy.com/media/vpwr0poGz7H27X1jzX/giphy.gif)
 
 - Users can view a table of appointments that needs preparation.
+    <br><br/>
+  ![user search](https://media.giphy.com/media/vpwr0poGz7H27X1jzX/giphy.gif)
 
 - Users can add notes and update the data. 
+  <br><br/>
+  ![user search](https://media.giphy.com/media/vpwr0poGz7H27X1jzX/giphy.gif)
 
 - Users can search for an appointment by a doctor, patient, notes, address.
-
+  <br><br/>
+  ![user search](https://media.giphy.com/media/vpwr0poGz7H27X1jzX/giphy.gif)
 - Users can sort the appointments by date, names, or the status of the insurance approval.
+  <br><br/>
+  ![user sort](https://media.giphy.com/media/vpwr0poGz7H27X1jzX/giphy.gif)
 
 
 
