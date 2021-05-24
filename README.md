@@ -21,9 +21,9 @@ This multi-language application supports English and Hebrew.
 
 - Users can view a table of appointments that needs preparation.
     <br><br/>
-![list](./src/images/list.png?raw=true "List")
+![list](./src/images/list.png?raw=true "List" | width=200)
     <br><br/>
-![add](./src/images/add.png?raw=true "Add")
+![add](./src/images/add.png?raw=true "Add" | width=200)
     <br><br/>
 
 - Users can add notes and update the data. 
