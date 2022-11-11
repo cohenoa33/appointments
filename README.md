@@ -35,8 +35,6 @@ This multi-language application supports English and Hebrew.
 
 
 
-## [Live App](https://cohenoa33.github.io/appointments/)
-
 ## Build
 
 - React
