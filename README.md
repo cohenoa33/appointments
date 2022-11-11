@@ -47,6 +47,4 @@ This multi-language application supports English and Hebrew.
 [GitHub repo](https://github.com/cohenoa33/appointments-list-backend)
 
 ## FollowDoc
-[Live App](http://follow-doc.surge.sh/)
-<br>
 [GitHub repo](https://github.com/cohenoa33/follow-doc-frontend)
